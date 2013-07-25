@@ -1,0 +1,3 @@
+[% WRAPPER "layouts/default.html.tx" WITH title = "BlockHash - program" %]
+<h1>index</h1>
+[% END %]

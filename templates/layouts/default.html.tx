@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>[% title %]</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/my.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/masonry.pkgd.min.js"></script>
+  </head>
+  <body>
+    [% content %]
+  </body>
+</html>
