@@ -1,0 +1,8 @@
+日付の取り扱い注意
+-----------------
+Twitterのapi responseのcreated_atの時刻はGMT
+Teng schemaのinflateで+9時間してJSTとして取得している
+
+created_atを範囲指定する際には
+入力された日付や時刻はJSTとして扱い
+sql select時には-9時間して抽出すること

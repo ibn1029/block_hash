@@ -1,19 +1,25 @@
 package BlockHash::Controller::Program;
 use Mojo::Base 'Mojolicious::Controller';
+use BlockHash::Model::Program;
+
+use Data::Dumper;
 
 sub display {
     my $self = shift;
-
-    my $result = $self->model('Program')->get_tweets({
-        prog_name => $self->stash('prog_name') || '',
-        date      => $self->stash('date') || '',
+    my ($tweets, $pager, $count) = BlockHash::Model::Program->get_tweets({
+        tag  => $self->stash('tag') || '',
+        date => $self->stash('date') || '',
+        page => $self->req->param('page') || 1,
     });
+    $self->render(
+        tag => $self->stash('tag') || '',
+        date => $self->stash('date') || '',
+        page => $self->req->param('page') || 1,
 
-    #if ($result->has_error) {
-    #    $self->stash->{error_messages} = $result->error_messages;
-    #    return $self->render('/top');
-    #}
-    $self->render( tweets => $result );
+        tweets => $tweets,
+        tweet_count => $count,
+        pager => $pager,
+    );
 }
 
 1;

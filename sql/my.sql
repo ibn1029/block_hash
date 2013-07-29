@@ -30,10 +30,15 @@ create table if not exists block_hash.archive (
     , foreign key(prog_id) references program(prog_id)
 );
 
-drop table if exists block_hash.tweet;
+-- drop table if exists block_hash.tweet;
+-- drop table block_hash.tweet;
 create table if not exists block_hash.tweet (
-    tweet_id            int(8) unsigned not null auto_increment primary key
-    , archive_id         int  not null
+    id                  bigint unsigned not null auto_increment primary key
+    , tweet_id          bigint unsigned not null unique
+    , hashtags          varchar(140) not null
+    , url               varchar(140)
+    , media_type        varchar(20)
+    , media_data        text
+    , created_at        datetime not null
     , tweet_json        text not null
-    , foreign key(archive_id) references block_hash.archive(archive_id)
 );

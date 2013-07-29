@@ -1,0 +1,75 @@
+#!/bin/env perl
+use strict;
+use warnings;
+use utf8;
+use FindBin;
+use File::Spec;
+use Encode;
+use DBI;
+use Time::Piece;
+use JSON;
+use Data::Dumper;
+
+# https://dev.twitter.com/apps
+# https://dev.twitter.com/docs/api/1.1/get/search/tweets
+# https://metacpan.org/module/MMIMS/Net-Twitter-4.00006/lib/Net/Twitter.pod
+
+my $conf = do File::Spec->catdir($FindBin::Bin, '..', 'config', 'block_hash.development.conf') 
+    or die 'config file not found';
+
+our $dbh = DBI->connect(
+    $conf->{db}{connect_info},
+    $conf->{db}{user},
+    $conf->{db}{password},
+    $conf->{db}{option},
+) or die 'db connection error';
+
+my $add_tag = 'remo_con';
+my @tl;
+
+my $id_sth = $dbh->prepare(qq/select tweet_id from tweet order by tweet_id desc/);
+$id_sth->execute;
+my $result = $id_sth->fetchall_arrayref(+{});
+$id_sth->finish;
+
+my $json_sth = $dbh->prepare(qq/select tweet_json from tweet where tweet_id = ?/);
+for my $tweet_id (@$result) {
+    $json_sth->bind_param(1,$tweet_id->{tweet_id});
+    $json_sth->execute;
+    my $result = $json_sth->fetchall_arrayref(+{});
+    for my $tweet_json (@$result) {
+        eval {
+            my $tweet = decode_json(encode_utf8($tweet_json->{tweet_json}));
+            my $tags = $tweet->{entities}{hashtags};
+            for my $tag (@$tags) {
+                if ($tag->{text} =~ /$add_tag/i) {
+                    #print encode_utf8($tweet->{user}{name}).' @'.$tweet->{user}{screen_name}."\n";
+                    #print "\t".encode_utf8($tweet->{text})."\n";
+                    #print "\t".$tweet->{created_at}."\n";
+                    push @tl, $tweet; 
+                }
+            }
+        };
+        if ($@) {
+            my $sth = $dbh->prepare(qq/delete from tweet where tweet_id = ?/);
+            $sth->bind_param(1, $tweet_id->{tweet_id});
+            $sth->execute;
+            print "deleted $tweet_id->{tweet_id}\n" ;
+        }
+    }
+}
+$json_sth->finish;
+$dbh->disconnect;
+
+for my $tweet (@tl) {
+    print encode_utf8($tweet->{user}{name}).' @'.$tweet->{user}{screen_name}."\n";
+    print "\t".encode_utf8($tweet->{text})."\n";
+    print "\t".$tweet->{created_at}."\n";
+}
+
+sub inflate_datetime {
+    my $twitter_date_str = shift or die;
+    my $t = Time::Piece->strptime($twitter_date_str, "%a %b %d %H:%M:%S %z %Y");
+    return $t->ymd.' '.$t->hms;
+}
+__END__

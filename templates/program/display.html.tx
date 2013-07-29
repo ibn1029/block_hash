@@ -1,37 +1,73 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "BlockHash - program" %]
-<h1>BlockHash</h1>
-<table>
-  <tr>
-    <td>Program Name</td><td>[Block.FM] Remote-Control</td>
-  </tr>
-  <tr>
-    <td>Hash Tags</td><td>#blockfm #remote-control</td>
-  </tr>
-  <tr>
-    <td>Data</td><td>2013-07-25 00:30</td>
-  </tr>
-  <tr>
-    <td>Tweets Count</td><td>269 tweets</td>
-  </tr>
-</table>
-<div id="container" class="masonry js-masonry" data-masonry-options='{"itemSelector": ".item" }'>
-  [% FOREACH v in tweets %]
-  <div class="item[% if v.is_large %] item-large[% END %]">
-    <img src="[% v.profile_img %]" class="profile_img" align="left">
-    <span class="id"> <strong>@[% v.id %]</strong></span> <span class="id">[% v.display_name %]</span><br>
-    <span class="timestamp">[% v.tweet_date %]</span>
-    <br clear="left">
-    <div class="media">
-      [% IF v.media == 'image' %]
-      <a href="[% v.media_url %]"><img src="[% v.media_url %]" class="media-image"></a>
-      [% ELSIF v.media == 'soundcloud' %]
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F[% v.media_url %]&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=false"></iframe>
-      [% ELSIF v.media == 'youtube' %]
-      <iframe width="100%" src="[% v.media_url %]" frameborder="0" allowfullscreen></iframe>
+<div class="row">
+  <div class="span8">
+    <h1>BlockHash</h1>
+    <table>
+      <tr>
+        <td>Hash Tags</td><td>#[% tag %]</td>
+      </tr>
+      <tr>
+        <td>Data</td><td>[% date %]</td>
+      </tr>
+      <tr>
+        <td>Tweets Count</td><td> [% tweet_count %]tweets</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span8">
+
+    <div id="timeline">
+      [% FOREACH v in tweets %]
+      <div class="media tweet">
+
+        <div class="pull-left">
+          <img src="[% v.tweet.user.profile_image_url%]" class="profile_img">
+        </div>
+
+        <div class="media-body">
+          <div class="userinfo">
+            <span class="id"><strong>[% v.tweet.user.name %]</strong></span>
+            <span class="muted">&nbsp;&nbsp;@[% v.tweet.user.screen_name %]</span>
+            <span class="pull-right timestamp">[% v.date %]</span>
+          </div>
+
+          <div>
+            [% IF v.media_type == 'image' %]
+            <a href="[% v.media_data %]"><img src="[% v.media_data %]" class="media-image"></a>
+            [% ELSIF v.media_type == 'instagram' %]
+            <iframe width="530" height="620" src="[% v.media_data %]embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            [% ELSIF v.media_type == 'vine' %]
+            <iframe class="vine-embed" src="[% v.media_data %]/embed/simple" width="320" height="320" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+            [% ELSIF v.media_type == 'owly' %]
+            <a href="[% v.media_data %]" target="_blank"><img src="http://static.ow.ly/photos/normal/[% for_owly(v.media_data) %].jpg" alt="Owly Images" /></a>
+            [% ELSIF v.media_type == 'youtube' %]
+            <iframe width="560" height="315" src="//www.youtube.com/embed/[% for_youtube(v.media_data) %]" frameborder="0" allowfullscreen></iframe>
+            [% ELSIF v.media_type == 'soundcloud' %]
+            <iframe width="530" height="166" src="https://w.soundcloud.com/player/?url=[% v.media_data %]" scrolling="no" frameborder="no" ></iframe>
+            [% END %]
+          </div>
+
+          <div>[% highlight(v.tweet.text) %]</div>
+        </div>
+
+      </div>
       [% END %]
     </div>
-    <div class="tweet">[% highlight(v.tweet) %]</div>
+
   </div>
-  [% END %]
-<div>
+</div>
+
+<div class="row">
+  <div class="span8">
+    [% IF pager.next_page %]
+    <a href="/[% tag %]/[% date %]?page=[% page + 1 %]" class="btn btn-primary btn-large">さらに表示する</a>
+    [% END %]
+[% INCLUDE "ad/test1.html.tx" %]
+  </div>
+</div>
+
+
 [% END %]

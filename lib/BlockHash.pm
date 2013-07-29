@@ -25,24 +25,35 @@ sub startup {
                     $str = $auto->parse_string($str);
                     return $str;
                 },
+                for_owly => sub {
+                    my $str = shift || return;
+                    my @splited = split '/', $str;
+                    return $splited[-1];
+                },
+                for_youtube => sub {
+                    my $str = shift || return;
+                    $str =~ /=(\w+)$/;
+                    my $id = $1;
+                    return $id;
+                },
             },
         },
     });
 
     # Helper method
-    $self->helper( model => sub {
-        my ($self, $model_class) = @_;
-        my $pkg = "BlockHash::Model::$model_class";
-        load $pkg;
-        return $pkg->new;
-    });
+    #$self->helper( model => sub {
+    #    my ($self, $model_class) = @_;
+    #    my $pkg = "BlockHash::Model::$model_class";
+    #    load $pkg;
+    #    return $pkg->new;
+    #});
 
     # Router
     my $r = $self->routes;
     $r->namespaces(['BlockHash::Controller']);
 
     $r->get('/')                            ->to('top#index');
-    $r->get('/(:prog_name)/(:date)')        ->to('program#display');
+    $r->get('/(:tag)/(:date)')        ->to('program#display');
 }
 
 1;
