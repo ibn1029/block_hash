@@ -1,7 +1,6 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "BlockHash - program" %]
 <div class="row">
   <div class="span8">
-    <h1>BlockHash</h1>
     <table>
       <tr>
         <td>Hash Tags</td><td>#[% tag %]</td>

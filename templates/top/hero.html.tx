@@ -6,7 +6,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="span10 offset1 white-panel">
+          <div class="span10 offset1 white-panel-top">
             <div class="offset1 search-box">
               <form method="post" action="/search" class="form-inline">
                 <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="blockfm">

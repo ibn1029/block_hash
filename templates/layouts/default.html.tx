@@ -14,7 +14,8 @@
     <header class="header">
       <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
-          <span class="brand">&nbsp;&nbsp;BlockHash</span>
+          <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
+          <!--
           <ul class="nav pull-right">
             <li><a href="">menu1</a></li>
             <li class="divider-vertical"></li>
@@ -22,12 +23,7 @@
             <li class="divider-vertical"></li>
             <li><a href="">menu3</a></li>
           </ul>
-        </div>
-      </div>
-      <div class="hero-unit">
-        <div class="container">
-          <h1>BlockHash</h1>
-          <h2>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h2>
+          -->
         </div>
       </div>
       <div class="container">
@@ -35,14 +31,14 @@
           <div class="span10 offset1 white-panel">
             <div class="offset1 search-box">
               <form method="post" action="/search" class="form-inline">
-                <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="blockfm">
+                <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="blockfm" value="[% tag %]">
                 <script>
                   var availableTags =["blockfm", "remo_con", "localize"];
                   $("#search-tag").autocomplete({
                     source: availableTags
                   });
                 </script>
-                <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" placeholder="yyyy-mm-dd">
+                <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" placeholder="yyyy-mm-dd" value="[% date %]">
                 <script>
                   $('#search-date').datepicker({
                     inline: true,

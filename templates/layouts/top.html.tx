@@ -14,7 +14,7 @@
     <header class="header">
       <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
-          <span class="brand">&nbsp;&nbsp;BlockHash</span>
+          <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
           <!--
           <ul class="nav pull-right">
             <li><a href="">menu1</a></li>
