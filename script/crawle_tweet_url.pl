@@ -117,7 +117,7 @@ sub _media_type_is_website {
 
 sub _resolve_media_data {
     my ($media_type, $url, $media_data) = @_;
-    my $sth = $self->{dbh}->prepare(qq/update block_hash.tweet set media_type = ?, media_data = ? where url = ?/);
+    my $sth = $self->{dbh}->prepare(qq/update block_hash.tweet set media_type = ?, media_data = ?, is_valid = 1 where url = ?/);
     $sth->execute($media_type, $media_data, $url);
     return;
 }

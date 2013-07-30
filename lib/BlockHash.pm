@@ -52,8 +52,9 @@ sub startup {
     my $r = $self->routes;
     $r->namespaces(['BlockHash::Controller']);
 
-    $r->get('/')                            ->to('top#index');
-    $r->get('/(:tag)/(:date)')        ->to('program#display');
+    $r->get('/')->to('top#top');
+    $r->post('/search')->to('program#search');
+    $r->get('/(:tag)/(:date)')->to('program#display');
 }
 
 1;

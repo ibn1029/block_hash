@@ -1,0 +1,15 @@
+[% WRAPPER "layouts/top.html.tx" WITH title = "BlockHash - program" %]
+<h2>BlockHashとは...</h2>
+<p>国内No.1のダンスミュージック専門インターネットラジオ"Block.FM"の公式ハッシュタグ"#blockfm"を含むツイートを検索できるWebサービスです。生放送でツイートされたタイムラインをいつでも見返すことができます。アーカイブ再生時にはプログラムのハッシュタグを検索すれば生放送のタイムラインをいつでも再現出来ます。</p>
+<h2>Status</h2>
+<table class="table">
+  <tr>
+    <th>アーカイブしたTweet数</th>
+    <th>最終更新日時</th>
+  </tr>
+  <tr>
+    <td class="status_num">[% total_tweets %]</td>
+    <td class="status_num">[% last_updated %]</td>
+  </tr>
+</table>
+[% END %]

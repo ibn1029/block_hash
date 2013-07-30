@@ -74,7 +74,7 @@ sub set_last_tweet_time {
 
 sub store_tweet {
     my $result = shift or die;
-    my $sth = $self->{dbh}->prepare(qq/insert into block_hash.tweet (tweet_id, hashtags, url, created_at, tweet_json) values (?, ?, ?, ?, ?)/);
+    my $sth = $self->{dbh}->prepare(qq/insert into block_hash.tweet (tweet_id, hashtags, url, created_at, tweet_json, is_valid) values (?, ?, ?, ?, ?, 0)/);
     for my $tweet (@{$result->{statuses}}) {
         unless (deflate_datetime(inflate_datetime($tweet->{created_at})) - $self->{last_tweet} ) {
             print "new tweet not found. finished.\n";

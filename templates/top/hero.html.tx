@@ -1,0 +1,31 @@
+      <div class="hero-unit">
+        <div class="container">
+          <h1>BlockHash</h1>
+          <h2>"Block.FM" hash tag archive web service.</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="span10 offset1 white-panel">
+            <div class="offset1 search-box">
+              <form method="post" action="/search" class="form-inline">
+                <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="blockfm">
+                <script>
+                  var availableTags =["blockfm", "remo_con", "localize"];
+                  $("#search-tag").autocomplete({
+                    source: availableTags
+                  });
+                </script>
+                <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" placeholder="yyyy-mm-dd">
+                <script>
+                  $('#search-date').datepicker({
+                    inline: true,
+                    dateFormat: 'yy-mm-dd',
+                  });
+                </script>
+                <input type="submit" class="btn btn-large" value="Search">
+              </form>
+            </div>
+          <div>
+        </div>
+      </div>

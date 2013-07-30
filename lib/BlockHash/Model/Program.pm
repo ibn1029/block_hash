@@ -4,14 +4,25 @@ use Time::Piece;
 use Time::Seconds;
 use Data::Dumper;
 
+sub get_status {
+    my $self = shift;
+
+    my $db = BlockHash::DB->new;
+
+    my $total_tweets = $db->count('tweet', '*');
+    my $rs = $db->single_by_sql(qq/select max(created_at) as last_updated_at from tweet/);
+    my $t = $rs->last_updated_at;
+    return $total_tweets, $t->ymd.' '.$t->hms;
+}
+
 sub get_tweets {
     my $self = shift;
     my $args = shift || croak;    
 
     my $db = BlockHash::DB->new;
     $args->{date} =~ /^(\d{4})(\d{2})(\d{2})$/;
-    my $t1 = Time::Piece->strptime("$1-$2-$3 00:00:00", '%Y-%m-%d %H:%M:%S');
-    my $t2 = Time::Piece->strptime("$1-$2-$3 23:59:59", '%Y-%m-%d %H:%M:%S');
+    my $t1 = Time::Piece->strptime($args->{date}.' 00:00:00', '%Y-%m-%d %H:%M:%S');
+    my $t2 = Time::Piece->strptime($args->{date}.' 23:59:59', '%Y-%m-%d %H:%M:%S');
     $t1 = $t1 - 9*60*60;
     $t2 = $t2 - 9*60*60;
     my $where = {
