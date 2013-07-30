@@ -17,6 +17,7 @@ sub get_tweets {
     my $where = {
         hashtags => { like => '%'.$args->{tag}.'%' },
         created_at => { between => [$t1->ymd.' '.$t1->hms, $t2->ymd.' '.$t2->hms] },
+        is_valid => 1,
     };
     my ($rows, $pager) = $db->search_with_pager('tweet',
         $where,
