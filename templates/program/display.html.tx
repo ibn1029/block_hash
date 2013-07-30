@@ -65,7 +65,6 @@
     [% IF pager.next_page %]
     <a href="/[% tag %]/[% date %]?page=[% page + 1 %]" class="btn btn-primary btn-large">さらに表示する</a>
     [% END %]
-[% INCLUDE "ad/test1.html.tx" %]
   </div>
 </div>
 

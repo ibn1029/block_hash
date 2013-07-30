@@ -2,35 +2,86 @@
 <html lang="ja">
   <head>
     <title>[% title %]</title>
-    <!--
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-    -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <link href="/css/my.css" rel="stylesheet">
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/masonry.pkgd.min.js"></script>
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/jquery-ui-1.9.2.custom.min.js"></script>
   </head>
   <body>
-    <header class="container-fluid">
-      headerheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheaderheader
-    </header>
-    <div class="container">
-      <div class="row">
-        <div class="span8">
-          [% content %]
+
+    <header class="header">
+      <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+          <span class="brand">&nbsp;&nbsp;BlockHash</span>
+          <ul class="nav pull-right">
+            <li><a href="">menu1</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="">menu2</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="">menu3</a></li>
+          </ul>
         </div>
-        <div class="span4">
-[% INCLUDE "ad/test2.html.tx" %]
-          <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
-          <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
-          <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
-          <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
+      </div>
+      <div class="hero-unit">
+        <div class="container">
+          <h1>BlockHash</h1>
+          <h2>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="span10 offset1 white-panel">
+            <div class="offset1 search-box">
+              <form class="form-inline">
+                <input type="text" name="tag" id="search-tag" class="input-xlarge" style="height: 35px; font-size: 24px;" placeholder="blockfm">
+                <script>
+                  var availableTags =["blockfm", "remo_con", "localize"];
+                  $("#search-tag").autocomplete({
+                    source: availableTags
+                  });
+                </script>
+                <input type="text" name="date" id="search-date" class="" style="height: 35px; font-size: 24px;" placeholder="yyyy-mm-dd">
+                <script>
+                  $('#search-date').datepicker({
+                    inline: true,
+                    dateFormat: 'yy-mm-dd',
+                  });
+                </script>
+                <input type="submit" class="btn btn-large" value="Search">
+              </form>
+            </div>
+          <div>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="span8">
+            [% content %]
+          </div>
+          <div class="span4">
+            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
+            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
+            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
+            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
+          </div>
         </div>
       </div>
     </div>
-    <footer class="container-fluid">
-      footerfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooterfooter
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <h1>BlockHash</h1>
+            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
