@@ -29,7 +29,7 @@ a {
 
 /*---- header part ----*/
 .hero-unit {
-    background-image: url(/img/hero-wall.png);
+    /*background-image: url(/img/hero-wall.png);*/
     background-color: #202020;
     height: 200px;
     text-shadow: 1px -1px 0 rgba(0,0,0,1);
