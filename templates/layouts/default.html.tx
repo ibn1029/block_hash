@@ -26,58 +26,33 @@
           -->
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="span10 offset1 white-panel">
-            <div class="offset1 search-box">
-              <form method="post" action="/search" class="form-inline">
-                <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="blockfm" value="[% tag %]">
-                <script>
-                  var availableTags =["blockfm", "remo_con", "localize"];
-                  $("#search-tag").autocomplete({
-                    source: availableTags
-                  });
-                </script>
-                <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" placeholder="yyyy-mm-dd" value="[% date %]">
-                <script>
-                  $('#search-date').datepicker({
-                    inline: true,
-                    dateFormat: 'yy-mm-dd',
-                  });
-                </script>
-                <input type="submit" class="btn btn-large" value="Search">
-              </form>
-            </div>
-          <div>
-        </div>
-      </div>
     </header>
 
-    <div class="wrapper">
+    [% IF is_toppage %]
+    <div class="hero-unit">
       <div class="container">
-        <div class="row">
-          <div class="span8">
-            [% content %]
-          </div>
-          <div class="span4">
-            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
-            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
-            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
-            <p style="border:1px solid silver; width: 100%; height: 320px; background-color: #f0f0f0"></p>
-          </div>
-        </div>
+        <h1>BlockHash</h1>
+        <h2>"Block.FM" hash tag archive web service.</h2>
       </div>
+    </div>
+    [% END %]
+
+    <div class="container header-offset">
+      [% content %]
     </div>
 
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="span12">
-            <h1>BlockHash</h1>
-            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<p>
+          <div class="span6">
+            <h3>BlockHash</h3>
+            <p>"Block.FM" hash tag archive web service.<p>
+          </div>
+          <div class="span6">xxx.xxx@xxxx.xxxx
           </div>
         </div>
       </div>
     </footer>
+
   </body>
 </html>

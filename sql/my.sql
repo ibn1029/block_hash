@@ -41,5 +41,5 @@ create table if not exists block_hash.tweet (
     , media_data        text
     , created_at        datetime not null
     , tweet_json        text not null
-    , is_valid          init(1)
+    , is_valid          int(1) default 0
 );

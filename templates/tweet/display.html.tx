@@ -1,0 +1,15 @@
+[% WRAPPER "layouts/default.html.tx" WITH title = " BlockHash - #"_ tag %]
+<div class="row">
+  <div class="span10 offset1 white-panel">
+    [% INCLUDE "common/search.html.tx" %]
+  </div>
+</div>
+<div class="row">
+  <div class="span8">
+    [% INCLUDE "tweet/tl/timeline.html.tx" %]
+  </div>
+  <div class="span4">
+    [% INCLUDE "tweet/ad/adsense.html.tx" %]
+  </div>
+</div>
+[% END %]

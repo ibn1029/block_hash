@@ -1,0 +1,16 @@
+    <header class="header">
+      <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+          <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
+          <!--
+          <ul class="nav pull-right">
+            <li><a href="">menu1</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="">menu2</a></li>
+            <li class="divider-vertical"></li>
+            <li><a href="">menu3</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+

@@ -14,7 +14,9 @@
 body {
     font-size: 18px;
     line-height: 1.3;
-    background: #202020;
+    background-color: #202020;
+    background-image: url(/img/binding_dark/binding_dark.png);
+    background-repeat: repeat-x repeat-y;
     color: #969696;
 }
 
@@ -25,47 +27,48 @@ a {
 
 /*------------------------------------------------------------------------------*/
 
-/* header part */
+/*---- header part ----*/
 .hero-unit {
-    background: url(/img/hero-wall.png);
+    background-image: url(/img/hero-wall.png);
     background-color: #202020;
     height: 200px;
+    text-shadow: 1px -1px 0 rgba(0,0,0,1);
 }
 
 .white-panel-top {
-    background-color: #ffffff;
+    background-color: #f8f8f8;
     border: 1px solid #dadada;
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.075);
     color: #333333;
     margin-bottom: 40px;
-    margin-top: -70px;
+    margin-top: -90px;
 }
 .white-panel {
-    background-color: #ffffff;
+    background-color: #f8f8f8;
     border: 1px solid #dadada;
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.075);
     color: #333333;
-    margin-top: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
-.search-box { margin-top: 20px; }
+.search-box {
+    margin-top: 20px;
+}
 .height30 { height: 30px; }
 .text-black { color: block; }
 
-/* content part */
-.wrapper {
+
+/*---- content part ----*/
+.header-offset {
     margin-top: 50px;
 }
 .status_num {
     font-size: 48px;
     font-weight: bold;
-};
-/* footer part */
-.footer {
-    background-color: black;
-    padding: 20px 20px;
 }
+
 .tweet {
     width: 600px;
     background: #333333;
@@ -86,3 +89,14 @@ a {
 .tweet .userinfo .timestamp { font-size: 0.8em; }
 .tweet .userinfo .url { color: #DF1515; }
 
+
+/*---- footer part ----*/
+.footer {
+    margin-top: 20px;
+    padding: 20px 20px;
+    text-shadow: 1px -1px 0 rgba(0,0,0,1);
+    background-color: black;
+    border-top-color: #191919;
+    border-top-width: 1px;
+    border-top-style: solid;
+}

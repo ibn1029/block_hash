@@ -53,8 +53,8 @@ sub startup {
     $r->namespaces(['BlockHash::Controller']);
 
     $r->get('/')->to('top#top');
-    $r->post('/search')->to('program#search');
-    $r->get('/(:tag)/(:date)')->to('program#display');
+    $r->post('/search')->to('tweet#search');
+    $r->get('/(:tag)/(:date)')->to('tweet#display');
 }
 
 1;

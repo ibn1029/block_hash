@@ -1,6 +1,15 @@
-[% WRAPPER "layouts/top.html.tx" WITH title = "BlockHash - program" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "BlockHash" %]
+<div class="container">
+  <div class="row">
+    <div class="span10 offset1 white-panel-top">
+      [% INCLUDE "common/search.html.tx" %]
+    </div>
+  </div>
+</div>
+
 <h2>BlockHashとは...</h2>
 <p>国内No.1のダンスミュージック専門インターネットラジオ"Block.FM"の公式ハッシュタグ"#blockfm"を含むツイートを検索できるWebサービスです。生放送でツイートされたタイムラインをいつでも見返すことができます。アーカイブ再生時にはプログラムのハッシュタグを検索すれば生放送のタイムラインをいつでも再現出来ます。</p>
+<div class="zurui-sen"></div>
 <h2>Status</h2>
 <table class="table">
   <tr>
