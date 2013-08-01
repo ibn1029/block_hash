@@ -1,0 +1,2 @@
+MAILTO=ibn1029@gmail.com
+*/15 * * * * viage /bin/bash /Users/viage/Work/App/block_hash/script/do.sh 

@@ -12,6 +12,7 @@ requires 'DBD::mysql', '== 4.023';
 requires 'JSON', '== 2.59';
 requires 'Teng', '== 0.19';
 requires 'LWP::UserAgent', '== 6.05';
+requires 'LWP::Protocol::https', '== 6.04';
 requires 'HTML::Entities', '== 3.69';
 requires 'DBIx::QueryLog', '== 0.37';
 requires 'Config::Pit', '== 0.04';

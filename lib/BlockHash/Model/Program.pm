@@ -10,9 +10,11 @@ sub get_status {
     my $db = BlockHash::DB->new;
 
     my $total_tweets = $db->count('tweet', '*');
-    my $rs = $db->single_by_sql(qq/select max(created_at) as last_updated_at from tweet/);
-    my $t = $rs->last_updated_at;
-    return $total_tweets, $t->ymd.' '.$t->hms;
+    my $rs1 = $db->single_by_sql(qq/select count(*) as hashtags from (select hashtags from tweet group by hashtags) as hashtag_group;/);
+    my $hashtags = $rs1->hashtags;
+    my $rs2 = $db->single_by_sql(qq/select max(created_at) as last_updated_at from tweet/);
+    my $t = $rs2->last_updated_at;
+    return $total_tweets, $hashtags, $t->ymd.' '.$t->hms;
 }
 
 sub get_tweets {

@@ -110,7 +110,7 @@ sub is_duplicate_tweet {
 sub join_hashtags {
     my $hashtags = shift or die;
     my @tags;
-    for my $tag (@$hashtags) {
+    for my $tag (sort @$hashtags) {
         push @tags, $tag->{text};
     }
     return join ',', @tags;

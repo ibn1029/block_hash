@@ -35,11 +35,17 @@ table {
 
 table {
     name 'tweet';
-    pk 'tweet_id';
+    pk 'id';
     columns (
+        {name => 'id', type => 4},
         {name => 'tweet_id', type => 4},
-        {name => 'archive_id', type => 4},
+        {name => 'hashtags', type => 12},
+        {name => 'created_at', type => 11},
         {name => 'tweet_json', type => 12},
+        {name => 'url', type => 12},
+        {name => 'media_type', type => 12},
+        {name => 'media_data', type => 12},
+        {name => 'is_valid', type => 4},
     );
 
         inflate qr/.+_json/ => sub {

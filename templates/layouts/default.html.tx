@@ -9,6 +9,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="/js/jquery.socialbutton-1.9.1.min.js"></script>
   </head>
   <body>
 
@@ -16,15 +17,8 @@
       <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
           <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
-          <!--
-          <ul class="nav pull-right">
-            <li><a href="">menu1</a></li>
-            <li class="divider-vertical"></li>
-            <li><a href="">menu2</a></li>
-            <li class="divider-vertical"></li>
-            <li><a href="">menu3</a></li>
-          </ul>
-          -->
+          <div class="btn-group pull-right">
+            [% INCLUDE "common/twitter.html.tx" %]
         </div>
       </div>
     </header>
@@ -36,9 +30,14 @@
         <p>BlockHash is the hash tag archive web service of '#blockfm'.</p>
       </div>
     </div>
+    <script>
+      $(document).ready( function() {
+        $("#search-tag").focus()
+      });
+    </script>
     [% END %]
 
-    <div class="container voffset1">
+    <div class="container voffset50">
       [% content %]
     </div>
 

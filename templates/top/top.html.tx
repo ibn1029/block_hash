@@ -7,21 +7,21 @@
   </div>
 </div>
 
-<h2 class="voffset1">BlockHashとは...</h2>
+<h2 class="voffset50">BlockHashとは...</h2>
 <p>国内No.1のダンスミュージック専門インターネットラジオ"Block.FM"の公式ハッシュタグ"#blockfm"を含むツイートを検索できるWebサービスです。生放送でツイートされたタイムラインをいつでも見返すことができます。アーカイブ再生時にはプログラムのハッシュタグを検索すれば生放送のタイムラインをいつでも再現出来ます。</p>
 
-<h2 class="voffset1">Status</h2>
+<h2 class="voffset50">Status</h2>
 <div class="row offset1">
   <div class="span3">
-        <h4 class="zurui-sen">アーカイブしたツイート</h4>
+        <h5 class="zurui-sen">アーカイブしたツイート</h5>
         <p class="status_num size48">[% total_tweets %]</p>
   </div>
   <div class="span3">
-        <h4 class="zurui-sen">アーカイブしたハッシュタグ</h4>
-        <p class="status_num size48">[% total_tweets %]</p>
+        <h5 class="zurui-sen">アーカイブしたハッシュタグ</h5>
+        <p class="status_num size48">[% hashtags %]</p>
   </div>
   <div class="span3">
-        <h4 class="zurui-sen">最終更新日時</h4>
+        <h5 class="zurui-sen">最終更新日時</h5>
         <p class="status_num size24">[% last_updated %]</p>
   </div>
 </div>

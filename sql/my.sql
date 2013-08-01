@@ -43,3 +43,7 @@ create table if not exists block_hash.tweet (
     , tweet_json        text not null
     , is_valid          int(1) default 0
 );
+
+create index tweet_hashtags on tweet (hashtags);
+create index tweet_created_at on tweet (created_at);
+

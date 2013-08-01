@@ -65,7 +65,10 @@ sub crawle {
     my $ua = $self->{ua};
     for my $url (@$url_list) {
         my $res = $ua->get($url);
-        next $res->status_line unless $res->is_success;
+        unless ($res->is_success) {
+            print $url.' '.$res->status_line."\n";
+            next;
+        }
         my $uri = $res->request->uri->as_string;
 
         if ($uri =~ /instagram\.com/) {

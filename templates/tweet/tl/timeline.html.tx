@@ -1,17 +1,11 @@
 <div class="row">
-  <div class="span8">
-    <table>
-      <tr>
-        <td>Hash Tags</td><td>#[% tag %]</td>
-      </tr>
-      <tr>
-        <td>Data</td><td>[% date %]</td>
-      </tr>
-      <tr>
-        <td>Tweets Count</td><td> [% tweet_count %]tweets</td>
-      </tr>
-    </table>
-  </div>
+  <div class="span2">Hash Tag</div><div class="span2">#[% tag %]</div>
+</div>
+<div class="row">
+  <div class="span2">Date</div><div class="span2">[% date %]</div>
+</div>
+<div class="row">
+  <div class="span2">Tweet Count</div><div class="span2">[% tweet_count %]<small>tweets</small></div>
 </div>
 
 <div class="row">
@@ -58,10 +52,10 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row voffset20">
   <div class="span8">
     [% IF pager.next_page %]
-    <a href="/[% tag %]/[% date %]?page=[% page + 1 %]" class="btn btn-primary btn-large">さらに表示する</a>
+    <a href="/[% tag %]/[% date %]?page=[% pager.next_page %]" class="btn btn-primary btn-large btn-block">次のページを表示する</a>
     [% END %]
   </div>
 </div>

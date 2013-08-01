@@ -5,6 +5,7 @@ use HTML::FillInForm::Lite 'fillinform';
 use Text::Xslate 'html_builder';
 use Text::AutoLink;
 use Module::Load 'load';
+use Time::Piece;
 
 sub startup {
     my $self = shift;
@@ -35,6 +36,10 @@ sub startup {
                     $str =~ /=(\w+)$/;
                     my $id = $1;
                     return $id;
+                },
+                today => sub {
+                    my $t = localtime;
+                    return $t->ymd;
                 },
             },
         },

@@ -1,19 +1,25 @@
 <div class="offset1 search-box">
   <form method="post" action="/search" class="form-inline">
-    <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" value="[% tag %]">
-    <script>
-      var availableTags =["blockfm", "remo_con", "localize"];
-      $("#search-tag").autocomplete({
-        source: availableTags
-      });
-    </script>
-    <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" value="[% date %]">
-    <script>
-      $('#search-date').datepicker({
-        inline: true,
-        dateFormat: 'yy-mm-dd',
-      });
-    </script>
+    <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="hashtag" value="[% tag %]">
+    <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" value="[% date || today() %]">
     <input type="submit" class="btn btn-large" value="Search">
   </form>
 </div>
+<script>
+  var availableTags =[
+    "blockfm","remo_con","techdance","dnbjpn","localize","DJAKi","Basstech","hedkandiradio","mosradio",
+    "tcyradio","oirantv","urbanslice","Hyper_Society","tjo","date_line","tony","カタカナdeハベル",
+    "no_bias","Wickedpedia_Radio","raidsystem","yone_bfm","agx","NewDJ_bfm","radio_REBOOT",
+    "VINYL_HOUSE","bakass","SECOND_SPACE","iflyer_bfm","sodeyama_bfm","EDM_Essentials","dont_blink",
+    "SDM_RADIO","swing_chop","混ぜると危険","reggae_times","STEPPASIDE","Dancing_Dead","PIW",
+    "GWIGGWIGRADIO","blockfmeden","KitsuneRadiobyBeatauCue","SUMMIT_bfm","blockstepper"
+  ];
+  $("#search-tag").autocomplete({
+    source: availableTags,
+    minLength: 2
+  });
+  $('#search-date').datepicker({
+    inline: true,
+    dateFormat: 'yy-mm-dd',
+  });
+</script>
