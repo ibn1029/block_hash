@@ -5,6 +5,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <link href="/css/my.css" rel="stylesheet">
+    <link href="/css/zurui.css" rel="stylesheet">
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/jquery-ui-1.9.2.custom.min.js"></script>
@@ -32,23 +33,23 @@
     <div class="hero-unit">
       <div class="container">
         <h1>BlockHash</h1>
-        <h2>"Block.FM" hash tag archive web service.</h2>
+        <p>BlockHash is the hash tag archive web service of '#blockfm'.</p>
       </div>
     </div>
     [% END %]
 
-    <div class="container header-offset">
+    <div class="container voffset1">
       [% content %]
     </div>
 
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="span6">
-            <h3>BlockHash</h3>
-            <p>"Block.FM" hash tag archive web service.<p>
+          <div class="span8">
+            <h2>BlockHash</h2>
+            <p>BlockHash is the hash tag archive web service of '#blockfm'.</p>
           </div>
-          <div class="span6">xxx.xxx@xxxx.xxxx
+          <div class="span4">xxx.xxx@xxxx.xxxx
           </div>
         </div>
       </div>

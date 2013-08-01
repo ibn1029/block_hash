@@ -61,11 +61,18 @@ a {
 
 
 /*---- content part ----*/
-.header-offset {
+.voffset1 {
     margin-top: 50px;
 }
 .status_num {
+    text-align: center;
+}
+.size48 {
     font-size: 48px;
+    font-weight: bold;
+}
+.size24 {
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -95,7 +102,7 @@ a {
     margin-top: 20px;
     padding: 20px 20px;
     text-shadow: 1px -1px 0 rgba(0,0,0,1);
-    background-color: black;
+    background-color: #202020;
     border-top-color: #191919;
     border-top-width: 1px;
     border-top-style: solid;
