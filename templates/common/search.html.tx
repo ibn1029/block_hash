@@ -68,6 +68,10 @@
     source: availableTags,
     minLength: 2
   });
+  $('#detail-search-tag').autocomplete({
+    source: availableTags,
+    minLength: 2
+  });
   var pickers = ['search-date', 'detail-search-start-date', 'detail-search-end-date'];
   for (var i = 0; i < pickers.length; i++) {
     $('#'+pickers[i]).datepicker({
