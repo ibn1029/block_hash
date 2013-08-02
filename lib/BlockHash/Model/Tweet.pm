@@ -6,7 +6,7 @@ use Data::Page::Navigation;
 
 use Data::Dumper;
 
-my $ROWS = 1;
+my $ROWS = 30;
 
 sub get_status {
     my $self = shift;
@@ -25,20 +25,19 @@ sub search {
     my $self = shift;
     my $args = shift || croak;    
 
-    $args->{date} =~ /^(\d{4})(\d{2})(\d{2})$/;
+    return 0 unless $args->{date} =~ /^(\d{4})-(\d{2})-(\d{2})$/;
+
     my $t_start = Time::Piece->strptime($args->{date}.' 00:00:00', '%Y-%m-%d %H:%M:%S');
     my $t_end = Time::Piece->strptime($args->{date}.' 23:59:59', '%Y-%m-%d %H:%M:%S');
     $t_start = $t_start - 9*60*60;
     $t_end = $t_end - 9*60*60;
 
-    #my $where = {
-    #    hashtags => { like => '%'.$args->{tag}.'%' },
-    #    created_at => { between => [$t_start->ymd.' '.$t_start->hms, $t_end->ymd.' '.$t_end->hms] },
-    #    is_valid => 1,
-    #};
-
-    my ($tweets, $pager, $tweet_count) = $self->_get_tweets($args->{page}, $t_start, $t_end);
-
+    my ($tweets, $pager, $tweet_count) = $self->_get_tweets(
+        $args->{tag},
+        $args->{page},
+        $t_start,
+        $t_end
+    );
     return $tweets, $pager, $tweet_count;
 }
 
@@ -46,32 +45,31 @@ sub search_detail {
     my $self = shift;
     my $args = shift || croak;    
 
-    $args->{start_date} =~ /^(\d{4})(\d{2})(\d{2})$/;
-    $args->{end_date}   =~ /^(\d{4})(\d{2})(\d{2})$/;
-    $args->{start_time} =~ /^\d{1,2}$/;
-    $args->{end_time}   =~ /^\d{1,2}$/;
+    return 0 unless $args->{start_date} =~ /^(\d{4})-(\d{2})-(\d{2})$/;
+    return 0 unless $args->{end_date}   =~ /^(\d{4})-(\d{2})-(\d{2})$/;
+    return 0 unless $args->{start_time} =~ /^\d{1,2}$/;
+    return 0 unless $args->{end_time}   =~ /^\d{1,2}$/;
+
     my $t_start = Time::Piece->strptime($args->{start_date}.' '.$args->{start_time}.':00:00', '%Y-%m-%d %H:%M:%S');
-    my $t_end   = Time::Piece->strptime($args->{end_date}  .' '.$args->{end_time}  .':00:00', '%Y-%m-%d %H:%M:%S');
+    my $t_end   = Time::Piece->strptime($args->{end_date}  .' '.$args->{end_time}  .':59:59', '%Y-%m-%d %H:%M:%S');
     $t_start = $t_start - 9*60*60;
     $t_end   = $t_end - 9*60*60;
 
-    #my $where = {
-    #    hashtags => { like => '%'.$args->{tag}.'%' },
-    #    created_at => { between => [$t1->ymd.' '.$t1->hms, $t2->ymd.' '.$t2->hms] },
-    #    is_valid => 1,
-    #};
-
-    my ($tweets, $pager, $tweet_count) = $self->_get_tweets($args->{page}, $t_start, $t_end);
-
+    my ($tweets, $pager, $tweet_count) = $self->_get_tweets(
+        $args->{tag},
+        $args->{page},
+        $t_start,
+        $t_end
+    );
     return $tweets, $pager, $tweet_count;
 }
 
 sub _get_tweets {
-    my ($self, $page, $t_start, $t_end) = @_;
+    my ($self, $tag, $page, $t_start, $t_end) = @_;
 
     my $db = BlockHash::DB->new;
     my $where = {
-        hashtags => { like => '%'.$args->{tag}.'%' },
+        hashtags => { like => '%'.$tag.'%' },
         created_at => { between => [$t_start->ymd.' '.$t_start->hms, $t_end->ymd.' '.$t_end->hms] },
         is_valid => 1,
     };
@@ -103,7 +101,6 @@ sub _get_tweets {
             media_data => $row->media_data,
         };
     }
-    
     return \@tweets, $pager, $tweet_count;
 }
 

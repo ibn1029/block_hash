@@ -12,8 +12,8 @@
           <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]">&lsaquo;</a>
         </li>
         [% ELSE %]
-        <li class="disabled"><a href="#">&laquo;</a></li>
-        <li class="disabled"><a href="#">&lsaquo;</a></li>
+        <li class="active"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">&lsaquo;</a></li>
         [% END %]
     
         [% FOREACH page IN pager.pages_in_navigation %]
@@ -34,8 +34,8 @@
           <a href="[% c.url_with.query([ page => pager.last_page ]) %]">&raquo;</a>
         </li>
         [% ELSE %]
-        <li class="disabled"><a href="#">&rsaquo;</a></li>
-        <li class="disabled"><a href="#">&raquo;</a></li>
+        <li class="active"><a href="#">&rsaquo;</a></li>
+        <li class="active"><a href="#">&raquo;</a></li>
         [% END %]
       </ul>
     </div>

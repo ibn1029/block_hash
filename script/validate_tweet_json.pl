@@ -57,9 +57,12 @@ sub validate {
         };
         if ($@) {
             push @ng_list, $row->{id};
+            warn Dumper \@ng_list;
+            my $sth = $self->{dbh}->prepare(qq/delete from tweet where id in (?)/);
+            $sth->execute(join ',', @ng_list);
+            $sth->finish;
         }
     }
-    warn Dumper \@ng_list;
 }
 
 __END__

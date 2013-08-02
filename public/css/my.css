@@ -29,9 +29,12 @@ a {
 
 /*---- header part ----*/
 .hero-unit {
-   /* background-image: url(/img/a0002_000374_m-tiltshift.jpg);
-    background-color: #202020;*/
-    background: #202020 url("/img/radio.jpg") no-repeat scroll center 85% / cover;
+    background-color: #202020;
+    background-image: url('/img/radio.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center 85%;
+    background-size: cover;
     height: 200px;
     color: #000;
     text-shadow: -1px 1px 0 rgba(255,255,255,1);
@@ -85,9 +88,7 @@ h1.title { margin-top:60px; }
     margin-top: 4px;
     margin-right: 2px;
 }
-#detail-search-inline {
-    margin-left: 517px;
-}
+#detail-search-inline { margin-left: 516px; }
 
 #timeline a { color: #DF1515; }
 

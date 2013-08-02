@@ -21,15 +21,12 @@ sub search {
 sub search_detail {
     my $self = shift;
     my $p = $self->req->params->to_hash;
-warn Dumper $p; 
+
     unless ( $p->{tag}
-    and $p->{start_date} and $p->{start_time}
-    and $p->{end_date}   and $p->{end_time}
     and $p->{start_date} =~ /^\d{4}-\d{2}-\d{2}$/
     and $p->{end_date}   =~ /^\d{4}-\d{2}-\d{2}$/ 
     and $p->{start_time} =~ /^\d{1,2}$/
     and $p->{end_time}   =~ /^\d{1,2}$/ ) {
-warn 'NG';
         $self->redirect_to("/");
         return 0;
     }
@@ -42,19 +39,19 @@ sub display {
 
     if ($self->stash('start_date') and $self->stash('end_date')) {
         my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search_detail({
-            tag  => $self->stash('tag') || '',
-            start_date => $self->stash('start_date') || '',
-            start_time => $self->stash('start_time') || '',
-            end_date => $self->stash('end_date') || '',
-            end_time => $self->stash('end_time') || '',
+            tag  => $self->stash('tag'),
+            start_date => $self->stash('start_date'),
+            start_time => $self->stash('start_time') || '0',
+            end_date => $self->stash('end_date'),
+            end_time => $self->stash('end_time') || '0',
             page => $self->req->param('page') || 1,
         });
         $self->render(
-            tag => $self->stash('tag') || '',
-            start_date => $self->stash('start_date') || '',
-            start_time => $self->stash('start_time') || '',
-            end_date => $self->stash('end_date') || '',
-            end_time => $self->stash('end_time') || '',
+            tag => $self->stash('tag'),
+            start_date => $self->stash('start_date'),
+            start_time => $self->stash('start_time') || '0',
+            end_date => $self->stash('end_date'),
+            end_time => $self->stash('end_time') || '0',
             page => $self->req->param('page') || 1,
 
             tweets => $tweets,
@@ -64,20 +61,19 @@ sub display {
 
     } else {
         my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search({
-            tag  => $self->stash('tag') || '',
-            date => $self->stash('date') || '',
+            tag  => $self->stash('tag'),
+            date => $self->stash('date'),
             page => $self->req->param('page') || 1,
         });
         $self->render(
-            tag => $self->stash('tag') || '',
-            date => $self->stash('date') || '',
+            tag => $self->stash('tag'),
+            date => $self->stash('date'),
             page => $self->req->param('page') || 1,
 
             tweets => $tweets,
             tweet_count => $tweet_count,
             pager => $pager,
         );
-
     }
 }
 
