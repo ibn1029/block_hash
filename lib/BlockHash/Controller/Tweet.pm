@@ -1,34 +1,84 @@
 package BlockHash::Controller::Tweet;
 use Mojo::Base 'Mojolicious::Controller';
-use BlockHash::Model::Program;
+use BlockHash::Model::Tweet;
 
 use Data::Dumper;
 
 sub search {
     my $self = shift;
     my $p = $self->req->params->to_hash;
-    $self->redirect_to("/") unless $p->{tag} and $p->{date};
-    my $tag = $p->{tag};
-    my $date = $p->{date};
-    $self->redirect_to("/$tag/$date");
+    
+    # validation
+    unless ( $p->{tag} and $p->{date} and $p->{date} =~ /^\d{4}-\d{2}-\d{2}$/ ) {
+        $self->redirect_to("/");
+        return 0;
+    }
+    # '#'filter
+    $p->{tag}  =~ s/#//g; my $tag = $p->{tag};
+    $self->redirect_to("/$tag/$p->{date}");
+}
+
+sub search_detail {
+    my $self = shift;
+    my $p = $self->req->params->to_hash;
+warn Dumper $p; 
+    unless ( $p->{tag}
+    and $p->{start_date} and $p->{start_time}
+    and $p->{end_date}   and $p->{end_time}
+    and $p->{start_date} =~ /^\d{4}-\d{2}-\d{2}$/
+    and $p->{end_date}   =~ /^\d{4}-\d{2}-\d{2}$/ 
+    and $p->{start_time} =~ /^\d{1,2}$/
+    and $p->{end_time}   =~ /^\d{1,2}$/ ) {
+warn 'NG';
+        $self->redirect_to("/");
+        return 0;
+    }
+    $p->{tag}  =~ s/#//g; my $tag = $p->{tag};
+    $self->redirect_to("/$tag/$p->{start_date}/$p->{start_time}/$p->{end_date}/$p->{end_time}");
 }
 
 sub display {
     my $self = shift;
-    my ($tweets, $pager, $count) = BlockHash::Model::Program->get_tweets({
-        tag  => $self->stash('tag') || '',
-        date => $self->stash('date') || '',
-        page => $self->req->param('page') || 1,
-    });
-    $self->render(
-        tag => $self->stash('tag') || '',
-        date => $self->stash('date') || '',
-        page => $self->req->param('page') || 1,
 
-        tweets => $tweets,
-        tweet_count => $count,
-        pager => $pager,
-    );
+    if ($self->stash('start_date') and $self->stash('end_date')) {
+        my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search_detail({
+            tag  => $self->stash('tag') || '',
+            start_date => $self->stash('start_date') || '',
+            start_time => $self->stash('start_time') || '',
+            end_date => $self->stash('end_date') || '',
+            end_time => $self->stash('end_time') || '',
+            page => $self->req->param('page') || 1,
+        });
+        $self->render(
+            tag => $self->stash('tag') || '',
+            start_date => $self->stash('start_date') || '',
+            start_time => $self->stash('start_time') || '',
+            end_date => $self->stash('end_date') || '',
+            end_time => $self->stash('end_time') || '',
+            page => $self->req->param('page') || 1,
+
+            tweets => $tweets,
+            tweet_count => $tweet_count,
+            pager => $pager,
+        );
+
+    } else {
+        my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search({
+            tag  => $self->stash('tag') || '',
+            date => $self->stash('date') || '',
+            page => $self->req->param('page') || 1,
+        });
+        $self->render(
+            tag => $self->stash('tag') || '',
+            date => $self->stash('date') || '',
+            page => $self->req->param('page') || 1,
+
+            tweets => $tweets,
+            tweet_count => $tweet_count,
+            pager => $pager,
+        );
+
+    }
 }
 
 1;

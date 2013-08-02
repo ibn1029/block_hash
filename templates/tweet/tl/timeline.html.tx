@@ -8,6 +8,8 @@
   <div class="span2">Tweet Count</div><div class="span2">[% tweet_count %]<small>tweets</small></div>
 </div>
 
+[% INCLUDE "common/pager.html.tx" %]
+
 <div class="row">
   <div class="span8">
 
@@ -52,10 +54,5 @@
   </div>
 </div>
 
-<div class="row voffset20">
-  <div class="span8">
-    [% IF pager.next_page %]
-    <a href="/[% tag %]/[% date %]?page=[% pager.next_page %]" class="btn btn-primary btn-large btn-block">次のページを表示する</a>
-    [% END %]
-  </div>
-</div>
+[% INCLUDE "common/pager.html.tx" %]
+

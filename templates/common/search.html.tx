@@ -1,10 +1,57 @@
-<div class="offset1 search-box">
+<div class="offset1 voffset30">
   <form method="post" action="/search" class="form-inline">
     <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="hashtag" value="[% tag %]">
     <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" value="[% date || today() %]">
-    <input type="submit" class="btn btn-large" value="Search">
+    <button type="submit" class="btn btn-large btn-primary"><i class="icon-search icon-white search-icon-offset"></i>検索</button>
+    <span id="detail-search-inline"><a href="#" id="detail"><i class="icon-plus detail-icon-offset"></i><small>詳細検索</small></a></span>
   </form>
+
+ <div id="detail-search" class="display-none">
+  <form method="post" action="/search/detail" class="form-horizontal">
+
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">ハッシュタグ</label>
+      <div class="controls">
+        <input type="text" name="tag" id="detail-search-tag" class="input-xlarge" style="color:black;" placeholder="hashtag" value="[% tag %]">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">検索開始日時</label>
+      <div class="controls">
+        <input type="text" name="start_date" id="detail-search-start-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% start_date %]">
+        <select name="start_time" class="input-mini">
+          <option></option>
+          [% h = 0; WHILE h <= 23 %]
+          <option value="[% h %]">[% h %]</option>
+          [% h = h + 1; END %]
+        </select>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">検索終了日時</label>
+      <div class="controls">
+        <input type="text" name="end_date" id="detail-search-end-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% end_date %]">
+        <select name="end_time" class="input-mini">
+          <option></option>
+          [% h = 0; WHILE h <= 23 %]
+          <option value="[% h %]">[% h %]</option>
+          [% h = h + 1; END %]
+        </select>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn btn-large btn-primary"><i class="icon-search icon-white search-icon-offset"></i><small>詳細検索</small></button>
+      </div>
+    </div>
+
+  </form>
+  </div>
 </div>
+
 <script>
   var availableTags =[
     "blockfm","remo_con","techdance","dnbjpn","localize","DJAKi","Basstech","hedkandiradio","mosradio",
@@ -14,12 +61,26 @@
     "SDM_RADIO","swing_chop","混ぜると危険","reggae_times","STEPPASIDE","Dancing_Dead","PIW",
     "GWIGGWIGRADIO","blockfmeden","KitsuneRadiobyBeatauCue","SUMMIT_bfm","blockstepper"
   ];
-  $("#search-tag").autocomplete({
+  $('#search-tag').autocomplete({
     source: availableTags,
     minLength: 2
   });
-  $('#search-date').datepicker({
-    inline: true,
-    dateFormat: 'yy-mm-dd',
-  });
+  var pickers = ['search-date', 'detail-search-start-date', 'detail-search-end-date'];
+  for (var i = 0; i < pickers.length; i++) {
+    $('#'+pickers[i]).datepicker({
+      inline: true,
+      dateFormat: 'yy-mm-dd',
+    });
+  }
+  $('#detail').toggle(
+    function () {
+        $('#search-box').animate({ height: '340px' }, 300);
+        $('#detail-search').fadeIn("slow");
+    },
+    function () {
+        $('#detail-search').fadeOut("fast");
+        $('#search-box').animate({ height: '120px' }, 300);
+    }
+
+  );
 </script>

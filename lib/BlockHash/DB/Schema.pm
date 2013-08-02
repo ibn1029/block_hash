@@ -48,11 +48,11 @@ table {
         {name => 'is_valid', type => 4},
     );
 
-        inflate qr/.+_json/ => sub {
-            use JSON;
-            use Encode;
-            return decode_json(encode_utf8(shift));
-        };
+        #inflate qr/.+_json/ => sub {
+        #    use JSON;
+        #    use Encode;
+        #    return decode_json(encode_utf8(shift));
+        #};
         inflate qr/.+_at/ => sub {
             use Time::Piece;
             use Time::Seconds;

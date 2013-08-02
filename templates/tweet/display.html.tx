@@ -1,6 +1,6 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = " BlockHash - #"_ tag %]
 <div class="row">
-  <div class="span10 offset1 white-panel">
+  <div id="search-box" class="span10 offset1 white-panel">
     [% INCLUDE "common/search.html.tx" %]
   </div>
 </div>

@@ -59,7 +59,9 @@ sub startup {
 
     $r->get('/')->to('top#top');
     $r->post('/search')->to('tweet#search');
+    $r->post('/search/detail')->to('tweet#search_detail');
     $r->get('/(:tag)/(:date)')->to('tweet#display');
+    $r->get('/(:tag)/(:start_date)/(:start_time)/(:end_date)/(:end_time)')->to('tweet#display');
 }
 
 1;

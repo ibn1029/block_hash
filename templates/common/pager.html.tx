@@ -1,7 +1,44 @@
-<div class="pagination">
-  <ul>
-    <li class="disabled"><a href="#">&laquo;</a></li>
-    <li class="active"><a href="#">1</a></li>
-    ...
-  </ul>
+[% IF pager %]
+<div class="row">
+  <div class="span8">
+    <div class="pagination pagination-centered">
+      <small>[% pager.total_entries %]件中 [% pager.first %] - [% pager.last %]件目</small><br>
+      <ul>
+        [% IF pager.previous_page %]
+        <li>
+          <a href="[% c.url_with.query([ page => $pager.first_page ]) %]" class="paging">&laquo;</a>
+        </li>
+        <li>
+          <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]">&lsaquo;</a>
+        </li>
+        [% ELSE %]
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="disabled"><a href="#">&lsaquo;</a></li>
+        [% END %]
+    
+        [% FOREACH page IN pager.pages_in_navigation %]
+        [% IF page == pager.current_page %]
+        <li class="active"><a href="#">[% page %]</a></li>
+        [% ELSE %]
+          <li>
+            <a href="[% c.url_with.query([ page => $page ]) %]">[% page %]</a>
+          </li>
+        [% END %]
+        [% END %]
+    
+        [% IF pager.next_page %]
+        <li>
+          <a href="[% c.url_with.query([ page => pager.next_page ]) %]">&rsaquo;</a>
+        </li>
+        <li>
+          <a href="[% c.url_with.query([ page => pager.last_page ]) %]">&raquo;</a>
+        </li>
+        [% ELSE %]
+        <li class="disabled"><a href="#">&rsaquo;</a></li>
+        <li class="disabled"><a href="#">&raquo;</a></li>
+        [% END %]
+      </ul>
+    </div>
+  </div>
 </div>
+[% END %]
