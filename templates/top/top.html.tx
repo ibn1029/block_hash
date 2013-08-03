@@ -25,4 +25,19 @@
         <p class="status_num size24">[% last_updated %]</p>
   </div>
 </div>
+
+<h2 class="voffset50">Tag Cloud</h2>
+  <div class="row">
+    <div class="span12">
+    [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
+    <a href="/[% v.tag %]/2013-01-01/0/[% today() %]/23"><span class="label
+      [% IF v.ratio > 0.8 %] label-important label-large
+      [% ELSIF v.ratio > 0.6 %] label-warning
+      [% ELSIF v.ratio > 0.4 %] label-info
+      [% END %]
+    ">[% v.tag %]</span></a>
+    [% END %]
+    </div>
+  </div>
+</div>
 [% END %]

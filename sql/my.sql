@@ -4,6 +4,7 @@
 
 create database if not exists block_hash;
 
+/*
 drop table if exists block_hash.program;
 create table block_hash.program (
     prog_id             int(4) unsigned not null auto_increment primary key
@@ -29,6 +30,7 @@ create table if not exists block_hash.archive (
     , stopped_at        datetime not null
     , foreign key(prog_id) references program(prog_id)
 );
+*/
 
 -- drop table if exists block_hash.tweet;
 -- drop table block_hash.tweet;
@@ -43,7 +45,11 @@ create table if not exists block_hash.tweet (
     , tweet_json        text not null
     , is_valid          int(1) default 0
 );
-
 create index tweet_hashtags on tweet (hashtags);
 create index tweet_created_at on tweet (created_at);
 
+create table if not exists block_hash.analyzed_tag (
+    id                  bigint unsigned not null auto_increment primary key
+    , tag               varchar(140) not null
+    , num               int unsigned not null
+);

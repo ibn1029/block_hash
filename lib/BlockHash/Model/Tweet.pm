@@ -14,11 +14,29 @@ sub get_status {
     my $db = BlockHash::DB->new;
 
     my $total_tweets = $db->count('tweet', '*');
+
     my $rs1 = $db->single_by_sql(qq/select count(*) as hashtags from (select hashtags from tweet group by hashtags) as hashtag_group;/);
     my $hashtags = $rs1->hashtags;
+
     my $rs2 = $db->single_by_sql(qq/select max(created_at) as last_updated_at from tweet/);
     my $t = $rs2->last_updated_at;
-    return $total_tweets, $hashtags, $t->ymd.' '.$t->hms;
+
+    my $rs3 = $db->search(analyzed_tag => {});
+    my $rows = $rs3->all;
+    my $max = 0;
+    for my $row (@$rows) {
+        $max = $row->num if $row->num > $max;
+    }
+    my @tag_cloud;
+    for my $row (@$rows) {
+        push @tag_cloud , {
+            tag => $row->tag,
+            num => $row->num,
+            ratio => $row->num / $max,
+        };
+    }
+
+    return $total_tweets, $hashtags, $t->ymd.' '.$t->hms, \@tag_cloud;
 }
 
 sub search {

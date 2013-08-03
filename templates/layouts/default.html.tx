@@ -45,14 +45,19 @@
         <div class="row">
           <div class="span8">
             <h2>BlockHash</h2>
-            <p>BlockHash is the hash tag archive web service of '#blockfm'.</p>
+            <p>BlockHash is the hash tag archive web service of '#blockfm'.<br>Since August 1 2013.</p>
           </div>
           <div class="span4">
             <strong>Twitter</strong>
-            <address>@blockhashinfo</address>
+            <address>@blockhashinfo[% INCLUDE "common/follow_me.html.tx" %]</address>
             <strong>Mail</strong>
             <address>blockhashinfo@gmail.com</address>
           </div>
+        </div>
+        <div class="row">
+          <div class="span12 offset4">
+            <small>Copyright &copy; 2013 by <a href="https://twitter.com/blockhashinfo">blockhashinfo</a></small>
+          </div>           
         </div>
       </div>
     </footer>

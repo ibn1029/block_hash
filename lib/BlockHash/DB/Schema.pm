@@ -3,6 +3,16 @@ use strict;
 use warnings;
 use Teng::Schema::Declare;
 table {
+    name 'analyzed_tag';
+    pk 'id';
+    columns (
+        {name => 'id', type => 4},
+        {name => 'tag', type => 12},
+        {name => 'num', type => 4},
+    );
+};
+
+table {
     name 'archive';
     pk 'archive_id';
     columns (

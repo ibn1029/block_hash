@@ -13,15 +13,40 @@ echo '#'
 echo '# carton exec -- perl script/pull_tweet.pl' 
 echo '#' 
 $carton exec -- perl script/pull_tweet.pl
+if [ X$? == 'X0' ]; then
+    echo ok
+else
+    exit 1
+fi
 
 echo '#' 
 echo '# carton exec -- perl script/crawle_tweet_url.pl'
 echo '#' 
 $carton exec -- perl script/crawle_tweet_url.pl
+if [ X$? == 'X0' ]; then
+    echo ok
+else
+    exit 1
+fi
 
 echo '#' 
 echo '# carton exec -- perl script/validate_tweet_json.pl'
 echo '#' 
 $carton exec -- perl script/validate_tweet_json.pl
+if [ X$? == 'X0' ]; then
+    echo ok
+else
+    exit 1
+fi
 
-exit
+echo '#' 
+echo '# carton exec -- perl script/analysis_tag.pl'
+echo '#' 
+$carton exec -- perl script/analysis_tag.pl
+if [ X$? == 'X0' ]; then
+    echo ok
+else
+    exit 1
+fi
+
+exit 0
