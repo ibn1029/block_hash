@@ -17,7 +17,7 @@
         <div class="navbar-inner">
           <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
           <div class="btn-group pull-right">
-            [%# INCLUDE "common/twitter.html.tx" %]
+            [% INCLUDE "common/twitter.html.tx" %]
         </div>
       </div>
     </header>
