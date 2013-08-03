@@ -82,8 +82,8 @@
   $('#detail').toggle(
     function () {
       $('#search-box').animate({ height: '340px' }, 300);
-      $('#detail-search').fadeIn("slow");
-      $('#detail-search-tag').focus();
+      $('#detail-search').fadeIn("slow", "", function() { $('#detail-search-tag').focus(); });
+      
     },
     function () {
       $('#detail-search').fadeOut("fast");
