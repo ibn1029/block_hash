@@ -4,7 +4,6 @@ requires 'MojoX::Renderer::Xslate', '== 0.09';
 requires 'HTML::FillInForm::Lite', '== 1.13';
 requires 'Text::AutoLink', '== 0.04000';
 requires 'Module::Load', '== 0.24';
-requires 'Qudo', '== 0.0213';
 requires 'Net::Twitter', '== 4.00006';
 requires 'AnyEvent::Twitter', '== 0.64';
 requires 'DBI', '== 1.628';
