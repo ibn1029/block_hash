@@ -29,7 +29,7 @@ vi /etc/ntp.conf
 server ntp.nict.jp
 ----
 
-sudo chkconfig {ntpd,nginx,mysqld} on
+sudo chkconfig {ntpd,nginx,mysqld, sendmail} on
 
 # plenv
 # https://github.com/tokuhirom/plenv
@@ -50,3 +50,8 @@ carton install
 
 vi ~/.pit/default.yaml
 
+
+cd && mkdir src && cd src
+git clone https://github.com/kazuho/kaztools.git
+cd kaztools
+sudo ln -s ~/src/kaztools/cronlog /usr/bin/cronlog

@@ -13,6 +13,8 @@ sub startup {
     # Config
     $self->plugin('Config', { file => 'config/block_hash.conf'});
 
+    $self->app->secret('BlockHash20130804');
+
     # View
     $self->plugin( xslate_renderer => {
         template_options => {
