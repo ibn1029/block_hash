@@ -63,4 +63,5 @@
     </footer>
 
   </body>
+  [% INCLUDE 'common/analytics.html.tx' %]
 </html>
