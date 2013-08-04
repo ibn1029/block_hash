@@ -1,1 +1,50 @@
 carton exec -- morbo script/block_hash -l http://*:5000
+
+#
+# for DTI VPS
+#
+su - root
+useradd viage
+su - viage
+ssh-keygen -N ''
+exit
+
+visudo
+vi /etc/group
+
+sudo yum groupinstall Base 'Development tools'
+sudo cat << _END_ > etc/yum.repos.d/nginx.repo
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1
+_END_
+
+sudo yum install nginx mysql-server openssl-devel
+mysqladmin -u root passowrd ****
+
+vi /etc/ntp.conf
+----
+server ntp.nict.jp
+----
+
+sudo chkconfig {ntpd,nginx,mysqld} on
+
+# plenv
+# https://github.com/tokuhirom/plenv
+
+plenv install 5.14.4
+plenv rehash
+plenv install-cpanm
+plenv rehash
+cpanm carton
+
+su - viage
+mkdir work
+cd work
+git clone git@github.com:ibn1029/block_hash.git
+carton install
+
+vi ~/.pit/default.yaml
+
