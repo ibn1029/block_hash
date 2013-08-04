@@ -4,15 +4,16 @@ set -e
 
 HOME=/Users/viage
 PERLVER=5.14.2
+APP=$HOME/Work/App/block_hash
 if [ `hostname` == 'dti-vps-srv85' ]; then
     HOME=/home/viage
+    APP=$HOME/work/block_hash
     PERLVER=5.14.4
 fi
 
-app=$HOME/Work/App/block_hash
 carton=$HOME/perl5/perlbrew/perls/perl-${PERLVER}/bin/carton
 
-cd $app
+cd $APP
 source $HOME/perl5/perlbrew/etc/bashrc
 
 echo '#' 
