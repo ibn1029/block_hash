@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <meta name="description" lang="ja" content=""Block.FM"の公式ハッシュタグ"#blockfm"を含むツイートを検索できるWebサービスです。生放送でツイートされたタイムラインをいつでも見返すことができます。アーカイブ再生時にはプログラムのハッシュタグを検索すれば生放送のタイムラインをいつでも再現出来ます。">
     <title>[% title %]</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
