@@ -18,3 +18,5 @@ requires 'Config::Pit', '== 0.04';
 requires 'Data::Page::Navigation', '== 0.06';
 
 requires 'Plack', '== 1.0028';
+requires 'Starman', '== 0.4001';
+requires 'Server::Starter', '== 0.15';
