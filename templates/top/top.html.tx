@@ -42,7 +42,7 @@
 </div>
 
 <div class="row voffset50">
-  <div class="span12 offset1">
+  <div class="span12">
     [% INCLUDE "common/ad/foot_adsense.html.tx" %]
   </div>
 </div>
