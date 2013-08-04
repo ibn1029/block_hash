@@ -5,16 +5,19 @@ set -e
 HOME=/Users/viage
 PERLVER=5.14.2
 APP=$HOME/Work/App/block_hash
+carton=$HOME/perl5/perlbrew/perls/perl-${PERLVER}/bin/carton
+source $HOME/perl5/perlbrew/etc/bashrc
+
+# for DTI VPS
 if [ `hostname` == 'dti-vps-srv85' ]; then
     HOME=/home/viage
+    source $HOME/.bash_profile
     APP=$HOME/work/block_hash
     PERLVER=5.14.4
+    carton=$HOME/.plenv/versions/$PERLVER/bin/cpanm
 fi
 
-carton=$HOME/perl5/perlbrew/perls/perl-${PERLVER}/bin/carton
-
 cd $APP
-source $HOME/perl5/perlbrew/etc/bashrc
 
 echo '#' 
 echo '# carton exec -- perl script/pull_tweet.pl' 
