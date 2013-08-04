@@ -27,5 +27,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <p>
 <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=blockhash-22&o=9&p=12&l=ur1&category=mp3&banner=19F3FKQMYM99Q6TYM5R2&f=ifr" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 </p>
+<p>
+<script type="text/javascript"><!--
+amazon_ad_tag = "blockhash-22"; amazon_ad_width = "300"; amazon_ad_height = "250"; amazon_ad_price = "retail";//--></script>
+<script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/ads.js"></script>
+</p>
 <p><img src="http://quickimage.it/320x320"></p>
 <p><img src="http://quickimage.it/320x320"></p>
