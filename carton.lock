@@ -2502,6 +2502,87 @@
          "target" : "DBIx::TransactionManager",
          "version" : "1.12"
       },
+      "Data::Dump" : {
+         "dist" : "Data-Dump-1.22",
+         "mymeta" : {
+            "abstract" : "Pretty printing of data structures",
+            "author" : [
+               "Gisle Aas <gisle@activestate.com>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Data-Dump",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Test" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "recommends" : {
+                     "MIME::Base64" : "0"
+                  },
+                  "requires" : {
+                     "Symbol" : "0",
+                     "perl" : "5.006"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "repository" : {
+                  "url" : "http://github.com/gisle/data-dump"
+               }
+            },
+            "version" : "1.22"
+         },
+         "name" : "Data::Dump",
+         "pathname" : "G/GA/GAAS/Data-Dump-1.22.tar.gz",
+         "provides" : {
+            "Data::Dump" : {
+               "file" : "lib/Data/Dump.pm",
+               "version" : "1.22"
+            },
+            "Data::Dump::FilterContext" : {
+               "file" : "lib/Data/Dump/FilterContext.pm"
+            },
+            "Data::Dump::Filtered" : {
+               "file" : "lib/Data/Dump/Filtered.pm"
+            },
+            "Data::Dump::Trace" : {
+               "file" : "lib/Data/Dump/Trace.pm",
+               "version" : "0.02"
+            },
+            "Data::Dump::Trace::Call" : {
+               "file" : "lib/Data/Dump/Trace.pm",
+               "version" : "0.02"
+            },
+            "Data::Dump::Trace::Wrapper" : {
+               "file" : "lib/Data/Dump/Trace.pm",
+               "version" : "0.02"
+            }
+         },
+         "target" : "Data::Dump",
+         "version" : "1.22"
+      },
       "Data::MessagePack" : {
          "dist" : "Data-MessagePack-0.47",
          "mymeta" : {
@@ -9464,6 +9545,249 @@
          "target" : "Eval::Closure",
          "version" : "0.10"
       },
+      "ExtUtils::Config" : {
+         "dist" : "ExtUtils-Config-0.007",
+         "mymeta" : {
+            "abstract" : "A wrapper for perl's configuration",
+            "author" : [
+               "Ken Williams <kwilliams@cpan.org>",
+               "Leon Timmermans <leont@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Dist::Zilla version 4.300021, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "ExtUtils-Config",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "File::Find" : "0",
+                     "File::Temp" : "0",
+                     "Test::More" : "0.88"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.30"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Config" : "0",
+                     "Data::Dumper" : "0",
+                     "strict" : "0",
+                     "warnings" : "0"
+                  }
+               },
+               "test" : {
+                  "requires" : {
+                     "File::Find" : "0",
+                     "File::Temp" : "0",
+                     "Test::More" : "0.88"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "mailto" : "bug-extutils-config at rt.cpan.org",
+                  "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=ExtUtils-Config"
+               },
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/Leont/extutils-config.git",
+                  "web" : "http://github.com/Leont/extutils-config"
+               }
+            },
+            "version" : "0.007"
+         },
+         "name" : "ExtUtils::Config",
+         "pathname" : "L/LE/LEONT/ExtUtils-Config-0.007.tar.gz",
+         "provides" : {
+            "ExtUtils::Config" : {
+               "file" : "lib/ExtUtils/Config.pm",
+               "version" : "0.007"
+            }
+         },
+         "target" : "ExtUtils::Config",
+         "version" : "0.007"
+      },
+      "ExtUtils::Helpers" : {
+         "dist" : "ExtUtils-Helpers-0.021",
+         "mymeta" : {
+            "abstract" : "Various portability utilities for module builders",
+            "author" : [
+               "Ken Williams <kwilliams@cpan.org>",
+               "Leon Timmermans <leont@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Dist::Zilla version 4.300033, CPAN::Meta::Converter version 2.130880, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "ExtUtils-Helpers",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {}
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.30"
+                  }
+               },
+               "develop" : {
+                  "requires" : {
+                     "Pod::Coverage::TrustPod" : "0",
+                     "Test::Pod" : "1.41",
+                     "Test::Pod::Coverage" : "1.08"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Carp" : "0",
+                     "Config" : "0",
+                     "Exporter" : "5.57",
+                     "File::Basename" : "0",
+                     "File::Copy" : "0",
+                     "File::Spec::Functions" : "0",
+                     "Module::Load" : "0",
+                     "Text::ParseWords" : "3.24",
+                     "strict" : "0",
+                     "warnings" : "0"
+                  }
+               },
+               "test" : {
+                  "requires" : {
+                     "Cwd" : "0",
+                     "File::Find" : "0",
+                     "File::Temp" : "0",
+                     "Test::More" : "0"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "mailto" : "bug-extutils-helpers at rt.cpan.org",
+                  "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=ExtUtils-Helpers"
+               },
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/Leont/extutils-helpers.git",
+                  "web" : "http://github.com/Leont/extutils-helpers"
+               }
+            },
+            "version" : "0.021"
+         },
+         "name" : "ExtUtils::Helpers",
+         "pathname" : "L/LE/LEONT/ExtUtils-Helpers-0.021.tar.gz",
+         "provides" : {
+            "ExtUtils::Helpers" : {
+               "file" : "lib/ExtUtils/Helpers.pm",
+               "version" : "0.021"
+            },
+            "ExtUtils::Helpers::Unix" : {
+               "file" : "lib/ExtUtils/Helpers/Unix.pm",
+               "version" : "0.021"
+            },
+            "ExtUtils::Helpers::VMS" : {
+               "file" : "lib/ExtUtils/Helpers/VMS.pm",
+               "version" : "0.021"
+            },
+            "ExtUtils::Helpers::Windows" : {
+               "file" : "lib/ExtUtils/Helpers/Windows.pm",
+               "version" : "0.021"
+            }
+         },
+         "target" : "ExtUtils::Helpers",
+         "version" : "0.021"
+      },
+      "ExtUtils::InstallPaths" : {
+         "dist" : "ExtUtils-InstallPaths-0.009",
+         "mymeta" : {
+            "abstract" : "Build.PL install path logic made easy",
+            "author" : [
+               "Ken Williams <kwilliams@cpan.org>",
+               "Leon Timmermans <leont@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Dist::Zilla version 4.300021, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "ExtUtils-InstallPaths",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Config" : "0",
+                     "File::Find" : "0",
+                     "File::Spec::Functions" : "0",
+                     "File::Temp" : "0",
+                     "Test::More" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.30"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Carp" : "0",
+                     "ExtUtils::Config" : "0.002",
+                     "File::Spec" : "0",
+                     "strict" : "0",
+                     "warnings" : "0"
+                  }
+               },
+               "test" : {
+                  "requires" : {
+                     "Config" : "0",
+                     "File::Find" : "0",
+                     "File::Spec::Functions" : "0",
+                     "File::Temp" : "0",
+                     "Test::More" : "0"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "mailto" : "bug-extutils-installpaths at rt.cpan.org",
+                  "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=ExtUtils-InstallPaths"
+               },
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/Leont/extutils-installpaths.git",
+                  "web" : "http://github.com/Leont/extutils-installpaths"
+               }
+            },
+            "version" : "0.009"
+         },
+         "name" : "ExtUtils::InstallPaths",
+         "pathname" : "L/LE/LEONT/ExtUtils-InstallPaths-0.009.tar.gz",
+         "provides" : {
+            "ExtUtils::InstallPaths" : {
+               "file" : "lib/ExtUtils/InstallPaths.pm",
+               "version" : "0.009"
+            }
+         },
+         "target" : "ExtUtils::InstallPaths",
+         "version" : "0.009"
+      },
       "ExtUtils::MakeMaker" : {
          "dist" : "ExtUtils-MakeMaker-6.72",
          "mymeta" : {
@@ -11419,6 +11743,73 @@
          "target" : "HTTP::Parser::XS",
          "version" : "0.16"
       },
+      "HTTP::Server::Simple" : {
+         "dist" : "HTTP-Server-Simple-0.44",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 1.00, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "HTTP-Server-Simple",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "CGI" : "0",
+                     "Socket" : "0",
+                     "Test::More" : "0"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.44"
+         },
+         "name" : "HTTP::Server::Simple",
+         "pathname" : "J/JE/JESSE/HTTP-Server-Simple-0.44.tar.gz",
+         "provides" : {
+            "HTTP::Server::Simple" : {
+               "file" : "lib/HTTP/Server/Simple.pm",
+               "version" : "0.44"
+            },
+            "HTTP::Server::Simple::CGI" : {
+               "file" : "lib/HTTP/Server/Simple/CGI.pm"
+            },
+            "HTTP::Server::Simple::CGI::Environment" : {
+               "file" : "lib/HTTP/Server/Simple/CGI/Environment.pm"
+            }
+         },
+         "target" : "HTTP::Server::Simple::CGI",
+         "version" : "0.44"
+      },
       "HTTP::Tiny" : {
          "dist" : "HTTP-Tiny-0.034",
          "mymeta" : {
@@ -12606,6 +12997,127 @@
          },
          "target" : "Mac::SystemDirectory",
          "version" : "0.06"
+      },
+      "Module::Build::Tiny" : {
+         "dist" : "Module-Build-Tiny-0.025",
+         "mymeta" : {
+            "abstract" : "A tiny replacement for Module::Build",
+            "author" : [
+               "Leon Timmermans <leont@cpan.org>",
+               "David Golden <dagolden@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Module-Build-Tiny",
+            "prereqs" : {
+               "configure" : {
+                  "requires" : {
+                     "CPAN::Meta" : "0",
+                     "Exporter" : "5.57",
+                     "ExtUtils::CBuilder" : "0",
+                     "ExtUtils::Config" : "0.003",
+                     "ExtUtils::Helpers" : "0.020",
+                     "ExtUtils::Install" : "0",
+                     "ExtUtils::InstallPaths" : "0.002",
+                     "ExtUtils::ParseXS" : "0",
+                     "File::Basename" : "0",
+                     "File::Find" : "0",
+                     "File::Path" : "0",
+                     "File::Spec::Functions" : "0",
+                     "Getopt::Long" : "0",
+                     "JSON::PP" : "2",
+                     "Pod::Man" : "0",
+                     "TAP::Harness" : "0",
+                     "perl" : "5.006",
+                     "strict" : "0",
+                     "warnings" : "0"
+                  }
+               },
+               "develop" : {
+                  "requires" : {
+                     "Test::Pod" : "1.41"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "CPAN::Meta" : "0",
+                     "Exporter" : "5.57",
+                     "ExtUtils::CBuilder" : "0",
+                     "ExtUtils::Config" : "0.003",
+                     "ExtUtils::Helpers" : "0.020",
+                     "ExtUtils::Install" : "0",
+                     "ExtUtils::InstallPaths" : "0.002",
+                     "ExtUtils::ParseXS" : "0",
+                     "File::Basename" : "0",
+                     "File::Find" : "0",
+                     "File::Path" : "0",
+                     "File::Spec::Functions" : "0",
+                     "Getopt::Long" : "0",
+                     "JSON::PP" : "2",
+                     "Pod::Man" : "0",
+                     "TAP::Harness" : "0",
+                     "perl" : "5.006",
+                     "strict" : "0",
+                     "warnings" : "0"
+                  },
+                  "suggests" : {
+                     "constant" : "1.27"
+                  }
+               },
+               "test" : {
+                  "requires" : {
+                     "Carp" : "0",
+                     "Config" : "0",
+                     "Cwd" : "0",
+                     "Data::Dumper" : "0",
+                     "File::Spec" : "0",
+                     "File::Temp" : "0",
+                     "IO::File" : "0",
+                     "IPC::Open2" : "0",
+                     "Test::More" : "0.88",
+                     "XSLoader" : "0",
+                     "blib" : "0"
+                  },
+                  "suggests" : {
+                     "File::ShareDir" : "1.000"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "mailto" : "bug-module-build-tiny at rt.cpan.org",
+                  "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Module-Build-Tiny"
+               },
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/Leont/module-build-tiny.git",
+                  "web" : "https://github.com/Leont/module-build-tiny"
+               }
+            },
+            "version" : "0.025"
+         },
+         "name" : "Module::Build::Tiny",
+         "pathname" : "L/LE/LEONT/Module-Build-Tiny-0.025.tar.gz",
+         "provides" : {
+            "DistGen" : {
+               "file" : "t/lib/DistGen.pm",
+               "version" : "0.01"
+            },
+            "Module::Build::Tiny" : {
+               "file" : "lib/Module/Build/Tiny.pm",
+               "version" : "0.025"
+            }
+         },
+         "target" : "Module::Build::Tiny",
+         "version" : "0.025"
       },
       "Module::Implementation" : {
          "dist" : "Module-Implementation-0.07",
@@ -15871,6 +16383,200 @@
          "target" : "Net::SSLeay",
          "version" : "1.55"
       },
+      "Net::Server" : {
+         "dist" : "Net-Server-2.007",
+         "mymeta" : {
+            "abstract" : "Extensible, general Perl server engine",
+            "author" : [
+               "Paul Seamons (paul@seamons.com) and Rob Brown (bbb@cpan.org)"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.57_05, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Net-Server",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "IO::Socket" : "0",
+                     "POSIX" : "0",
+                     "Socket" : "0"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "2.007"
+         },
+         "name" : "Net::Server",
+         "pathname" : "R/RH/RHANDOM/Net-Server-2.007.tar.gz",
+         "provides" : {
+            "Net::Server" : {
+               "file" : "lib/Net/Server.pm",
+               "version" : "2.007"
+            },
+            "Net::Server::Daemonize" : {
+               "file" : "lib/Net/Server/Daemonize.pm",
+               "version" : "0.06"
+            },
+            "Net::Server::Fork" : {
+               "file" : "lib/Net/Server/Fork.pm"
+            },
+            "Net::Server::HTTP" : {
+               "file" : "lib/Net/Server/HTTP.pm"
+            },
+            "Net::Server::INET" : {
+               "file" : "lib/Net/Server/INET.pm"
+            },
+            "Net::Server::INET::Handle" : {
+               "file" : "lib/Net/Server/INET.pm"
+            },
+            "Net::Server::Log::Log::Log4perl" : {
+               "file" : "lib/Net/Server/Log/Log/Log4perl.pm"
+            },
+            "Net::Server::Log::Sys::Syslog" : {
+               "file" : "lib/Net/Server/Log/Sys/Syslog.pm"
+            },
+            "Net::Server::MultiType" : {
+               "file" : "lib/Net/Server/MultiType.pm"
+            },
+            "Net::Server::Multiplex" : {
+               "file" : "lib/Net/Server/Multiplex.pm"
+            },
+            "Net::Server::Multiplex::MUX" : {
+               "file" : "lib/Net/Server/Multiplex.pm"
+            },
+            "Net::Server::PSGI" : {
+               "file" : "lib/Net/Server/PSGI.pm"
+            },
+            "Net::Server::PreFork" : {
+               "file" : "lib/Net/Server/PreFork.pm"
+            },
+            "Net::Server::PreForkSimple" : {
+               "file" : "lib/Net/Server/PreForkSimple.pm"
+            },
+            "Net::Server::Proto" : {
+               "file" : "lib/Net/Server/Proto.pm"
+            },
+            "Net::Server::Proto::SSL" : {
+               "file" : "lib/Net/Server/Proto/SSL.pm"
+            },
+            "Net::Server::Proto::SSLEAY" : {
+               "file" : "lib/Net/Server/Proto/SSLEAY.pm"
+            },
+            "Net::Server::Proto::TCP" : {
+               "file" : "lib/Net/Server/Proto/TCP.pm"
+            },
+            "Net::Server::Proto::UDP" : {
+               "file" : "lib/Net/Server/Proto/UDP.pm"
+            },
+            "Net::Server::Proto::UNIX" : {
+               "file" : "lib/Net/Server/Proto/UNIX.pm"
+            },
+            "Net::Server::Proto::UNIXDGRAM" : {
+               "file" : "lib/Net/Server/Proto/UNIXDGRAM.pm"
+            },
+            "Net::Server::SIG" : {
+               "file" : "lib/Net/Server/SIG.pm",
+               "version" : "0.03"
+            },
+            "Net::Server::Single" : {
+               "file" : "lib/Net/Server/Single.pm"
+            },
+            "Net::Server::TiedHandle" : {
+               "file" : "lib/Net/Server.pm",
+               "version" : "2.007"
+            }
+         },
+         "target" : "Net::Server",
+         "version" : "2.007"
+      },
+      "Net::Server::SS::PreFork" : {
+         "dist" : "Net-Server-SS-PreFork-0.05",
+         "mymeta" : {
+            "abstract" : "a hot-deployable variant of Net::Server::PreFork",
+            "author" : [
+               "Kazuho Oku"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 0.93, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Net-Server-SS-PreFork",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42",
+                     "HTTP::Server::Simple::CGI" : "0",
+                     "LWP::Simple" : "0",
+                     "Test::TCP" : "0.06"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "HTTP::Server::Simple::CGI" : "0",
+                     "LWP::Simple" : "0",
+                     "Net::Server" : "0",
+                     "Server::Starter" : "0.02",
+                     "Test::TCP" : "0.06"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.05"
+         },
+         "name" : "Net::Server::SS::PreFork",
+         "pathname" : "K/KA/KAZUHO/Net-Server-SS-PreFork-0.05.tar.gz",
+         "provides" : {
+            "Net::Server::SS::PreFork" : {
+               "file" : "lib/Net/Server/SS/PreFork.pm",
+               "version" : "0.05"
+            }
+         },
+         "target" : "Net::Server::SS::PreFork",
+         "version" : "0.05"
+      },
       "Net::Twitter" : {
          "dist" : "Net-Twitter-4.00006",
          "mymeta" : {
@@ -17619,6 +18325,58 @@
          "target" : "Probe::Perl",
          "version" : "0.02"
       },
+      "Proc::Wait3" : {
+         "dist" : "Proc-Wait3-0.04",
+         "mymeta" : {
+            "abstract" : "Perl extension for wait3 system call",
+            "author" : [
+               "C. Tilmes <curt@tilmes.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.56, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Proc-Wait3",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.04"
+         },
+         "name" : "Proc::Wait3",
+         "pathname" : "C/CT/CTILMES/Proc-Wait3-0.04.tar.gz",
+         "provides" : {
+            "Proc::Wait3" : {
+               "file" : "Wait3.pm",
+               "version" : "0.04"
+            }
+         },
+         "target" : "Proc::Wait3",
+         "version" : "0.04"
+      },
       "Qudo" : {
          "dist" : "Qudo-0.0213",
          "mymeta" : {
@@ -17889,6 +18647,236 @@
          },
          "target" : "SQL::Maker",
          "version" : "1.12"
+      },
+      "Scope::Guard" : {
+         "dist" : "Scope-Guard-0.20",
+         "mymeta" : {
+            "abstract" : "lexically-scoped resource management",
+            "author" : [
+               "chocolateboy <chocolate@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.56, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Scope-Guard",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Test::More" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "perl" : "5.006001"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.20"
+         },
+         "name" : "Scope::Guard",
+         "pathname" : "C/CH/CHOCOLATE/Scope-Guard-0.20.tar.gz",
+         "provides" : {
+            "Scope::Guard" : {
+               "file" : "lib/Scope/Guard.pm",
+               "version" : "0.20"
+            }
+         },
+         "target" : "Scope::Guard",
+         "version" : "0.20"
+      },
+      "Server::Starter" : {
+         "dist" : "Server-Starter-0.15",
+         "mymeta" : {
+            "abstract" : "a superdaemon for hot-deploying server programs",
+            "author" : [
+               "Kazuho Oku"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 1.00, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Server-Starter",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42",
+                     "Test::TCP" : "2.00"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Getopt::Long" : "0",
+                     "List::MoreUtils" : "0",
+                     "Proc::Wait3" : "0",
+                     "Scope::Guard" : "0",
+                     "Test::TCP" : "2.00",
+                     "perl" : "5.008"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.15"
+         },
+         "name" : "Server::Starter",
+         "pathname" : "K/KA/KAZUHO/Server-Starter-0.15.tar.gz",
+         "provides" : {
+            "Server::Starter" : {
+               "file" : "lib/Server/Starter.pm",
+               "version" : "0.15"
+            }
+         },
+         "target" : "Server::Starter",
+         "version" : "0.15"
+      },
+      "Starman" : {
+         "dist" : "Starman-0.4001",
+         "mymeta" : {
+            "abstract" : "High-performance preforking PSGI/Plack web server",
+            "author" : [
+               "Tatsuhiko Miyagawa <miyagawa@bulknews.net>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Dist::Milla version v1.0.3, Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Starman",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "xt",
+                  "inc",
+                  "share",
+                  "eg",
+                  "examples"
+               ]
+            },
+            "prereqs" : {
+               "configure" : {
+                  "requires" : {
+                     "Module::Build::Tiny" : "0.025"
+                  }
+               },
+               "develop" : {
+                  "requires" : {
+                     "Test::Pod" : "1.41"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Data::Dump" : "0",
+                     "HTTP::Date" : "0",
+                     "HTTP::Parser::XS" : "0",
+                     "HTTP::Status" : "0",
+                     "Net::Server" : "2.007",
+                     "Plack" : "0.9971",
+                     "Test::TCP" : "2.00",
+                     "parent" : "0",
+                     "perl" : "5.008001"
+                  }
+               },
+               "test" : {
+                  "requires" : {
+                     "LWP::UserAgent" : "0",
+                     "Test::More" : "0",
+                     "Test::Requires" : "0"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "web" : "https://github.com/miyagawa/Starman/issues"
+               },
+               "homepage" : "https://github.com/miyagawa/Starman",
+               "repository" : {
+                  "type" : "git",
+                  "url" : "https://github.com/miyagawa/Starman.git",
+                  "web" : "https://github.com/miyagawa/Starman"
+               }
+            },
+            "version" : "0.4001",
+            "x_contributors" : [
+               "Alex Vandiver <alex@chmrr.net>",
+               "Aristotle Pagaltzis <pagaltzis@gmx.de>",
+               "Audrey Tang <audreyt@audreyt.org>",
+               "Chia-liang Kao <clkao@clkao.org>",
+               "David Steinbrunner <dsteinbrunner@pobox.com>",
+               "Graham Barr <gbarr@pobox.com>",
+               "Grant McLean <grant@catalyst.net.nz>",
+               "Gregory Oschwald <goschwald@maxmind.com>",
+               "Leon Brocard <acme@astray.com>",
+               "Olaf Alders <olaf@wundersolutions.com>",
+               "Paulo E. Castro <pauloedgarcastro@gmail.com>",
+               "Perlover <perlover@perlover.com>",
+               "Peter Makholm <peter@makholm.net>",
+               "Piotr Roszatycki <piotr.roszatycki@gmail.com>",
+               "cho45 <cho45@lowreal.net>",
+               "spleenjack <spleenjack@gmail.com>"
+            ]
+         },
+         "name" : "Starman",
+         "pathname" : "M/MI/MIYAGAWA/Starman-0.4001.tar.gz",
+         "provides" : {
+            "HTTP::Server::PSGI::Net::Server::PreFork" : {
+               "file" : "lib/HTTP/Server/PSGI/Net/Server/PreFork.pm"
+            },
+            "Plack::Handler::Starman" : {
+               "file" : "lib/Plack/Handler/Starman.pm"
+            },
+            "Starman" : {
+               "file" : "lib/Starman.pm",
+               "version" : "0.4001"
+            },
+            "Starman::Server" : {
+               "file" : "lib/Starman/Server.pm"
+            }
+         },
+         "target" : "Starman",
+         "version" : "0.4001"
       },
       "Stream::Buffered" : {
          "dist" : "Stream-Buffered-0.02",
