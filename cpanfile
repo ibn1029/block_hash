@@ -17,3 +17,5 @@ requires 'HTML::Entities', '== 3.69';
 requires 'DBIx::QueryLog', '== 0.37';
 requires 'Config::Pit', '== 0.04';
 requires 'Data::Page::Navigation', '== 0.06';
+
+requires 'Plack', '== 1.0028';
