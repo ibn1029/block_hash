@@ -9,7 +9,7 @@ if [ `hostname` == 'dti-vps-srv85' ]; then
     source $HOME/.bash_profile
     APP=$HOME/work/block_hash
     PERLVER=5.14.4
-    carton=$HOME/.plenv/versions/$PERLVER/bin/cpanm
+    carton=$HOME/.plenv/versions/$PERLVER/bin/carton
 
 # for local mac
 else
