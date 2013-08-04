@@ -9,12 +9,12 @@
     [% INCLUDE "tweet/tl/timeline.html.tx" %]
   </div>
   <div class="span4">
-    [% INCLUDE "tweet/ad/side_adsense.html.tx" %]
+    [% INCLUDE "common/ad/side_adsense.html.tx" %]
   </div>
 </div>
 <div class="row">
-  <div class="span12">
-    [% INCLUDE "tweet/ad/foot_adsense.html.tx" %]
+  <div class="span12 offset1">
+    [% INCLUDE "common/ad/foot_adsense.html.tx" %]
   </div>
 </div>
 [% END %]

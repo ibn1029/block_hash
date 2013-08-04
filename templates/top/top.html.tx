@@ -40,4 +40,10 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="span12 offset1">
+    [% INCLUDE "common/ad/foot_adsense.html.tx" %]
+  </div>
+</div>
 [% END %]
