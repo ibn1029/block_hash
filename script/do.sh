@@ -2,11 +2,6 @@
 set -e
 #set -x
 
-HOME=/Users/viage
-PERLVER=5.14.2
-APP=$HOME/Work/App/block_hash
-carton=$HOME/perl5/perlbrew/perls/perl-${PERLVER}/bin/carton
-source $HOME/perl5/perlbrew/etc/bashrc
 
 # for DTI VPS
 if [ `hostname` == 'dti-vps-srv85' ]; then
@@ -15,6 +10,14 @@ if [ `hostname` == 'dti-vps-srv85' ]; then
     APP=$HOME/work/block_hash
     PERLVER=5.14.4
     carton=$HOME/.plenv/versions/$PERLVER/bin/cpanm
+
+# for local mac
+else
+    HOME=/Users/viage
+    PERLVER=5.14.2
+    APP=$HOME/Work/App/block_hash
+    carton=$HOME/perl5/perlbrew/perls/perl-${PERLVER}/bin/carton
+    source $HOME/perl5/perlbrew/etc/bashrc
 fi
 
 cd $APP
