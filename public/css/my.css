@@ -36,8 +36,10 @@ a {
     background-position: center 85%;
     background-size: cover;
     height: 200px;
-    color: #000;
-    text-shadow: -1px 1px 0 rgba(255,255,255,1);
+    /*color: #000;*/
+    color: #FFFFFF;
+    /*text-shadow: -1px 1px 0 rgba(255,255,255,1);*/
+    text-shadow: 0 1px 5px #000000;
     border-radius: 0;
 }
 h1.title { margin-top:60px; }
@@ -126,3 +128,7 @@ h1.title { margin-top:60px; }
     border-top-style: solid;
 }
 .footer a { color: #969696; }
+
+.contact-padding {
+    padding-left:20px;
+}

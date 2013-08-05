@@ -1,15 +1,35 @@
+[%
+desc = '#blockfmを含むツイートを時間で検索できるWebサービス。アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。';
+sub_title = 'BlockHash is the hash tag archive and search web service of #blockfm.';
+%]
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta name="description" lang="ja" content=""Block.FM"の公式ハッシュタグ"#blockfm"を含むツイートを検索できるWebサービスです。生放送でツイートされたタイムラインをいつでも見返すことができます。アーカイブ再生時にはプログラムのハッシュタグを検索すれば生放送のタイムラインをいつでも再現出来ます。">
-    <title>[% title %]</title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" lang="ja" content="[% desc%]"/>
+    <meta name="keywords" content="blockhash,blockhashinfo,blockhash.info,blockfm,block.fm,archive,アーカイブ,timeline,タイムライン,search,検索" xml:lang="ja" lang="ja"/>
+    <meta property="og:title" content="#blockfm関連ハッシュタグ検索"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://blockhash.info/"/>
+    <meta property="og:site_name" content="BlockHash"/>
+    <meta property="og:description" content="[% desc %]"/>
+    <!--<meta property="og:image" content=""/>-->
+    <!--<meta property="fb:app_id" content=""/>-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@blockhashinfo">
+    <meta name="twitter:url" content="http://blockhash.info/">
+    <meta name="twitter:title" content="#blockfm関連ハッシュタグ検索">
+    <meta name="twitter:description" content="[% desc %]">
+    <!--<meta name="twitter:image" content="">-->
+    <meta name="twitter:creator" content="@blockhashinfo">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <link href="/css/my.css" rel="stylesheet">
     <link href="/css/zurui.css" rel="stylesheet">
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <title>[% title %]</title>
   </head>
   <body>
 
@@ -19,6 +39,7 @@
           <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
           <div class="btn-group pull-right">
             [% INCLUDE "common/twitter.html.tx" %]
+          </div>
         </div>
       </div>
     </header>
@@ -27,7 +48,7 @@
     <div class="hero-unit">
       <div class="container">
         <h1 class="title">BlockHash</h1>
-        <p>BlockHash is the hash tag archive web service of '#blockfm'.</p>
+        <p>[% sub_title %]</p>
       </div>
     </div>
     <script>
@@ -46,18 +67,21 @@
         <div class="row">
           <div class="span8">
             <h2>BlockHash</h2>
-            <p>BlockHash is the hash tag archive web service of '#blockfm'.<br>Since August 1 2013.</p>
+            <p>[% sub_title %]<br>Since August 1 2013.</p>
           </div>
-          <div class="span4">
-            <strong>Twitter</strong>
-            <address>@blockhashinfo[% INCLUDE "common/follow_me.html.tx" %]</address>
-            <strong>Mail</strong>
-            <address>blockhashinfo@gmail.com</address>
+          <div class="span3 zurui-sen-left contact-padding">
+            <h4><i class="icon-user"></i> Contact</h4>
+            <small>
+              <i class="icon-twitter"></i> Twitter
+              <address>@blockhashinfo[% INCLUDE "common/follow_me.html.tx" %]</address>
+              <i class="icon-envelope"></i> Mail
+              <address>blockhashinfo@gmail.com</address>
+            </small>
           </div>
         </div>
         <div class="row">
           <div class="span12 offset4">
-            <small>Copyright &copy; 2013 by <a href="https://twitter.com/blockhashinfo">blockhashinfo</a></small>
+            <small>Copyright &copy; 2013 by blockhash.info</small>
           </div>           
         </div>
       </div>
