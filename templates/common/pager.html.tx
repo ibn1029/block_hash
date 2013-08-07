@@ -3,24 +3,24 @@
   <div class="span8">
     <div class="pagination pagination-centered">
       <small>[% pager.total_entries %]件中 [% pager.first %] - [% pager.last %]件目</small><br>
-      <ul>
+      <ul style="font-size:1.1em">
         [% IF pager.previous_page %]
         <li>
-          <a href="[% c.url_with.query([ page => $pager.first_page ]) %]" class="paging">&laquo;</a>
+          <a href="[% c.url_with.query([ page => $pager.first_page ]) %]" class="paging"><i class="icon-fast-backward"></i></a>
         </li>
         <li>
-          <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]">&lsaquo;</a>
+          <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]">&nbsp;<i class="icon-chevron-left"></i>&nbsp;</a>
         </li>
         [% ELSE %]
-        <li class="active"><a href="#">&laquo;</a></li>
-        <li class="active"><a href="#">&lsaquo;</a></li>
+        <li class="active"><a href="#"><i class="icon-fast-backward"></i></a></li>
+        <li class="active"><a href="#"><i class="icon-chevron-left"></i></a></li>
         [% END %]
     
-        [% FOREACH page IN pager.pages_in_navigation %]
+        [% FOREACH page IN pager.pages_in_navigation(7) %]
         [% IF page == pager.current_page %]
-        <li class="active"><a href="#">[% page %]</a></li>
+        <li style="font-size:1.6em" class="active"><a href="#">[% page %]</a></li>
         [% ELSE %]
-          <li>
+          <li style="font-size:1.5em">
             <a href="[% c.url_with.query([ page => $page ]) %]">[% page %]</a>
           </li>
         [% END %]
@@ -28,14 +28,14 @@
     
         [% IF pager.next_page %]
         <li>
-          <a href="[% c.url_with.query([ page => pager.next_page ]) %]">&rsaquo;</a>
+          <a href="[% c.url_with.query([ page => pager.next_page ]) %]">&nbsp;<i class="icon-chevron-right"></i>&nbsp;</a>
         </li>
         <li>
-          <a href="[% c.url_with.query([ page => pager.last_page ]) %]">&raquo;</a>
+          <a href="[% c.url_with.query([ page => pager.last_page ]) %]"><i class="icon-fast-forward"></i></a>
         </li>
         [% ELSE %]
-        <li class="active"><a href="#">&rsaquo;</a></li>
-        <li class="active"><a href="#">&raquo;</a></li>
+        <li class="active"><a href="#"><i class="icon-chevron-right"></i></a></li>
+        <li class="active"><a href="#"><i class="icon-fast-forward"></i></a></li>
         [% END %]
       </ul>
     </div>
