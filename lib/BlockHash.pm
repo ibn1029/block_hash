@@ -6,6 +6,7 @@ use Text::Xslate 'html_builder';
 use Text::AutoLink;
 use Module::Load 'load';
 use Time::Piece;
+use Time::Seconds;
 
 sub startup {
     my $self = shift;
@@ -41,6 +42,11 @@ sub startup {
                 },
                 today => sub {
                     my $t = localtime;
+                    return $t->ymd;
+                },
+                week_ago => sub {
+                    my $t = localtime;
+                    $t = $t - 60 * 60 * 24 * 7;
                     return $t->ymd;
                 },
             },

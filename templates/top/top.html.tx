@@ -30,7 +30,7 @@
 <div class="row">
   <div class="span12">
   [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
-  <a href="/[% v.tag %]/2013-01-01/0/[% today() %]/23"><span class="label
+  <a href="/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23"><span class="label
     [% IF v.ratio > 0.8 %] label-important label-large
     [% ELSIF v.ratio > 0.6 %] label-warning
     [% ELSIF v.ratio > 0.4 %] label-info
