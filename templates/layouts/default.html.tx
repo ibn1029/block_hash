@@ -34,11 +34,13 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
   <body>
 
     <header class="header">
-      <div class="navbar navbar-fixed-top navbar-inverse">
-        <div class="navbar-inner">
-          <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
-          <div class="btn-group pull-right">
-            [% INCLUDE "common/twitter.html.tx" %]
+      <div class="container">
+        <div class="navbar navbar-fixed-top navbar-inverse">
+          <div class="navbar-inner">
+            <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
+            <div class="btn-group pull-right">
+              [% INCLUDE "common/twitter.html.tx" %]
+            </div>
           </div>
         </div>
       </div>
