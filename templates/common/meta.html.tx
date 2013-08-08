@@ -1,0 +1,16 @@
+    <meta name="description" lang="ja" content="[% desc%]"/>
+    <meta name="keywords" content="blockhash,blockhashinfo,blockhash.info,blockfm,block.fm,archive,アーカイブ,timeline,タイムライン,search,検索" xml:lang="ja" lang="ja"/>
+    <meta property="og:title" content="#blockfm関連ハッシュタグ検索"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://blockhash.info/"/>
+    <meta property="og:site_name" content="BlockHash"/>
+    <meta property="og:description" content="[% desc %]"/>
+    <!--<meta property="og:image" content=""/>-->
+    <!--<meta property="fb:app_id" content=""/>-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@blockhashinfo">
+    <meta name="twitter:url" content="http://blockhash.info/">
+    <meta name="twitter:title" content="#blockfm関連ハッシュタグ検索">
+    <meta name="twitter:description" content="[% desc %]">
+    <!--<meta name="twitter:image" content="">-->
+    <meta name="twitter:creator" content="@blockhashinfo">
