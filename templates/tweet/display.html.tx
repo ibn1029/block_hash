@@ -5,10 +5,10 @@
   </div>
 </div>
 <div class="row">
-  <div class="span8">
+  <div class="span7">
     [% INCLUDE "tweet/tl/timeline.html.tx" %]
   </div>
-  <div class="span4">
+  <div class="span5">
     [% INCLUDE "common/ad/side_adsense.html.tx" %]
   </div>
 </div>

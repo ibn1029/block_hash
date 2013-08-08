@@ -18,7 +18,7 @@
 [% INCLUDE "common/pager.html.tx" %]
 
 <div class="row">
-  <div class="span8">
+  <div class="span7">
 
     <div id="timeline">
       [% FOREACH v in tweets %]
