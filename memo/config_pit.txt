@@ -1,0 +1,3 @@
+# Config::Pit
+EDITOR=/usr/bin/vi carton exec -- ppit set block_hash_twitter
+carton exec -- ppit get block_hash_twitter | cat
