@@ -59,11 +59,15 @@ sub validate {
         };
         if ($@) {
             push @ng_list, $row->{id};
-            warn Dumper \@ng_list;
-            my $sth = $self->{dbh}->prepare(qq/delete from tweet where id in (?)/);
-            $sth->execute(join ',', @ng_list);
-            $sth->finish;
+            #warn Dumper \@ng_list;
         }
+    }
+    if (@ng_list) {
+        warn 'deleteing bloken json of tweet.\n';
+        warn @ng_list."\n";
+        #my $sth = $self->{dbh}->prepare(qq/delete from tweet where id in (?)/);
+        #$sth->execute(join ',', @ng_list);
+        #$sth->finish;
     }
 }
 
