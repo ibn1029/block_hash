@@ -65,9 +65,10 @@ sub validate {
     if (@ng_list) {
         warn "deleteing bloken json of tweet.\n";
         warn  join ', ', @ng_list,"\n";
-        #my $sth = $self->{dbh}->prepare(qq/delete from tweet where id in (?)/);
-        #$sth->execute(join ',', @ng_list);
-        #$sth->finish;
+        my $id_list_str = join ', ', @ng_list;
+        my $sth = $self->{dbh}->prepare(qq/delete from tweet where id in (?)/);
+        $sth->execute($id_list_str);
+        $sth->finish;
     }
 }
 
