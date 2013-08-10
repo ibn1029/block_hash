@@ -8,6 +8,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     [%# INCLUDE 'common/responsive.html.tx' %]
     [% INCLUDE 'common/meta.html.tx' %]
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <link href="/css/my.css" rel="stylesheet">

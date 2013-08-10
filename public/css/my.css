@@ -116,6 +116,11 @@ h1.title { margin-top:60px; }
 #pagination li >  a.paging {
     background-color: #333;
 }
+
+.label-large {
+    font-size: 0.8em;
+    padding: 4px 10px;
+}
 /*---- footer part ----*/
 .footer {
     margin-top: 50px;
