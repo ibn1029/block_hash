@@ -25,7 +25,7 @@ a { text-decoration:none; }
 /*------------------------------------------------------------------------------*/
 
 /*---- header part ----*/
-.hero-unit {
+.hero-unit-opt {
     background-color: #202020;
     background-image: url('/img/radio.jpg');
     background-repeat: no-repeat;

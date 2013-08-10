@@ -20,7 +20,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
   <body>
 
     <header class="header">
-      <div class="navbar _navbar-fixed-top navbar-inverse">
+      <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
           <a href="/" class="brand">&nbsp;&nbsp;BlockHash</a>
           <div class="btn-group pull-right">
@@ -31,7 +31,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     </header>
 
     [% IF is_toppage %]
-    <div class="hero-unit">
+    <div class="hero-unit hero-unit-opt">
       <div class="container">
         <h1 class="title">BlockHash</h1>
         <p>[% sub_title %]</p>
@@ -66,7 +66,8 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
           </div>
         </div>
         <div class="row">
-          <div class="span8 offset4">
+          <div class="span4"></div>
+          <div class="span8">
             <small>Copyright &copy; 2013 by blockhash.info</small>
           </div>           
         </div>

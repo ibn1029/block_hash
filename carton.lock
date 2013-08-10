@@ -18768,14 +18768,14 @@
          "version" : "0.15"
       },
       "Starman" : {
-         "dist" : "Starman-0.4001",
+         "dist" : "Starman-0.4003",
          "mymeta" : {
             "abstract" : "High-performance preforking PSGI/Plack web server",
             "author" : [
                "Tatsuhiko Miyagawa <miyagawa@bulknews.net>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Dist::Milla version v1.0.3, Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Dist::Milla version v1.0.3, Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.132140, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -18838,7 +18838,7 @@
                   "web" : "https://github.com/miyagawa/Starman"
                }
             },
-            "version" : "0.4001",
+            "version" : "0.4003",
             "x_contributors" : [
                "Alex Vandiver <alex@chmrr.net>",
                "Aristotle Pagaltzis <pagaltzis@gmx.de>",
@@ -18859,7 +18859,7 @@
             ]
          },
          "name" : "Starman",
-         "pathname" : "M/MI/MIYAGAWA/Starman-0.4001.tar.gz",
+         "pathname" : "M/MI/MIYAGAWA/Starman-0.4003.tar.gz",
          "provides" : {
             "HTTP::Server::PSGI::Net::Server::PreFork" : {
                "file" : "lib/HTTP/Server/PSGI/Net/Server/PreFork.pm"
@@ -18869,14 +18869,14 @@
             },
             "Starman" : {
                "file" : "lib/Starman.pm",
-               "version" : "0.4001"
+               "version" : "0.4003"
             },
             "Starman::Server" : {
                "file" : "lib/Starman/Server.pm"
             }
          },
          "target" : "Starman",
-         "version" : "0.4001"
+         "version" : "0.4003"
       },
       "Stream::Buffered" : {
          "dist" : "Stream-Buffered-0.02",
