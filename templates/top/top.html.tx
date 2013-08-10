@@ -7,6 +7,8 @@
   </div>
 </div>
 
+[% INCLUDE 'common/ad/text_adsense.html.tx' %]
+
 <h2 class="voffset50">BlockHashとは...</h2>
 <p>#blockfmのハッシュタグを含むツイートを時間で検索できるWebサービスです。アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。<small><em>(#blockfmは国内No.1のダンスミュージック専門インターネットラジオ"block.fm"の公式ハッシュタグです。)</em></small></p>
 
