@@ -31,7 +31,7 @@
         <div class="media-body">
           <div class="userinfo">
             <span class="id"><strong>[% v.tweet.user.name %]</strong></span>
-            <span class="muted">&nbsp;&nbsp;@[% v.tweet.user.screen_name %]</span>
+            <span class="muted">&nbsp;@[% v.tweet.user.screen_name %]</span>
             <span class="pull-right timestamp">[% v.date %]</span>
           </div>
 
