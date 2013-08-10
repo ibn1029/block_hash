@@ -1,5 +1,5 @@
 .carton
-local/
-tmp/
-log/
+local/*
+tmp/*
+log/*
 *.swp
