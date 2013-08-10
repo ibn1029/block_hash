@@ -1,7 +1,8 @@
 <!--
 <p><img src="http://quickimage.it/320x320"></p>
 -->
-[% INCLUDE 'common/ad/linkshare/hmv.html.tx' %]
-[% INCLUDE 'common/ad/amazon/350x600_dance.html.tx' %]
-[% INCLUDE 'common/ad/amazon/350x600_musictop.html.tx' %]
-[% INCLUDE 'common/ad/google/300x600_1.html.tx' %]
+
+<p>[% INCLUDE 'common/ad/linkshare/hmv.html.tx' %]</p>
+<p>[% INCLUDE 'common/ad/amazon/350x600_dance.html.tx' %]</p>
+<p>[% INCLUDE 'common/ad/amazon/350x600_musictop.html.tx' %]</p>
+<p>[% INCLUDE 'common/ad/google/300x600_1.html.tx' %]</p>
