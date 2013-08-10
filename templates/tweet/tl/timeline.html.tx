@@ -36,9 +36,7 @@
           </div>
 
           <div>
-            [% IF v.media_type == 'image' %]
-            <a href="[% v.media_data %]"><img src="[% v.media_data %]" class="media-image"></a>
-            [% ELSIF v.media_type == 'instagram' %]
+            [% IF v.media_type == 'instagram' %]
             <iframe width="530" height="620" src="[% v.media_data %]embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
             [% ELSIF v.media_type == 'vine' %]
             <iframe class="vine-embed" src="[% v.media_data %]/embed/simple" width="320" height="320" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
