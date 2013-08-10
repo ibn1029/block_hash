@@ -67,8 +67,10 @@ h1.title { margin-top:60px; }
 .display-none { display: none; }
 
 /*---- content part ----*/
+.voffset10 { margin-top: 10px; }
 .voffset20 { margin-top: 20px; }
 .voffset30 { margin-top: 30px; }
+.voffset40 { margin-top: 40px; }
 .voffset50 { margin-top: 50px; }
 .status_num { text-align: center; }
 .size48 {

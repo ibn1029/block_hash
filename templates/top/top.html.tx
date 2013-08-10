@@ -1,49 +1,55 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "BlockHash" %]
-<div class="container">
-  <div class="row">
-    <div id="search-box" class="span10 offset1 white-panel-top">
-      [% INCLUDE "common/search.html.tx" %]
-    </div>
-  </div>
-</div>
-
-[% INCLUDE 'common/ad/text_adsense.html.tx' %]
-
-<h2 class="voffset50">BlockHashとは...</h2>
-<p>#blockfmのハッシュタグを含むツイートを時間で検索できるWebサービスです。アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。<small><em>(#blockfmは国内No.1のダンスミュージック専門インターネットラジオ"block.fm"の公式ハッシュタグです。)</em></small></p>
-
-<h3 class="voffset50"><i class="icon-archive"></i> Archive status</h3>
-<div class="row offset1">
-  <div class="span3">
-        <h5 class="zurui-sen">アーカイブしたツイート</h5>
-        <p class="status_num size48">[% total_tweets %]</p>
-  </div>
-  <div class="span3">
-        <h5 class="zurui-sen">アーカイブしたハッシュタグ</h5>
-        <p class="status_num size48">[% hashtags %]</p>
-  </div>
-  <div class="span3">
-        <h5 class="zurui-sen">最終更新日時</h5>
-        <p class="status_num size24">[% last_updated %]</p>
-  </div>
-</div>
-
-<h3 class="voffset50"><i class="icon-tags"></i> Hash tags</h3>
 <div class="row">
+  <div id="search-box" class="span10 offset1 white-panel-top">
+    [% INCLUDE "common/search.html.tx" %]
+  </div>
+</div>
+
+<div class="row voffset30">
+  <h2>BlockHashとは...</h2>
   <div class="span12">
-  [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
-  <a href="/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23"><span class="label
-    [% IF v.ratio > 0.8 %] label-important label-large
-    [% ELSIF v.ratio > 0.6 %] label-warning
-    [% ELSIF v.ratio > 0.4 %] label-info
+    <p>#blockfmのハッシュタグを含むツイートを時間で検索できるWebサービスです。アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。<small><em>(#blockfmは国内No.1のダンスミュージック専門インターネットラジオ"block.fm"の公式ハッシュタグです。)</em></small></p>
+  </div>
+</div>
+
+<div class="row voffset30">
+  <div class="span10 offset1">
+    [% INCLUDE 'common/ad/text_adsense.html.tx' %]
+  </div>
+</div>
+
+<div class="row voffset30">
+  <h3><i class="icon-archive"></i> Archive status</h3>
+  <div class="span3 offset1">
+    <h5 class="zurui-sen">アーカイブしたツイート</h5>
+    <p class="status_num size48">[% total_tweets %]</p>
+  </div>
+  <div class="span3">
+    <h5 class="zurui-sen">アーカイブしたハッシュタグ</h5>
+    <p class="status_num size48">[% hashtags %]</p>
+  </div>
+  <div class="span3">
+    <h5 class="zurui-sen">最終更新日時</h5>
+    <p class="status_num size24">[% last_updated %]</p>
+  </div>
+</div>
+
+<div class="row voffset30">
+  <h3><i class="icon-tags"></i> Hash tags</h3>
+  <div class="span12">
+    [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
+    <a href="/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23"><span class="label
+      [% IF v.ratio > 0.8 %] label-important label-large
+      [% ELSIF v.ratio > 0.6 %] label-warning
+      [% ELSIF v.ratio > 0.4 %] label-info
+      [% END %]
+    ">[% v.tag %]</span></a>
     [% END %]
-  ">[% v.tag %]</span></a>
-  [% END %]
   </div>
 </div>
 
 <div class="row voffset50">
-  <div class="span12 offset1">
+  <div class="span10 offset1">
     [% INCLUDE "common/ad/foot_adsense.html.tx" %]
   </div>
 </div>
