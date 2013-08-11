@@ -1,12 +1,11 @@
 [%
 desc = '#blockfmを含むツイートを時間で検索できるWebサービス。アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。';
 sub_title = 'BlockHash is the hash tag archive and search web service of #blockfm.';
-%]
+-%]
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    [%# INCLUDE 'common/responsive.html.tx' %]
-    [% INCLUDE 'common/meta.html.tx' %]
+    [% INCLUDE 'common/meta.html.tx' -%]
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
