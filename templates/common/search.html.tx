@@ -62,7 +62,7 @@
     "no_bias","Wickedpedia_Radio","raidsystem","yone_bfm","agx","NewDJ_bfm","radio_REBOOT",
     "VINYL_HOUSE","bakass","SECOND_SPACE","iflyer_bfm","sodeyama_bfm","EDM_Essentials","dont_blink",
     "SDM_RADIO","swing_chop","混ぜると危険","reggae_times","STEPPASIDE","Dancing_Dead","PIW",
-    "GWIGGWIGRADIO","blockfmeden","KitsuneRadiobyBeatauCue","SUMMIT_bfm","blockstepper"
+    "GWIGGWIGRADIO","blockfmeden","KitsuneRadiobyBeatauCue","SUMMIT_bfm","blockstepper","nowplaying"
   ];
   $('#search-tag').autocomplete({
     source: availableTags,

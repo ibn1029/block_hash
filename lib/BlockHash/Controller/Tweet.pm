@@ -6,13 +6,10 @@ use Data::Dumper;
 
 sub search {
     my $self = shift;
+
     my $p = $self->req->params->to_hash;
-    
-    # validation
-    unless ( $p->{tag} and $p->{date} and $p->{date} =~ /^\d{4}-\d{2}-\d{2}$/ ) {
-        $self->redirect_to("/");
-        return 0;
-    }
+    $self->_validate($p);
+
     # '#'filter
     $p->{tag}  =~ s/#//g; my $tag = $p->{tag};
     $self->redirect_to("/$tag/$p->{date}");
@@ -20,16 +17,10 @@ sub search {
 
 sub search_detail {
     my $self = shift;
-    my $p = $self->req->params->to_hash;
 
-    unless ( $p->{tag}
-    and $p->{start_date} =~ /^\d{4}-\d{2}-\d{2}$/
-    and $p->{end_date}   =~ /^\d{4}-\d{2}-\d{2}$/ 
-    and $p->{start_time} =~ /^\d{1,2}$/
-    and $p->{end_time}   =~ /^\d{1,2}$/ ) {
-        $self->redirect_to("/");
-        return 0;
-    }
+    my $p = $self->req->params->to_hash;
+    $self->_validate_detail($p);
+
     $p->{tag}  =~ s/#//g; my $tag = $p->{tag};
     $self->redirect_to("/$tag/$p->{start_date}/$p->{start_time}/$p->{end_date}/$p->{end_time}");
 }
@@ -37,7 +28,11 @@ sub search_detail {
 sub display {
     my $self = shift;
 
+    # 詳細検索
     if ($self->stash('start_date') and $self->stash('end_date')) {
+
+        $self->_validate_detail($self->stash);
+
         my $tweet_btn_text = '#blockfm #'.$self->stash('tag').' '
                             .$self->stash('start_date').' '.$self->stash('start_time').'時から'
                             .$self->stash('end_date').' '.$self->stash('end_time')
@@ -64,7 +59,10 @@ sub display {
             pager => $pager,
         );
 
+    # 検索
     } else {
+        $self->_validate($self->stash);
+
         my $tweet_btn_text = $self->stash('tag').' '.$self->stash('date').'のツイート検索結果';
         my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search({
             tag  => $self->stash('tag'),
@@ -84,4 +82,23 @@ sub display {
     }
 }
 
+sub _validate {
+    my ($self, $p) = @_;
+    unless ( $p->{tag} and $p->{date} and $p->{date} =~ /^\d{4}-\d{2}-\d{2}$/ ) {
+        $self->redirect_to("/");
+        return 0;
+    }
+}
+
+sub _validate_detail {
+    my ($self, $p) = @_;
+    unless ( $p->{tag}
+    and $p->{start_date} =~ /^\d{4}-\d{2}-\d{2}$/
+    and $p->{end_date}   =~ /^\d{4}-\d{2}-\d{2}$/ 
+    and $p->{start_time} =~ /^\d{1,2}$/
+    and $p->{end_time}   =~ /^\d{1,2}$/ ) {
+        $self->redirect_to("/");
+        return 0;
+    }
+}
 1;
