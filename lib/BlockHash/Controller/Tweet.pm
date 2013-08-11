@@ -38,8 +38,10 @@ sub display {
     my $self = shift;
 
     if ($self->stash('start_date') and $self->stash('end_date')) {
-        my $tweet_btn_text = '#blockfm #'.$self->stash('tag').' '.$self->stash('start_date').' '.$self->stash('start_time').'時から'
-                                .$self->stash('end_date').' '.$self->stash('end_time').'時台のツイート検索結果';
+        my $tweet_btn_text = '#blockfm #'.$self->stash('tag').' '
+                            .$self->stash('start_date').' '.$self->stash('start_time').'時から'
+                            .$self->stash('end_date').' '.$self->stash('end_time')
+                            .'時台のツイート検索結果 #BlockHash';
         my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search_detail({
             tag  => $self->stash('tag'),
             start_date => $self->stash('start_date'),
