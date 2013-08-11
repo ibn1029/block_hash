@@ -94,7 +94,7 @@ h1.title { margin-top:60px; }
 #timeline a { color: #DF1515; }
 
 .tweet {
-    width: 520px;
+    /*width: 520px;*/
     background: #333333;
     border: 2px solid #333;
     border-color: hsla(0, 0%, 0%, 0.5);
