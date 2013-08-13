@@ -54,8 +54,7 @@
          "pathname" : "M/ML/MLEHMANN/AnyEvent-7.04.tar.gz",
          "provides" : {
             "AE" : {
-               "file" : "lib/AnyEvent.pm",
-               "version" : "7.04"
+               "file" : "lib/AE.pm"
             },
             "AE::Log::COLLECT" : {
                "file" : "lib/AnyEvent/Log.pm"
@@ -104,7 +103,7 @@
                "file" : "lib/AnyEvent/Handle.pm"
             },
             "AnyEvent::IO" : {
-               "file" : "lib/AnyEvent/IO/Perl.pm"
+               "file" : "lib/AnyEvent/IO.pm"
             },
             "AnyEvent::IO::IOAIO" : {
                "file" : "lib/AnyEvent/IO/IOAIO.pm"
@@ -977,7 +976,7 @@
                "unknown"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -1316,7 +1315,7 @@
                "Dave Rolsky <autarch@urth.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "artistic_2"
             ],
@@ -2951,7 +2950,7 @@
                "Based on code originally by Leo Lapworth, with many changes added by\nby Leon Brocard <acme@astray.com>."
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -3508,7 +3507,7 @@
                "Dave Rolsky <autarch@urth.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "artistic_2"
             ],
@@ -3687,7 +3686,7 @@
                "Dave Rolsky <autarch@urth.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -9013,7 +9012,8 @@
          "pathname" : "D/DO/DOY/Dist-CheckConflicts-0.09.tar.gz",
          "provides" : {
             "Bar" : {
-               "file" : "t/lib/runtime/Bar.pm"
+               "file" : "t/lib/conflicts/Bar.pm",
+               "version" : "0.02"
             },
             "Bar::Bar" : {
                "file" : "t/lib/runtime/Bar/Bar.pm",
@@ -9040,28 +9040,28 @@
                "version" : "0.02"
             },
             "Bar::Conflicts" : {
-               "file" : "t/lib/runtime/Bar/Conflicts.pm"
+               "file" : "t/lib/basic/Bar/Conflicts.pm"
             },
             "Bar::Conflicts2" : {
-               "file" : "t/lib/basic/Bar/Conflicts2.pm"
+               "file" : "t/lib/also/Bar/Conflicts2.pm"
             },
             "Bar::Conflicts3" : {
                "file" : "t/lib/basic/Bar/Conflicts3.pm"
             },
             "Bar::Conflicts::Bad" : {
-               "file" : "t/lib/dist/Bar/Conflicts/Bad.pm"
+               "file" : "t/lib/conflicts/Bar/Conflicts/Bad.pm"
             },
             "Bar::Conflicts::Bad2" : {
-               "file" : "t/lib/dist/Bar/Conflicts/Bad2.pm"
+               "file" : "t/lib/conflicts/Bar/Conflicts/Bad2.pm"
             },
             "Bar::Conflicts::Bad3" : {
-               "file" : "t/lib/dist/Bar/Conflicts/Bad3.pm"
+               "file" : "t/lib/conflicts/Bar/Conflicts/Bad3.pm"
             },
             "Bar::Conflicts::Good" : {
-               "file" : "t/lib/dist/Bar/Conflicts/Good.pm"
+               "file" : "t/lib/conflicts/Bar/Conflicts/Good.pm"
             },
             "Bar::Conflicts::Good2" : {
-               "file" : "t/lib/dist/Bar/Conflicts/Good2.pm"
+               "file" : "t/lib/conflicts/Bar/Conflicts/Good2.pm"
             },
             "Bar::Conflicts::Good3" : {
                "file" : "t/lib/dist/Bar/Conflicts/Good3.pm"
@@ -9091,7 +9091,7 @@
                "version" : "0.02"
             },
             "Bar::Three" : {
-               "file" : "t/lib/dist/Bar/Three.pm",
+               "file" : "t/lib/conflicts/Bar/Three.pm",
                "version" : "0.02"
             },
             "Bar::Two" : {
@@ -9106,7 +9106,7 @@
                "version" : "0.09"
             },
             "Foo" : {
-               "file" : "t/lib/runtime/Foo.pm"
+               "file" : "t/lib/also/Foo.pm"
             },
             "Foo::Bar" : {
                "file" : "t/lib/runtime/Foo/Bar.pm",
@@ -9117,19 +9117,19 @@
                "version" : "0.02"
             },
             "Foo::Conflicts" : {
-               "file" : "t/lib/warn/Foo/Conflicts.pm"
+               "file" : "t/lib/basic/Foo/Conflicts.pm"
             },
             "Foo::Conflicts2" : {
                "file" : "t/lib/merge/Foo/Conflicts2.pm"
             },
             "Foo::Conflicts::Bad" : {
-               "file" : "t/lib/dist/Foo/Conflicts/Bad.pm"
+               "file" : "t/lib/conflicts/Foo/Conflicts/Bad.pm"
             },
             "Foo::Conflicts::Broken" : {
                "file" : "t/lib/conflicts/Foo/Conflicts/Broken.pm"
             },
             "Foo::Conflicts::Good" : {
-               "file" : "t/lib/dist/Foo/Conflicts/Good.pm"
+               "file" : "t/lib/conflicts/Foo/Conflicts/Good.pm"
             },
             "Foo::Foo" : {
                "file" : "t/lib/runtime/Foo/Foo.pm",
@@ -9144,7 +9144,7 @@
                "version" : "0.02"
             },
             "Foo::Three" : {
-               "file" : "t/lib/dist/Foo/Three.pm",
+               "file" : "t/lib/conflicts/Foo/Three.pm",
                "version" : "0.02"
             },
             "Foo::Two" : {
@@ -9972,7 +9972,7 @@
                "version" : "6.72"
             },
             "MY" : {
-               "file" : "lib/ExtUtils/MY.pm",
+               "file" : "lib/ExtUtils/MakeMaker.pm",
                "version" : "6.72"
             },
             "in" : {
@@ -10068,12 +10068,11 @@
                "runtime" : {
                   "requires" : {
                      "Carp" : "0",
-                     "Cwd" : "3",
+                     "Cwd" : "3.12",
                      "File::Path" : "2.01",
-                     "File::Spec" : "3",
+                     "File::Spec" : "3.12",
                      "File::Temp" : "0.19",
                      "File::Which" : "0.05",
-                     "Mac::SystemDirectory" : "0.04",
                      "perl" : "5.00503"
                   }
                }
@@ -10494,195 +10493,6 @@
          "target" : "Filesys::Notify::Simple",
          "version" : "0.12"
       },
-      "Furl" : {
-         "dist" : "Furl-2.17",
-         "mymeta" : {
-            "abstract" : "Lightning-fast URL fetcher",
-            "author" : [
-               "Tokuhiro Matsuno <tokuhirom@gmail.com>"
-            ],
-            "dynamic_config" : 0,
-            "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.131560",
-            "license" : [
-               "perl_5"
-            ],
-            "meta-spec" : {
-               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-               "version" : "2"
-            },
-            "name" : "Furl",
-            "no_index" : {
-               "directory" : [
-                  "t",
-                  "xt",
-                  "inc",
-                  "share",
-                  "eg",
-                  "examples",
-                  "author"
-               ]
-            },
-            "prereqs" : {
-               "configure" : {
-                  "requires" : {
-                     "CPAN::Meta" : "0",
-                     "CPAN::Meta::Prereqs" : "0",
-                     "Module::Build" : "0.38"
-                  }
-               },
-               "develop" : {
-                  "requires" : {
-                     "Test::CPAN::Meta" : "0",
-                     "Test::MinimumVersion" : "0.10108",
-                     "Test::Pod" : "1.41",
-                     "Test::Spellunker" : "v0.2.7"
-                  },
-                  "suggests" : {
-                     "Child" : "0",
-                     "Getopt::Long" : "0",
-                     "HTTP::Lite" : "0",
-                     "LWP::UserAgent" : "0",
-                     "Plack::Loader" : "0",
-                     "Starman" : "0",
-                     "Test::More" : "0",
-                     "Test::TCP" : "0",
-                     "Test::suggests" : "0",
-                     "URI" : "0",
-                     "WWW::Curl::Easy" : "4.14",
-                     "autodie" : "0",
-                     "parent" : "0"
-                  }
-               },
-               "runtime" : {
-                  "recommends" : {
-                     "Compress::Raw::Zlib" : "0",
-                     "IO::Socket::SSL" : "0",
-                     "Net::IDN::Encode" : "0"
-                  },
-                  "requires" : {
-                     "Class::Accessor::Lite" : "0",
-                     "Encode" : "0",
-                     "HTTP::Parser::XS" : "0.11",
-                     "MIME::Base64" : "0",
-                     "Mozilla::CA" : "0",
-                     "Scalar::Util" : "0",
-                     "Socket" : "0",
-                     "Time::HiRes" : "0",
-                     "perl" : "5.008001"
-                  },
-                  "suggests" : {
-                     "HTTP::Headers" : "0",
-                     "HTTP::Request" : "0",
-                     "HTTP::Response" : "0"
-                  }
-               },
-               "test" : {
-                  "requires" : {
-                     "File::Temp" : "0",
-                     "Test::More" : "0.96",
-                     "Test::Requires" : "0",
-                     "Test::TCP" : "1.06"
-                  },
-                  "suggests" : {
-                     "HTTP::Proxy" : "0",
-                     "HTTP::Server::PSGI" : "0",
-                     "Plack" : "0",
-                     "Plack::Loader" : "0",
-                     "Plack::Request" : "0",
-                     "Starlet::Server" : "0",
-                     "Test::Fake::HTTPD" : "0",
-                     "Test::SharedFork" : "0",
-                     "Test::Valgrind" : "0",
-                     "URI" : "0",
-                     "parent" : "0"
-                  }
-               }
-            },
-            "provides" : {
-               "Furl" : {
-                  "file" : "lib/Furl.pm",
-                  "version" : "2.17"
-               },
-               "Furl::ConnectionCache" : {
-                  "file" : "lib/Furl/ConnectionCache.pm"
-               },
-               "Furl::HTTP" : {
-                  "file" : "lib/Furl/HTTP.pm",
-                  "version" : "2.17"
-               },
-               "Furl::Headers" : {
-                  "file" : "lib/Furl/Headers.pm"
-               },
-               "Furl::Request" : {
-                  "file" : "lib/Furl/Request.pm"
-               },
-               "Furl::Response" : {
-                  "file" : "lib/Furl/Response.pm"
-               },
-               "Furl::ZlibStream" : {
-                  "file" : "lib/Furl/ZlibStream.pm"
-               }
-            },
-            "release_status" : "stable",
-            "resources" : {
-               "bugtracker" : {
-                  "web" : "https://github.com/tokuhirom/Furl/issues"
-               },
-               "homepage" : "https://github.com/tokuhirom/Furl",
-               "repository" : {
-                  "type" : "git",
-                  "url" : "git://github.com/tokuhirom/Furl.git",
-                  "web" : "https://github.com/tokuhirom/Furl"
-               }
-            },
-            "version" : "2.17",
-            "x_contributors" : [
-               "Keiji, Yoshimi <walf443@gmail.com>",
-               "Fuji, Goro <gfuji@cpan.org>",
-               "lestrrat <lestrrat+github@gmail.com>",
-               "Audrey Tang <audreyt@audreyt.org>",
-               "mattn <mattn.jp@gmail.com>",
-               "Fuji Goro <fuji.goro@dena.jp>",
-               "bayashi <bayashi@cpan.org>",
-               "Kazuho Oku <kazuhooku@gmail.com>",
-               "Fuji, Goro <g.psy.va@gmail.com>",
-               "s-aska <s.aska.org@gmail.com>",
-               "Masahiro Nagano <kazeburo@gmail.com>",
-               "ikasam_a <masaki.nakagawa@gmail.com>",
-               "xaicron <xaicron@gmail.com>",
-               "Syohei YOSHIDA <syohex@gmail.com>"
-            ]
-         },
-         "name" : "Furl",
-         "pathname" : "T/TO/TOKUHIROM/Furl-2.17.tar.gz",
-         "provides" : {
-            "Furl" : {
-               "file" : "lib/Furl.pm",
-               "version" : "2.17"
-            },
-            "Furl::ConnectionCache" : {
-               "file" : "lib/Furl/ConnectionCache.pm"
-            },
-            "Furl::HTTP" : {
-               "file" : "lib/Furl/HTTP.pm",
-               "version" : "2.17"
-            },
-            "Furl::Headers" : {
-               "file" : "lib/Furl/Headers.pm"
-            },
-            "Furl::Request" : {
-               "file" : "lib/Furl/Request.pm"
-            },
-            "Furl::Response" : {
-               "file" : "lib/Furl/Response.pm"
-            },
-            "Furl::ZlibStream" : {
-               "file" : "lib/Furl/ZlibStream.pm"
-            }
-         },
-         "target" : "Furl",
-         "version" : "2.17"
-      },
       "HTML::FillInForm::Lite" : {
          "dist" : "HTML-FillInForm-Lite-1.13",
          "mymeta" : {
@@ -10924,7 +10734,7 @@
                "Jeff Fearn <jfearn@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -11581,8 +11391,8 @@
                "version" : "6.00"
             },
             "HTTP::Headers" : {
-               "file" : "lib/HTTP/Headers/ETag.pm",
-               "version" : "6.00"
+               "file" : "lib/HTTP/Headers.pm",
+               "version" : "6.05"
             },
             "HTTP::Headers::Auth" : {
                "file" : "lib/HTTP/Headers/Auth.pm",
@@ -12930,74 +12740,6 @@
          "target" : "MRO::Compat",
          "version" : "0.12"
       },
-      "Mac::SystemDirectory" : {
-         "dist" : "Mac-SystemDirectory-0.06",
-         "mymeta" : {
-            "abstract" : "Locate Mac OS X Standard System Directories",
-            "author" : [
-               "Christian Hansen, <chansen@cpan.org>"
-            ],
-            "dynamic_config" : 0,
-            "generated_by" : "Module::Install version 1.00, CPAN::Meta::Converter version 2.131560",
-            "license" : [
-               "perl_5"
-            ],
-            "meta-spec" : {
-               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-               "version" : "2"
-            },
-            "name" : "Mac-SystemDirectory",
-            "no_index" : {
-               "directory" : [
-                  "inc",
-                  "t",
-                  "xt"
-               ]
-            },
-            "prereqs" : {
-               "build" : {
-                  "requires" : {
-                     "ExtUtils::MakeMaker" : "6.42",
-                     "Test::More" : "0.86"
-                  }
-               },
-               "configure" : {
-                  "requires" : {
-                     "ExtUtils::MakeMaker" : "6.42"
-                  }
-               },
-               "runtime" : {
-                  "requires" : {
-                     "perl" : "5.006"
-                  }
-               }
-            },
-            "release_status" : "stable",
-            "resources" : {
-               "bugtracker" : {
-                  "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Mac-SystemDirectory"
-               },
-               "license" : [
-                  "http://dev.perl.org/licenses/"
-               ],
-               "repository" : {
-                  "url" : "http://svn.ali.as/cpan/trunk/Mac-SystemDirectory/"
-               }
-            },
-            "version" : "0.06",
-            "x_module_name" : "Mac::SystemDirectory"
-         },
-         "name" : "Mac::SystemDirectory",
-         "pathname" : "C/CH/CHANSEN/Mac-SystemDirectory-0.06.tar.gz",
-         "provides" : {
-            "Mac::SystemDirectory" : {
-               "file" : "lib/Mac/SystemDirectory.pm",
-               "version" : "0.06"
-            }
-         },
-         "target" : "Mac::SystemDirectory",
-         "version" : "0.06"
-      },
       "Module::Build::Tiny" : {
          "dist" : "Module-Build-Tiny-0.025",
          "mymeta" : {
@@ -13279,7 +13021,7 @@
                "Andrew Main (Zefram) <zefram@fysh.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -15873,23 +15615,25 @@
                "version" : "1.11"
             },
             "Mouse::Exporter" : {
-               "file" : "lib/Mouse/Tiny.pm",
-               "version" : "1.11"
+               "file" : "lib/Mouse/Exporter.pm"
             },
             "Mouse::Meta::Attribute" : {
-               "file" : "lib/Mouse/Meta/Attribute.pm"
+               "file" : "lib/Mouse/PurePerl.pm"
             },
             "Mouse::Meta::Class" : {
                "file" : "lib/Mouse/Meta/Class.pm"
             },
             "Mouse::Meta::Method" : {
-               "file" : "lib/Mouse/Meta/Method.pm"
+               "file" : "lib/Mouse/Tiny.pm",
+               "version" : "1.11"
             },
             "Mouse::Meta::Method::Accessor" : {
-               "file" : "lib/Mouse/Meta/Method/Accessor.pm"
+               "file" : "lib/Mouse/Tiny.pm",
+               "version" : "1.11"
             },
             "Mouse::Meta::Method::Constructor" : {
-               "file" : "lib/Mouse/Meta/Method/Constructor.pm"
+               "file" : "lib/Mouse/Tiny.pm",
+               "version" : "1.11"
             },
             "Mouse::Meta::Method::Delegation" : {
                "file" : "lib/Mouse/Meta/Method/Delegation.pm"
@@ -15898,7 +15642,7 @@
                "file" : "lib/Mouse/Meta/Method/Destructor.pm"
             },
             "Mouse::Meta::Module" : {
-               "file" : "lib/Mouse/Meta/Module.pm"
+               "file" : "lib/Mouse/PurePerl.pm"
             },
             "Mouse::Meta::Role" : {
                "file" : "lib/Mouse/Meta/Role.pm"
@@ -15916,15 +15660,13 @@
                "file" : "lib/Mouse/Meta/Role/Method.pm"
             },
             "Mouse::Meta::TypeConstraint" : {
-               "file" : "lib/Mouse/Meta/TypeConstraint.pm"
+               "file" : "lib/Mouse/PurePerl.pm"
             },
             "Mouse::Object" : {
-               "file" : "lib/Mouse/Tiny.pm",
-               "version" : "1.11"
+               "file" : "lib/Mouse/PurePerl.pm"
             },
             "Mouse::PurePerl" : {
-               "file" : "lib/Mouse/Tiny.pm",
-               "version" : "1.11"
+               "file" : "lib/Mouse/PurePerl.pm"
             },
             "Mouse::Role" : {
                "file" : "lib/Mouse/Tiny.pm",
@@ -15949,7 +15691,7 @@
                "file" : "lib/Mouse/Util/MetaRole.pm"
             },
             "Mouse::Util::TypeConstraints" : {
-               "file" : "lib/Mouse/Util/TypeConstraints.pm"
+               "file" : "lib/Mouse/PurePerl.pm"
             },
             "Squirrel" : {
                "file" : "lib/Squirrel.pm"
@@ -16113,7 +15855,7 @@
                "Keith Grennan <kgrennan@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -16585,7 +16327,7 @@
                "Marc Mims <mmims@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -17620,7 +17362,7 @@
                "Dave Rolsky, <autarch@urth.org> and Ilya Martynov <ilya@martynov.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "artistic_2"
             ],
@@ -17692,7 +17434,7 @@
                "file" : "t/lib/PVTests/Standard.pm"
             },
             "Foo" : {
-               "file" : "t/lib/PVTests/Standard.pm"
+               "file" : "t/lib/PVTests/Callbacks.pm"
             },
             "PVTests" : {
                "file" : "t/lib/PVTests.pm"
@@ -17752,7 +17494,7 @@
                "Ken Williams <kwilliams@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -20040,7 +19782,7 @@
                "Adrian Howard <adrianh@quietstars.com>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "perl_5"
             ],
@@ -21430,7 +21172,7 @@
                "Sean M. Burke <sburke@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.131560",
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.131560",
             "license" : [
                "artistic_2"
             ],
@@ -22523,9 +22265,7 @@
          "name" : "common::sense",
          "pathname" : "M/ML/MLEHMANN/common-sense-3.6.tar.gz",
          "provides" : {
-            "common::sense" : {
-               "file" : "sense.pm.PL"
-            }
+            "common::sense" : {}
          },
          "target" : "common::sense",
          "version" : "3.6"
