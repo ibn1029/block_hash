@@ -19,6 +19,20 @@
 </div>
 
 <div class="row voffset30">
+  <h3><i class="icon-tags"></i> Hash tags</h3>
+  <div class="span12">
+    [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
+    <a href="/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23"><span class="label
+      [% IF v.ratio > 0.6 %] label-important label-large
+      [% ELSIF v.ratio > 0.4 %] label-warning label-large
+      [% ELSIF v.ratio > 0.2 %] label-info label-large
+      [% END %]
+    ">[% v.tag %]</span></a>
+    [% END %]
+  </div>
+</div>
+
+<div class="row voffset30">
   <h3><i class="icon-archive"></i> Archive status</h3>
   <div class="span3 offset1">
     <h5 class="zurui-sen">アーカイブしたツイート</h5>
@@ -31,20 +45,6 @@
   <div class="span3">
     <h5 class="zurui-sen">最終更新日時</h5>
     <p class="status_num size24">[% last_updated %]</p>
-  </div>
-</div>
-
-<div class="row voffset30">
-  <h3><i class="icon-tags"></i> Hash tags</h3>
-  <div class="span12">
-    [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
-    <a href="/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23"><span class="label
-      [% IF v.ratio > 0.6 %] label-important label-large
-      [% ELSIF v.ratio > 0.4 %] label-warning label-large
-      [% ELSIF v.ratio > 0.2 %] label-info label-large
-      [% END %]
-    ">[% v.tag %]</span></a>
-    [% END %]
   </div>
 </div>
 
