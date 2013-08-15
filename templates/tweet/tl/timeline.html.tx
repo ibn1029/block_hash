@@ -54,12 +54,20 @@
 
       </div>
       [% END %]
+      <div id="loading"><img src="images/loading.gif"></div>
     </div>
     <script>
       <!--
       $(function() {
         $.autopager({
-          content: '#timeline'
+          content: '#timeline',
+          link: 'a[rel=next]', /* default */
+          start: function() {
+            $("#loading").fadeIn("fast");
+          },
+          load: function() {
+            $("#loading").fadeOut("fast");
+          },
           /*load: function() {
             this.before('[%- INCLUDE "common/ad/text_adsense.html.tx" -%]');
           }*/

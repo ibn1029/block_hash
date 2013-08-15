@@ -120,6 +120,9 @@ h1.title { margin-top:60px; }
     font-size: 0.8em;
     padding: 4px 10px;
 }
+
+#loading { display: none; }
+
 /*---- footer part ----*/
 .footer {
     margin-top: 50px;
