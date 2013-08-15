@@ -54,6 +54,7 @@
 
       </div>
       [% END %]
+      [% INCLUDE 'common/ad/google/text_320x50.html.tx' %]
       <div class="loading"><img src="/img/ajax-loader.gif"></div>
     </div>
     <script>
