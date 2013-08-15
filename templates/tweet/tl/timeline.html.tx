@@ -51,10 +51,8 @@
 
           <div>[% highlight(v.tweet.text) %]</div>
         </div>
-
       </div>
       [% END %]
-      [% INCLUDE 'common/ad/google/text_468x60.html.tx' %]
       <div class="loading"><img src="/img/ajax-loader.gif"></div>
     </div>
     <script>
@@ -64,14 +62,11 @@
           content: '#timeline',
           link: 'a[rel=next]', /* default */
           start: function() {
-            $(".loading").fadeIn("fast");
+            $(".loading").show();
           },
           load: function() {
             $(".loading").hide();
-          },
-          /*load: function() {
-            this.before('[%#- INCLUDE "common/ad/text_adsense.html.tx" -%]');
-          }*/
+          }
         });
       });
       //-->
