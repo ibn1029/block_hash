@@ -121,7 +121,10 @@ h1.title { margin-top:60px; }
     padding: 4px 10px;
 }
 
-#loading { display: none; }
+.loading {
+    display: none;
+    text-align: center;     
+}
 
 /*---- footer part ----*/
 .footer {

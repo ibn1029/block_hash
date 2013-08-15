@@ -22,6 +22,7 @@ enabled=1
 _END_
 
 sudo yum install nginx mysql-server mysql-devel openssl-devel
+sudo yum install policycoreutils # for iptables save
 mysqladmin -u root passowrd ****
 
 vi /etc/ntp.conf

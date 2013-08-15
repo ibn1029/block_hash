@@ -54,7 +54,7 @@
 
       </div>
       [% END %]
-      <div id="loading"><img src="images/loading.gif"></div>
+      <div class="loading"><img src="/img/ajax-loader.gif"></div>
     </div>
     <script>
       <!--
@@ -63,13 +63,13 @@
           content: '#timeline',
           link: 'a[rel=next]', /* default */
           start: function() {
-            $("#loading").fadeIn("fast");
+            $(".loading").fadeIn("fast");
           },
           load: function() {
-            $("#loading").fadeOut("fast");
+            $(".loading").hide();
           },
           /*load: function() {
-            this.before('[%- INCLUDE "common/ad/text_adsense.html.tx" -%]');
+            this.before('[%#- INCLUDE "common/ad/text_adsense.html.tx" -%]');
           }*/
         });
       });
