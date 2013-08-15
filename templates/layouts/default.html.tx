@@ -15,6 +15,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="/js/jquery.autopager-1.0.0.min.js"></script>
     <title>[% title %]</title>
   </head>
   <body>

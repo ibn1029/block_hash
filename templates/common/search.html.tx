@@ -29,7 +29,7 @@
           [% h = 0; WHILE h <= 23 %]
           <option value="[% h %]"[% IF start_time == h %] selected[% END %]>[% h %]</option>
           [% h = h + 1; END %]
-        </select>
+        </select>時
       </div>
     </div>
 
@@ -41,7 +41,7 @@
           [% h = 0; WHILE h <= 23 %]
           <option value="[% h %]"[% IF end_time == h %] selected[% END %]>[% h %]</option>
           [% h = h + 1; END %]
-        </select>
+        </select>時
       </div>
     </div>
 

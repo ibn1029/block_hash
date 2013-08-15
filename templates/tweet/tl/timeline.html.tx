@@ -55,7 +55,18 @@
       </div>
       [% END %]
     </div>
-
+    <script>
+      <!--
+      $(function() {
+        $.autopager({
+          content: '#timeline'
+          /*load: function() {
+            this.before('[%- INCLUDE "common/ad/text_adsense.html.tx" -%]');
+          }*/
+        });
+      });
+      //-->
+    </script>
   </div>
 </div>
 
