@@ -10,9 +10,9 @@ use Data::Dumper;
 
 BEGIN {
     warn Dumper $FindBin::Bin;
+    my $blockfm_friends_path = File::Spec->catdir($FindBin::Bin, qw/.. config blockfm_friends.pl/);
     my $blockfm_friends_path_dev = File::Spec->catdir($FindBin::Bin, qw/.. .. config blockfm_friends.pl/);
-    my $blockfm_friends_path_prod = File::Spec->catdir($FindBin::Bin, qw/.. config blockfm_friends.pl/);
-    open our $fh, '<', $blockfm_friends_path_dev or $blockfm_friends_path_prod or die "not found. $!";
+    open our $fh, '<', $blockfm_friends_path or $blockfm_friends_path_dev or die "not found. $!";
     my $str;
     while (my $line = <$fh>) {
         $str .= $line;
