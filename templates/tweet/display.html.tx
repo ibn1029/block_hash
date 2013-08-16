@@ -12,7 +12,7 @@
     [% INCLUDE "common/ad/side_adsense.html.tx" %]
   </div>
 </div>
-<div class="row">
+<div class="row voffset50">
   <div class="span10 offset1">
     [% INCLUDE "common/ad/foot_adsense.html.tx" %]
   </div>
