@@ -23,11 +23,11 @@
     <div id="timeline">
       [% FOREACH v in tweets %]
       <div class="media tweet[% IF v.blockfm_friend %] blockfm_friend[% END %]">
-
         <div class="pull-left">
-          <img src="[% v.tweet.user.profile_image_url %]" class="profile_img">
+          <a href="https://twitter.com/[% v.tweet.user.screen_name %]">
+            <img src="[% v.tweet.user.profile_image_url %]" class="profile_img">
+          </a>
         </div>
-
         <div class="media-body">
           <div class="userinfo">
             <span class="id"><strong>[% v.tweet.user.name %]</strong></span>
@@ -39,9 +39,12 @@
             [% IF v.media_type == 'instagram' %]
             <iframe width="530" height="620" src="[% v.media_data %]embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
             [% ELSIF v.media_type == 'vine' %]
-            <iframe class="vine-embed" src="[% v.media_data %]/embed/simple" width="320" height="320" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+            <iframe class="vine-embed" src="[% v.media_data %]/embed/simple" width="320" height="320" frameborder="0"></iframe>
+            <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
             [% ELSIF v.media_type == 'owly' %]
-            <a href="[% v.media_data %]" target="_blank"><img src="http://static.ow.ly/photos/normal/[% for_owly(v.media_data) %].jpg" alt="Owly Images" /></a>
+            <a href="[% v.media_data %]" target="_blank">
+              <img src="http://static.ow.ly/photos/normal/[% for_owly(v.media_data) %].jpg" alt="Owly Images" />
+            </a>
             [% ELSIF v.media_type == 'youtube' %]
             <iframe width="560" height="315" src="//www.youtube.com/embed/[% for_youtube(v.media_data) %]" frameborder="0" allowfullscreen></iframe>
             [% ELSIF v.media_type == 'soundcloud' %]
@@ -53,14 +56,19 @@
         </div>
       </div>
       [% END %]
+      <div class="center">[% INCLUDE 'common/ad/google/text_468x60.html.tx' %]</div>
     </div>
+
     [% IF pager.next_page %]
     <div id="bottom_paging">
-      <a href="[% c.url_with.query([ page => pager.next_page ]) %]" rel="next"><i class="icon-chevron-sign-right"></i> 次を表示する(<span id="next_page">2</span>)</a>
+      <a href="[% c.url_with.query([ page => pager.next_page ]) %]" rel="next">
+        <i class="icon-chevron-sign-right"></i> 次を表示する(<span id="next_page">2</span>)
+      </a>
     </div>
     [% END %]
     <div id="loading"><img src="/img/ajax-loader.gif"></div>
     <div id="no_more_tweet">ツイートはありません</div>
+
     <script>
       <!--
       var last_page = [% pager.last_page%];

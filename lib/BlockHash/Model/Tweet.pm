@@ -3,10 +3,21 @@ use BlockHash::DB;
 use Time::Piece;
 use Time::Seconds;
 use Data::Page::Navigation;
+use FindBin;
+use File::Spec;
 
 use Data::Dumper;
 
-my $ROWS = 30;
+BEGIN {
+    my $blockfm_friends_path = File::Spec->catdir($FindBin::Bin, qw/.. .. config blockfm_friends.pl/);
+    open our $fh, '<', $blockfm_friends_path or die "not found. $!";
+    my $str;
+    while (my $line = <$fh>) {
+        $str .= $line;
+    }
+    our @BLOCKFM_FRIEND_IDS = split /,/, $str;
+}
+our $ROWS = 30;
 
 sub get_status {
     my $self = shift;
@@ -113,13 +124,13 @@ sub _get_tweets {
         my $t = $row->created_at;
         my $t_str = $t->ymd.' '.$t->hms;
         my $tweet_json = $row->tweet_json;
-        my $screen_name = $tweet_json->{user}{screen_name};
+        my $user_id = $tweet_json->{user}{id};
         push @tweets, {
             tweet => $tweet_json,
             date => $t_str,
             media_type => $row->media_type,
             media_data => $row->media_data,
-            #blockfm_friend => _check_blockfm_friend($screen_name),
+            blockfm_friend => $self->_check_blockfm_friend($user_id),
         };
     }
 
@@ -127,9 +138,15 @@ sub _get_tweets {
 }
 
 sub _check_blockfm_friend {
-    my ($self, $id) = @_;
-
-    return 1;
+    my ($self, $user_id) = @_;
+    my $is_friend = 0;
+    for my $id (@BLOCKFM_FRIEND_IDS) {
+        if ($user_id == $id) {
+            $is_friend = 1;
+            last;
+        }
+    }
+    return $is_friend ? 1 : 0;
 }
 
 1;

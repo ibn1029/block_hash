@@ -18,13 +18,16 @@ use Data::Dumper;
 
 our $self;
 setup();
-my $result = $self->{nt}->friends_ids({user_id => 'blockfm'}) or die "twitter api error. $!";
-warn Dumper $result;
+
+my @friend_ids;
+my $result = $self->{nt}->friends_ids({ screen_name => 'blockfmjp'}) or die "failed twitter api. $!\n";
+push @friend_ids, @{$result->{ids}};
+
 open my $fh, '>', File::Spec->catdir($FindBin::Bin, qw/.. .. config blockfm_friends.pl/);
-for my $friend (@$result) {
-    print $fh $fritnd->{};
-}
+my $joined_ids = join ',', @friend_ids;
+print $fh $joined_ids;
 close $fh;
+
 exit;
 
 #--------------------------------------------------------------------------------------------
