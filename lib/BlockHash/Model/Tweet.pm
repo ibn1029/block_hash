@@ -1,4 +1,5 @@
 package BlockHash::Model::Tweet;
+use BlockHash;
 use BlockHash::DB;
 use Time::Piece;
 use Time::Seconds;
@@ -10,9 +11,12 @@ use Data::Dumper;
 
 BEGIN {
     warn Dumper $FindBin::Bin;
+    my $app = BlockHash->new;
     my $blockfm_friends_path = File::Spec->catdir($FindBin::Bin, qw/.. config blockfm_friends.pl/);
-    my $blockfm_friends_path_dev = File::Spec->catdir($FindBin::Bin, qw/.. .. config blockfm_friends.pl/);
-    open our $fh, '<', $blockfm_friends_path or $blockfm_friends_path_dev or die "not found. $!";
+    if ($app->mode eq 'development') {
+        $blockfm_friends_path = File::Spec->catdir($FindBin::Bin, qw/.. .. config blockfm_friends.pl/);
+    }
+    open our $fh, '<', $blockfm_friends_path or die "not found. $!";
     my $str;
     while (my $line = <$fh>) {
         $str .= $line;

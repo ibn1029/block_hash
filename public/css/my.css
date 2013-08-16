@@ -109,11 +109,17 @@ h1.title { margin-top:60px; }
     height: 50px;
 }
 .tweet .userinfo { margin-bottom: 6px; }
-.tweet .userinfo .id { color: #DF1515; }
-.tweet .userinfo .timestamp { font-size: 0.8em; }
+.tweet .userinfo .username { color: #DF1515; }
+/*.tweet .userinfo .timestamp { font-size: 0.8em; }*/
+.tweet .timestamp {
+    font-size: 0.8em;
+    margin-top: 6px;
+}
 .tweet .userinfo .url { color: #DF1515; }
 .blockfm_friend {
-    border: 1px solid #f8f8f8;
+    border: 2px solid #333;
+    background-color: #f2f2f2;
+    color: #505050;
 }
 
 

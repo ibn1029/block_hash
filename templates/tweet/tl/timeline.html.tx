@@ -24,15 +24,14 @@
       [% FOREACH v in tweets %]
       <div class="media tweet[% IF v.blockfm_friend %] blockfm_friend[% END %]">
         <div class="pull-left">
-          <a href="https://twitter.com/[% v.tweet.user.screen_name %]">
+          <a href="https://twitter.com/[% v.tweet.user.screen_name %]" target=_blank>
             <img src="[% v.tweet.user.profile_image_url %]" class="profile_img">
           </a>
         </div>
         <div class="media-body">
           <div class="userinfo">
-            <span class="id"><strong>[% v.tweet.user.name %]</strong></span>
-            <span class="muted">&nbsp;@[% v.tweet.user.screen_name %]</span>
-            <span class="pull-right timestamp">[% v.date %]</span>
+            <strong class="username">[% v.tweet.user.name %]</strong>
+            <small class="muted">&nbsp;@[% v.tweet.user.screen_name %]</small>
           </div>
 
           <div>
@@ -53,6 +52,7 @@
           </div>
 
           <div>[% highlight(v.tweet.text) %]</div>
+          <div class="pull-right timestamp muted">[% v.date %]</div>
         </div>
       </div>
       [% END %]
