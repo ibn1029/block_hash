@@ -67,6 +67,7 @@ h1.title { margin-top:60px; }
 .display-none { display: none; }
 
 /*---- content part ----*/
+.center { text-align: center; }
 .voffset10 { margin-top: 10px; }
 .voffset20 { margin-top: 20px; }
 .voffset30 { margin-top: 30px; }
@@ -111,6 +112,10 @@ h1.title { margin-top:60px; }
 .tweet .userinfo .id { color: #DF1515; }
 .tweet .userinfo .timestamp { font-size: 0.8em; }
 .tweet .userinfo .url { color: #DF1515; }
+.blockfm_friend {
+    border: 1px solid #f8f8f8;
+}
+
 
 #pagination li >  a.paging {
     background-color: #333;
@@ -121,9 +126,13 @@ h1.title { margin-top:60px; }
     padding: 4px 10px;
 }
 
-.loading {
+#loading {
     display: none;
     text-align: center;     
+}
+#no_more_tweet {
+    display: none;
+    text-align: center;
 }
 
 /*---- footer part ----*/

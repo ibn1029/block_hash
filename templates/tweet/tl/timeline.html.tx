@@ -22,7 +22,7 @@
 
     <div id="timeline">
       [% FOREACH v in tweets %]
-      <div class="media tweet">
+      <div class="media tweet[% IF v.blockfm_friend %] blockfm_friend[% END %]">
 
         <div class="pull-left">
           <img src="[% v.tweet.user.profile_image_url %]" class="profile_img">
@@ -53,26 +53,40 @@
         </div>
       </div>
       [% END %]
-      <div class="loading"><img src="/img/ajax-loader.gif"></div>
     </div>
+    <div id="loading"><img src="/img/ajax-loader.gif"></div>
+    <div id="no_more_tweet">ツイートはありません</div>
+    [% IF pager.next_page %]
+    <div id="bottom_paging">
+      <a href="[% c.url_with.query([ page => pager.next_page ]) %]" rel="next"><i class="icon-chevron-sign-right"></i> 次を表示する(<span id="next_page">2</span>)</a>
+    </div>
+    [% END %]
     <script>
       <!--
+      var last_page = [% pager.last_page%];
       $(function() {
         $.autopager({
           content: '#timeline',
           link: 'a[rel=next]', /* default */
-          start: function() {
-            $(".loading").show();
+          start: function(current, next) {
+            $("#loading").show();
           },
-          load: function() {
-            $(".loading").hide();
+          load: function(current, next) {
+            $("#loading").hide();
+            if (next.page <= last_page) {
+              $("#next_page").text(next.page);
+            } else {
+              $("#bottom_paging").hide();
+              $("#no_more_tweet").show();
+            }
           }
         });
       });
       //-->
     </script>
+
   </div>
 </div>
 
-[% INCLUDE "common/pager.html.tx" %]
+[%# INCLUDE "common/pager.html.tx" %]
 

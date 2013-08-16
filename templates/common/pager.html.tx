@@ -28,7 +28,7 @@
     
         [% IF pager.next_page %]
         <li>
-          <a href="[% c.url_with.query([ page => pager.next_page ]) %]" rel="next">&nbsp;&nbsp;&nbsp;<i class="icon-chevron-right"></i>&nbsp;&nbsp;&nbsp;</a>
+          <a href="[% c.url_with.query([ page => pager.next_page ]) %]">&nbsp;&nbsp;&nbsp;<i class="icon-chevron-right"></i>&nbsp;&nbsp;&nbsp;</a>
         </li>
         <li>
           <a href="[% c.url_with.query([ page => pager.last_page ]) %]"><i class="icon-fast-forward"></i></a>

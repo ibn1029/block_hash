@@ -6,7 +6,8 @@ use Data::Page::Navigation;
 
 use Data::Dumper;
 
-my $ROWS = 30;
+#my $ROWS = 30;
+my $ROWS = 3;
 
 sub get_status {
     my $self = shift;
@@ -112,14 +113,25 @@ sub _get_tweets {
     for my $row (@$rs) {
         my $t = $row->created_at;
         my $t_str = $t->ymd.' '.$t->hms;
+        #my $tweet_json = $row->tweet_json;
+        my $screen_name = $tweet_json->{user}{screen_name};
         push @tweets, {
-            tweet =>$row->tweet_json,
+            #tweet => $tweet_json,
             date => $t_str,
             media_type => $row->media_type,
             media_data => $row->media_data,
+            #blockfm_friend => _check_blockfm_friend($screen_name),
+            blockfm_friend => 1, 
         };
     }
+
     return \@tweets, $pager, $tweet_count;
+}
+
+sub _check_blockfm_friend {
+    my ($self, $id) = @_;
+
+    return 1;
 }
 
 1;
