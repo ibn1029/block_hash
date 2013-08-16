@@ -119,7 +119,7 @@ sub _get_tweets {
             date => $t_str,
             media_type => $row->media_type,
             media_data => $row->media_data,
-            blockfm_friend => _check_blockfm_friend($screen_name),
+            #blockfm_friend => _check_blockfm_friend($screen_name),
         };
     }
 
