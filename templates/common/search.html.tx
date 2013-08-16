@@ -24,24 +24,24 @@
     <div class="control-group">
       <label class="control-label" for="inputEmail">検索開始日時</label>
       <div class="controls">
-        <input type="text" name="start_date" id="detail-search-start-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% start_date %]">
+        <input type="text" name="start_date" id="detail-search-start-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% start_date || yesterday() %]">
         <select name="start_time" class="input-mini">
           [% h = 0; WHILE h <= 23 %]
-          <option value="[% h %]"[% IF start_time == h %] selected[% END %]>[% h %]</option>
+          <option value="[% h %]"[% IF h == start_time %] selected[% END %]>[% h %]</option>
           [% h = h + 1; END %]
-        </select>時
+        </select><span class="muted">時00分00秒</span>
       </div>
     </div>
 
     <div class="control-group">
       <label class="control-label" for="inputEmail">検索終了日時</label>
       <div class="controls">
-        <input type="text" name="end_date" id="detail-search-end-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% end_date %]">
+        <input type="text" name="end_date" id="detail-search-end-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% end_date || today() %]">
         <select name="end_time" class="input-mini">
           [% h = 0; WHILE h <= 23 %]
-          <option value="[% h %]"[% IF end_time == h %] selected[% END %]>[% h %]</option>
+          <option value="[% h %]"[% IF h == end_time or h == 23%] selected[% END %]>[% h %]</option>
           [% h = h + 1; END %]
-        </select>時
+        </select><span class="muted">時59分59秒</span>
       </div>
     </div>
 
@@ -72,6 +72,7 @@
     source: availableTags,
     minLength: 2
   });
+
   var pickers = ['search-date', 'detail-search-start-date', 'detail-search-end-date'];
   for (var i = 0; i < pickers.length; i++) {
     $('#'+pickers[i]).datepicker({
@@ -79,8 +80,10 @@
       dateFormat: 'yy-mm-dd',
     });
   }
+
   $('#detail').toggle(
     function () {
+      $('#detail-search-tag').val($('#search-tag').val());
       $('#search-box').animate({ height: '340px' }, 300);
       $('#detail-search').fadeIn("slow", "", function() { $('#detail-search-tag').focus(); });
       

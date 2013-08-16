@@ -6,13 +6,13 @@ use Data::Dumper;
 
 sub top {
     my $self = shift;
-    #my ($total_tweets, $hashtags, $last_updated, $tag_cloud) = BlockHash::Model::Tweet->get_status;
+    my ($total_tweets, $hashtags, $last_updated, $tag_cloud) = BlockHash::Model::Tweet->get_status;
     $self->render(
-        #is_toppage => 1,
-        #total_tweets => $total_tweets,
-        #hashtags => $hashtags,
-        #last_updated => $last_updated,
-        #tag_cloud => $tag_cloud,
+        is_toppage => 1,
+        total_tweets => $total_tweets,
+        hashtags => $hashtags,
+        last_updated => $last_updated,
+        tag_cloud => $tag_cloud,
     );
 }
 

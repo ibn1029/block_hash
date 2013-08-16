@@ -44,6 +44,11 @@ sub startup {
                     my $t = localtime;
                     return $t->ymd;
                 },
+                yesterday => sub {
+                    my $t = localtime;
+                    $t -= ONE_DAY;
+                    return $t->ymd;
+                },
                 week_ago => sub {
                     my $t = localtime;
                     $t = $t - 60 * 60 * 24 * 7;
