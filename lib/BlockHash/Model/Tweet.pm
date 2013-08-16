@@ -9,6 +9,7 @@ use File::Spec;
 use Data::Dumper;
 
 BEGIN {
+    warn Dumper $FindBin::Bin;
     my $blockfm_friends_path = File::Spec->catdir($FindBin::Bin, qw/.. .. config blockfm_friends.pl/);
     open our $fh, '<', $blockfm_friends_path or die "not found. $!";
     my $str;
