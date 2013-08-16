@@ -54,13 +54,13 @@
       </div>
       [% END %]
     </div>
-    <div id="loading"><img src="/img/ajax-loader.gif"></div>
-    <div id="no_more_tweet">ツイートはありません</div>
     [% IF pager.next_page %]
     <div id="bottom_paging">
       <a href="[% c.url_with.query([ page => pager.next_page ]) %]" rel="next"><i class="icon-chevron-sign-right"></i> 次を表示する(<span id="next_page">2</span>)</a>
     </div>
     [% END %]
+    <div id="loading"><img src="/img/ajax-loader.gif"></div>
+    <div id="no_more_tweet">ツイートはありません</div>
     <script>
       <!--
       var last_page = [% pager.last_page%];
