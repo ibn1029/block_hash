@@ -45,8 +45,10 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     </script>
     [% END %]
 
+    <div>
     <div class="container voffset50">
       [% content %]
+    </div>
     </div>
 
     <footer class="footer">

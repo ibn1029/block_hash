@@ -13,14 +13,38 @@ table {
 };
 
 table {
-    name 'archive';
-    pk 'archive_id';
+    name 'analyzed_weekly_moment';
+    pk 'id';
     columns (
-        {name => 'archive_id', type => 4},
-        {name => 'prog_id', type => 4},
-        {name => 'url', type => 12},
-        {name => 'started_at', type => 11},
-        {name => 'stopped_at', type => 11},
+        {name => 'id', type => 4},
+        {name => 'job_id', type => 4},
+        {name => 'hashtag', type => 12},
+        {name => 'count', type => 4},
+        {name => 'count_from', type => 11},
+        {name => 'count_to', type => 11},
+    );
+};
+
+table {
+    name 'analyzed_weekly_moment_job';
+    pk 'job_id';
+    columns (
+        {name => 'job_id', type => 4},
+        {name => 'span_from', type => 11},
+        {name => 'span_to', type => 11},
+        {name => 'created_at', type => 11},
+    );
+};
+
+table {
+    name 'hashtag';
+    pk 'tag_id';
+    columns (
+        {name => 'tag_id', type => 4},
+        {name => 'hastag', type => 12},
+        {name => 'title', type => 12},
+        {name => 'created_at', type => 11},
+        {name => 'updated_at', type => 11},
     );
 };
 
@@ -29,17 +53,13 @@ table {
     pk 'prog_id';
     columns (
         {name => 'prog_id', type => 4},
-        {name => 'prog_name', type => 12},
-        {name => 'hash_tags', type => 12},
-        {name => 'note', type => 12},
-        {name => 'prog_week_day', type => 4},
-        {name => 'prog_day', type => 9},
-        {name => 'prog_start_at', type => 10},
-        {name => 'prog_end_at', type => 10},
+        {name => 'prog_date', type => 9},
+        {name => 'prog_start', type => 10},
+        {name => 'prog_end', type => 10},
+        {name => 'title', type => 12},
+        {name => 'subtitle', type => 12},
+        {name => 'hashtag', type => 12},
         {name => 'created_at', type => 11},
-        {name => 'updated_at', type => 11},
-        {name => 'created_by', type => 12},
-        {name => 'updated_by', type => 12},
     );
 };
 
@@ -50,11 +70,11 @@ table {
         {name => 'id', type => 4},
         {name => 'tweet_id', type => 4},
         {name => 'hashtags', type => 12},
-        {name => 'created_at', type => 11},
-        {name => 'tweet_json', type => 12},
         {name => 'url', type => 12},
         {name => 'media_type', type => 12},
         {name => 'media_data', type => 12},
+        {name => 'created_at', type => 11},
+        {name => 'tweet_json', type => 12},
         {name => 'is_valid', type => 4},
     );
 

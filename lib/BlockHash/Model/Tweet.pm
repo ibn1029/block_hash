@@ -30,14 +30,18 @@ sub get_status {
 
     my $db = BlockHash::DB->new;
 
+    # アーカイブしたツイート数
     my $total_tweets = $db->count('tweet', '*');
 
+    # アーカイブしたハッシュタグ
     my $rs1 = $db->single_by_sql(qq/select count(*) as hashtags from (select hashtags from tweet group by hashtags) as hashtag_group;/);
     my $hashtags = $rs1->hashtags;
 
+    # 最終更新日時
     my $rs2 = $db->single_by_sql(qq/select max(created_at) as last_updated_at from tweet/);
     my $t = $rs2->last_updated_at;
 
+    # タグクラウド
     my $rs3 = $db->search(analyzed_tag => {});
     my $rows = $rs3->all;
     my $max = 0;
@@ -53,7 +57,21 @@ sub get_status {
         };
     }
 
-    return $total_tweets, $hashtags, $t->ymd.' '.$t->hms, \@tag_cloud;
+    # 週間週間ツイートジョブ
+    my $rs4 = $db->single_by_sql(qq/select * from analyzed_weekly_moment_job order by job_id desc limit 1/);
+    my $weekly_moment_job = {
+        job_id => $rs4->job_id,
+        from => $rs4->span_from,
+        to => $rs4->span_to,
+        created_at => $rs4->created_at,
+    };
+
+    # 週間週間ツイートトップ10
+    my $rs5 = $db->search_by_sql(qq/select hashtag, count, count_from, count_to from analyzed_weekly_moment where job_id = $weekly_moment_job->{job_id} order by count desc limit 10/);
+    my $weekly_moment = [ $rs5->all ];
+
+
+    return $total_tweets, $hashtags, $t->ymd.' '.$t->hms, \@tag_cloud, $weekly_moment_job, $weekly_moment;
 }
 
 sub search {

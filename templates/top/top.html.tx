@@ -19,7 +19,7 @@
 </div>
 
 <div class="row voffset30">
-  <h3><i class="icon-tags"></i> Hash tags</h3>
+  <h3><i class="icon-tags"></i> Hashtags</h3>
   <div class="span12">
     [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
     <a href="/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23"><span class="label
@@ -29,6 +29,35 @@
       [% END %]
     ">[% v.tag %]</span></a>
     [% END %]
+  </div>
+</div>
+
+<div class="row voffset30">
+  <h3><i class="icon-list-ol"></i> Weekly top tweets</h3>
+  <div class="span10 offset1">
+    <p>1週間<small>([% weekly_moment_job.from %]から[% weekly_moment_job.to %]まで)</small>の瞬間ツイート数の集計結果</p>
+    <p><small>([% weekly_moment_job.created_at %]更新)</small></p>
+    <table class="table table-condensed voffset20">
+      <thead>
+        <tr>
+          <th class="zurui-border">ランキング</th>
+          <th class="zurui-border">ツイート数</th>
+          <th class="zurui-border">ハッシュタグ</th>
+          <th class="zurui-border">時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        [% num = 1 %]
+        [% FOREACH v in weekly_moment %]
+        <tr>
+          <td class="zurui-border">[% num %]位</td>
+          <td class="zurui-border">[% v.count %]</td>
+          <td class="zurui-border">[% v.hashtag %]</td>
+          <td class="zurui-border"><small>[% v.count_from %] - [% v.count_to %]</small></td>
+        </tr>
+        [% num = num + 1; END %]
+      </tbody>
+    </table>
   </div>
 </div>
 
