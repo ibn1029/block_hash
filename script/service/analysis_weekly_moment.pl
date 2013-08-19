@@ -56,11 +56,11 @@ sub analysis {
     );
 
     # １周間のツイート総数
-    my $total_sth = $self->{dbh}->prepare(qq/select count(*) as total from tweet where '$last_one_week' <= created_at and  created_at < '$deadline'/);
-    $total_sth->execute;
-    my $total_rs = $total_sth->fetchrow_hashref();
-    $total_sth->finish;
-    my $total = $total_rs->{total};
+    #my $total_sth = $self->{dbh}->prepare(qq/select count(*) as total from tweet where '$last_one_week' <= created_at and  created_at < '$deadline'/);
+    #$total_sth->execute;
+    #my $total_rs = $total_sth->fetchrow_hashref();
+    #$total_sth->finish;
+    #my $total = $total_rs->{total};
 
     # １周間のハッシュタグ種類
     my $tag_sth = $self->{dbh}->prepare(qq/select hashtags from tweet where '$last_one_week' <= created_at and  created_at < '$deadline' group by hashtags/);
@@ -71,7 +71,7 @@ sub analysis {
     for my $row (@$tag_rs) {
         map {
             my $tag = $_;
-            $tag =~ s/\s*(\S+)\s*/$1/;
+            $tag =~ s/\s//g;
             $tag =~ s/#(.+)/$1/;
             $tags{encode_utf8($tag)} = +{};
         } split /,/, $row->{hashtags};
@@ -97,10 +97,12 @@ sub analysis {
         # 時間内のhashtag毎のtweet件数を集計
         my %tag_count;
         for my $row (@$rs) {
-            my $tag_str = $row->{hashtags};
-            for my $tag (keys %tags) {
-                if ($tag_str =~ /$tag/) {
-                    $tag_count{$tag}++;         
+            my @period_tags = split /,/, encode_utf8($row->{hashtags});
+            for my $period_tag (@period_tags) {
+                for my $tag (keys %tags) {
+                    if ($period_tag eq $tag) {
+                        $tag_count{$tag}++;         
+                    }
                 }
             }
         }
@@ -120,6 +122,7 @@ sub analysis {
             count => $max{count},
         };
     }
+warn Dumper \@score;
     return \%span, \@score;
 }
 

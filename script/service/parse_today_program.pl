@@ -11,8 +11,8 @@ use Encode;
 use Data::Dumper;
 
 our $self;
-#my $url = 'http://block.fm';
-my $url = 'http://172.16.100.102:5000/fafaasiiuouurqfaf9989r12.html';
+my $url = 'http://block.fm';
+#my $url = 'http://172.16.100.102:5000/fafaasiiuouurqfaf9989r12.html';
 my $t = localtime;
 my $today = $t->ymd('');
 
@@ -48,7 +48,8 @@ sub setup {
 sub fetch {
     my ($url, $today) = @_;
     my @programs;
-    my $wq = Web::Query->new_from_url($url);
+    my $wq = Web::Query->new_from_url($url)
+        or die "Cannot get a resource from $url: " . Web::Query->last_response()->status_line;
     $wq->find("#date${today} .tt_time")->each(sub {
         my ($i, $e) = @_;
         my ($start, $end) = split /～/, encode_utf8($e->find('.time')->text);
