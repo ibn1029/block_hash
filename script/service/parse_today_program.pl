@@ -5,6 +5,9 @@ use FindBin;
 use File::Path;
 use DBI;
 use Time::Piece;
+use File::Which;
+use Test::TCP;
+use Selenium::Remote::Driver;
 use Web::Query;
 use Encode;
 
@@ -47,9 +50,26 @@ sub setup {
 
 sub fetch {
     my ($url, $today) = @_;
+
+    my $bin= scalar which 'phantomjs';
+    my $phantomjs = Test::TCP->new(
+        code => sub {
+            my $port = shift; # assign undefined local port
+            exec $bin, "--webdriver=$port";
+            die "cannot execute $bin: $!";
+        },
+    );
+
+    my $driver = Selenium::Remote::Driver->new(
+        remote_server_addr => '127.0.0.1',
+        port => $phantomjs->port,
+    );
+    $driver->debug_off;
+    $driver->get($url);
+    sleep 2;
+    my $res = $driver->get_page_source;
     my @programs;
-    my $wq = Web::Query->new_from_url($url)
-        or die "Cannot get a resource from $url: " . Web::Query->last_response()->status_line;
+    my $wq = Web::Query->new_from_html($res);
     $wq->find("#date${today} .tt_time")->each(sub {
         my ($i, $e) = @_;
         my ($start, $end) = split /～/, encode_utf8($e->find('.time')->text);
