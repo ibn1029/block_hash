@@ -18,6 +18,8 @@ requires 'Config::Pit', '== 0.04';
 requires 'Data::Page::Navigation', '== 0.06';
 requires 'Web::Query', '== 0.23';
 requires 'Qudo', '== 0.0213';
+requires 'Selenium::Remote::Driver', '== 0.17';
+requires 'Test::TCP', '== 2.00';
 
 requires 'Plack', '== 1.0028';
 #requires 'Plack::Handler::Starman', '== 0.4003';
