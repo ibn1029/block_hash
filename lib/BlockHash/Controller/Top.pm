@@ -14,8 +14,8 @@ sub top {
         hashtags => $hashtags,
         last_updated => $last_updated,
         tag_cloud => $tag_cloud,
-        weekly_moment_job => $weekly_moment_job,
-        weekly_moment => $weekly_moment,
+        #weekly_moment_job => $weekly_moment_job,
+        #weekly_moment => $weekly_moment,
     );
 }
 

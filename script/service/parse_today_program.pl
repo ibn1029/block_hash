@@ -5,6 +5,7 @@ use FindBin;
 use File::Path;
 use DBI;
 use Time::Piece;
+use Time::Seconds;
 use File::Which;
 use Test::TCP;
 use Selenium::Remote::Driver;
@@ -17,6 +18,7 @@ our $self;
 my $url = 'http://block.fm';
 #my $url = 'http://172.16.100.102:5000/fafaasiiuouurqfaf9989r12.html';
 my $t = localtime;
+#$t = $ - ONE_DAY * 1;  # only manual
 my $today = $t->ymd('');
 
 setup();

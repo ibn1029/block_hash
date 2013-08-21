@@ -31,7 +31,7 @@
     [% END %]
   </div>
 </div>
-
+<!--
 <div class="row voffset30">
   <h3><i class="icon-list-ol"></i> Weekly top tweets</h3>
   <div class="span10 offset1">
@@ -60,7 +60,7 @@
     </table>
   </div>
 </div>
-
+//-->
 <div class="row voffset30">
   <h3><i class="icon-archive"></i> Archive status</h3>
   <div class="span3 offset1">
