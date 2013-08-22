@@ -71,6 +71,7 @@ sub startup {
     $r->namespaces(['BlockHash::Controller']);
 
     $r->get('/')->to('top#top');
+    $r->get('/3')->to('top#top3');
     $r->post('/search')->to('tweet#search');
     $r->post('/search/detail')->to('tweet#search_detail');
     $r->get('/(:tag)/(:date)')->to('tweet#display');

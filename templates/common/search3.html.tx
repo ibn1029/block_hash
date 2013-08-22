@@ -1,0 +1,116 @@
+<div id="search-box">
+  <form method="post" action="/search" class="form-inline voffset30" role="form">
+    <div class="form-group" style="padding-left: 50px; vertical-align: top;">
+      <input type="text" name="tag" id="search-tag" class="form-control input-lg" style="color:black; font-size:24px;" placeholder="hashtag" value="[% tag %]">
+    </div>
+    <div class="form-group" style="vertical-align: top;">
+      <input type="text" name="date" id="search-date" class="form-control input-lg" style="color:black; font-size:24px;" value="[% date || today() %]">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-lg btn-primary"><i class="icon-search icon-white"></i> 検索</button>
+      <br>
+      <span id="search-detail-adjust">
+        <a href="#" id="detail"><i class="icon-plus"></i><small> 詳細検索</small></a>
+      </span>
+    </div>
+  </form>
+  
+  <div id="detail-search" class="display-none">
+    <form method="post" action="/search/detail" role="form">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="4">詳細検索</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p class="help-block">ハッシュタグ</p></td>
+            <td colspan="2">
+              <input type="text" class="form-control input-sm" name="tag" id="detail-search-tag" style="color:black;" placeholder="hashtag" value="[% tag %]">
+            </td>
+            <td></td>
+          </tr>
+  
+          <tr>
+            <td><p class="help-block">検索開始日時</p></td>
+            <td>
+              <input type="text" class="form-control input-sm" name="start_date" id="detail-search-start-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% start_date || yesterday() %]">
+            </td>
+            <td>
+              <select class="form-control input-sm" name="start_time">
+                [% h = 0; WHILE h <= 23 %]
+                <option value="[% h %]"[% IF h == start_time %] selected[% END %]>[% h %]</option>
+                [% h = h + 1; END %]
+              </select>
+            </td>
+            <td><p class="help-block">時00分00秒</p></td>
+          </tr>
+   
+          <tr>
+            <td><p class="help-block">検索終了日時</p></td>
+            <td>
+              <input type="text" class="form-control input-sm" name="end_date" id="detail-search-end-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% end_date || today() %]">
+            </td>
+            <td>
+              <select class="form-control input-sm" name="end_time">
+                [% h = 0; WHILE h <= 23 %]
+                <option value="[% h %]"[% IF h == end_time or h == 23%] selected[% END %]>[% h %]</option>
+                [% h = h + 1; END %]
+              </select>
+            </td>
+            <td><p class="help-block">時59分59秒</p></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2" align="center">
+              <button type="submit" class="btn btn-lg btn-primary"><i class="icon-search icon-white"></i><small> 詳細検索</small></button>
+            </td>
+            <td></td>
+          </tr>
+        <tbody>
+      </table>
+    </form>
+  </div>
+</div>
+
+<script>
+  var availableTags =[
+    "blockfm","remo_con","techdance","dnbjpn","localize","DJAKi","Basstech","hedkandiradio","mosradio",
+    "tcyradio","oirantv","urbanslice","Hyper_Society","tjo","date_line","tony","カタカナdeハベル",
+    "no_bias","Wickedpedia_Radio","raidsystem","yone_bfm","agx","NewDJ_bfm","radio_REBOOT",
+    "VINYL_HOUSE","bakass","SECOND_SPACE","iflyer_bfm","sodeyama_bfm","EDM_Essentials","dont_blink",
+    "SDM_RADIO","swing_chop","混ぜると危険","reggae_times","STEPPASIDE","Dancing_Dead","PIW",
+    "GWIGGWIGRADIO","blockfmeden","KitsuneRadiobyBeatauCue","SUMMIT_bfm","blockstepper","nowplaying"
+  ];
+  $('#search-tag').autocomplete({
+    source: availableTags,
+    minLength: 2
+  });
+  $('#detail-search-tag').autocomplete({
+    source: availableTags,
+    minLength: 2
+  });
+
+  var pickers = ['search-date', 'detail-search-start-date', 'detail-search-end-date'];
+  for (var i = 0; i < pickers.length; i++) {
+    $('#'+pickers[i]).datepicker({
+      inline: true,
+      dateFormat: 'yy-mm-dd',
+    });
+  }
+
+  $('#detail').toggle(
+    function () {
+      $('#detail-search-tag').val($('#search-tag').val());
+      $('#search-box').animate({ height: '340px' }, 400);
+      $('#detail-search').fadeIn("slow", "", function() { $('#detail-search-tag').focus(); });
+      
+    },
+    function () {
+      $('#detail-search').fadeOut("fast");
+      $('#search-box').animate({ height: '91px' }, 400);
+      $('#search-tag').focus();
+    }
+  );
+</script>
