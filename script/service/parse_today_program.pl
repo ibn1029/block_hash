@@ -18,12 +18,11 @@ our $self;
 my $url = 'http://block.fm';
 #my $url = 'http://172.16.100.102:5000/fafaasiiuouurqfaf9989r12.html';
 my $t = localtime;
-#$t = $ - ONE_DAY * 1;  # only manual
-my $today = $t->ymd('');
+#$t -= ONE_DAY * $ARGV[0] || 1;  # only manual
 
 setup();
-my $programs = fetch($url, $today);
-update_table($today, $programs);
+my $programs = fetch($url, $t);
+update_table($programs);
 exit;
 
 
@@ -51,7 +50,7 @@ sub setup {
 }
 
 sub fetch {
-    my ($url, $today) = @_;
+    my ($url, $t) = @_;
 
     my $bin= scalar which 'phantomjs';
     my $phantomjs = Test::TCP->new(
@@ -71,15 +70,22 @@ sub fetch {
     sleep 2;
     my $res = $driver->get_page_source;
     my @programs;
+    my $date_changed = 0;
     my $wq = Web::Query->new_from_html($res);
-    $wq->find("#date${today} .tt_time")->each(sub {
+    $wq->find('#date'.$t->ymd('').' .tt_time')->each(sub {
         my ($i, $e) = @_;
         my ($start, $end) = split /～/, encode_utf8($e->find('.time')->text);
         my $title_text = encode_utf8($e->find('.title')->text);
         $title_text =~ /(.+)"(.+)"/;
         my $title = $1;
         my $subtitle = $2;
+        # 0時対応
+        if ($start =~ /^0/) {
+            $t += ONE_DAY unless $date_changed;
+            $date_changed = 1;
+        }
         push @programs, {
+            prog_date => $t->ymd(''), 
             title => $title,
             subtitle => $subtitle,
             prog_start => $start,
@@ -90,12 +96,12 @@ sub fetch {
 }
 
 sub update_table {
-    my ($today, $programs) = @_;
+    my ($programs) = @_;
 
     for my $prog (@$programs) {
         my $sth1 = $self->{dbh}->prepare(qq/select count(*) as cnt from program where prog_date = ? and prog_start = ? and  prog_end = ? and title = ?/);
         $sth1->execute(
-            $today,
+            $prog->{prog_date},
             $prog->{prog_start},
             $prog->{prog_end},
             $prog->{title},
@@ -113,7 +119,7 @@ sub update_table {
 
         my $sth3 = $self->{dbh}->prepare(qq/insert into program (prog_date, prog_start, prog_end, title, subtitle, hashtag, created_at) values (?, ?, ?, ?, ?, ?, now())/);
         $sth3->execute(
-            $today,
+            $prog->{prog_date},
             $prog->{prog_start},
             $prog->{prog_end},
             $prog->{title},
