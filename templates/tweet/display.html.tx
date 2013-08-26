@@ -4,22 +4,17 @@
     [% INCLUDE "common/search.html.tx" %]
   </div>
 </div>
-<div class="row visible-md visible-lg">
-  <div class="col-md-12 center">
+<div class="row">
+  <div class="col-md-12 center" style="margin:0; padding:0;">
     [% INCLUDE "common/ad/google/resp1.html.tx" %]
   </div>
 </div>
-<div class="row voffset20">
+<div class="row voffset30">
   <div class="col-md-8">
     [% INCLUDE "tweet/tl/timeline.html.tx" %]
   </div>
   <div class="col-md-4 visible-md visible-lg">
     [% INCLUDE "common/ad/side_adsense.html.tx" %]
-  </div>
-</div>
-<div class="row voffset20 visible-md visible-lg">
-  <div class="col-md-12 center">
-    [% INCLUDE "common/ad/google/resp1.html.tx" %]
   </div>
 </div>
 [% END %]

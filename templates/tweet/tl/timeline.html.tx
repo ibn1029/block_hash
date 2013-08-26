@@ -71,29 +71,35 @@
     <div id="loading"><img src="/img/ajax-loader.gif"></div>
     <div id="no_more_tweet">ツイートはありません</div>
 
-    <script>
-      <!--
-      var last_page = [% pager.last_page%];
-      $(function() {
-        $.autopager({
-          content: '#timeline',
-          link: 'a[rel=next]', /* default */
-          start: function(current, next) {
-            $("#loading").show();
-          },
-          load: function(current, next) {
-            $("#loading").hide();
-            if (next.page <= last_page) {
-              $("#next_page").text(next.page);
-            } else {
-              $("#bottom_paging").hide();
-              $("#no_more_tweet").show();
-            }
-          }
-        });
-      });
-      //-->
-    </script>
-
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12 center" style="margin:0; padding:0;">
+    [% INCLUDE "common/ad/google/resp1.html.tx" %]
+  </div>
+</div>
+
+<script>
+  <!--
+  var last_page = [% pager.last_page%];
+  $(function() {
+    $.autopager({
+      content: '#timeline',
+      link: 'a[rel=next]', /* default */
+      start: function(current, next) {
+        $("#loading").show();
+      },
+      load: function(current, next) {
+        $("#loading").hide();
+        if (next.page <= last_page) {
+          $("#next_page").text(next.page);
+        } else {
+          $("#bottom_paging").hide();
+          $("#no_more_tweet").show();
+        }
+      }
+    });
+  });
+  //-->
+</script>
