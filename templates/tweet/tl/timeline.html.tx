@@ -23,9 +23,6 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="center">
-      [% INCLUDE 'common/ad/google/text_468x60.html.tx' %]
-    </div>
     <div id="timeline">
       [% FOREACH v in tweets %]
       <div class="media tweet[% IF v.blockfm_friend %] blockfm_friend[% END %]">
@@ -62,9 +59,6 @@
         </div>
       </div>
       [% END %]
-      <div id="tl_adsence" class="center">
-        [% INCLUDE 'common/ad/google/resp1.html.tx' %]
-      </div>
     </div>
 
     [% IF pager.next_page %]
@@ -86,7 +80,6 @@
           link: 'a[rel=next]', /* default */
           start: function(current, next) {
             $("#loading").show();
-            $("tl_adsence").remove();
           },
           load: function(current, next) {
             $("#loading").hide();

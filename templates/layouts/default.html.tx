@@ -46,11 +46,11 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     </script>
     [% END %]
 
-    <div class="container voffset50">
+    <div class="container">
       [% content %]
     </div>
 
-    <div class="row">
+    <div class="row voffset20">
       <div class="col-md-12 center">
         [% INCLUDE 'common/ad/google/resp1.html.tx' %]
       </div>
