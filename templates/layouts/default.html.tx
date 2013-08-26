@@ -51,7 +51,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     </div>
 
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-12 center">
         [% INCLUDE 'common/ad/google/resp1.html.tx' %]
       </div>
     </div>
