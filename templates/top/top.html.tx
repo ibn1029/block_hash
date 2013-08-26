@@ -8,13 +8,10 @@
 <div class="row">
   <div class="col-md-12">
     <h2>BlockHashとは...</h2>
-    <p>#blockfmのハッシュタグを含むツイートを時間で検索できるWebサービスです。アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。<small><em>(#blockfmは国内No.1のダンスミュージック専門インターネットラジオ"block.fm"の公式ハッシュタグです。)</em></small></p>
-  </div>
-</div>
-
-<div class="row voffset10">
-  <div class="col-md-12 center">
-    [% INCLUDE 'common/ad/google/resp1.html.tx' %]
+    <p>#blockfmのハッシュタグを含むツイートを時間で検索できるWebサービスです。
+        アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。
+        <small><em>(#blockfmは国内No.1のダンスミュージック専門インターネットラジオ"block.fm"の公式ハッシュタグです。)</em></small>
+    </p>
   </div>
 </div>
 
@@ -81,12 +78,6 @@
         <p class="status_num size24">[% last_updated %]</p>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="row voffset20">
-  <div class="col-md-12 center">
-    [% INCLUDE 'common/ad/google/resp1.html.tx' %]
   </div>
 </div>
 [% END %]
