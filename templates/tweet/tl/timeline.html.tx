@@ -16,7 +16,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-offset-2 col-md-8">
+  <div class="col-md-12 center">
     [% INCLUDE "common/pager.html.tx" %]
   </div>
 </div>
