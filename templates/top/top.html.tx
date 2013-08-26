@@ -1,40 +1,41 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "BlockHash" %]
 <div class="row">
-  <div id="search-box" class="span10 offset1 white-panel-top">
+  <div class="col-md-10 col-md-offset-1 white-panel-top">
     [% INCLUDE "common/search.html.tx" %]
   </div>
 </div>
 
 <div class="row voffset30">
-  <h2>BlockHashとは...</h2>
-  <div class="span12">
+  <div class="col-md-12">
+    <h2>BlockHashとは...</h2>
     <p>#blockfmのハッシュタグを含むツイートを時間で検索できるWebサービスです。アーカイブ再生時に併せてプログラムのハッシュタグと日付で検索すれば生放送時のタイムラインをいつでも再現出来ます。<small><em>(#blockfmは国内No.1のダンスミュージック専門インターネットラジオ"block.fm"の公式ハッシュタグです。)</em></small></p>
   </div>
 </div>
 
 <div class="row voffset30">
-  <div class="span10 offset1">
+  <div class=" col-md-offset-1 col-md-10">
     [% INCLUDE 'common/ad/text_adsense.html.tx' %]
   </div>
 </div>
 
 <div class="row voffset30">
-  <h3><i class="icon-tags"></i> Hashtags</h3>
-  <div class="span12">
+  <div class="col-md-12">
+    <h3><i class="icon-tags"></i> Hashtags</h3>
     [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
-    <a href="/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23"><span class="label
-      [% IF v.ratio > 0.6 %] label-important label-large
-      [% ELSIF v.ratio > 0.4 %] label-warning label-large
-      [% ELSIF v.ratio > 0.2 %] label-info label-large
+    <button type="button" class="btn btn-xs
+      [% IF v.ratio > 0.6 %] btn-danger
+      [% ELSIF v.ratio > 0.4 %] btn-warning
+      [% ELSIF v.ratio > 0.2 %] btn-info
       [% END %]
-    ">[% v.tag %]</span></a>
+    " onclick="location.href='/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23'">[% v.tag %]</button>
     [% END %]
   </div>
 </div>
+
 <!--
 <div class="row voffset30">
-  <h3><i class="icon-list-ol"></i> Weekly top tweets</h3>
-  <div class="span10 offset1">
+  <div class="col-md-12">
+    <h3><i class="icon-list-ol"></i> Weekly top tweets</h3>
     <p>1週間<small>([% weekly_moment_job.from %]から[% weekly_moment_job.to %]まで)</small>の瞬間ツイート数の集計結果</p>
     <p><small>([% weekly_moment_job.created_at %]更新)</small></p>
     <table class="table table-condensed voffset20">
@@ -61,24 +62,29 @@
   </div>
 </div>
 //-->
+
 <div class="row voffset30">
-  <h3><i class="icon-archive"></i> Archive status</h3>
-  <div class="span3 offset1">
-    <h5 class="zurui-sen">アーカイブしたツイート</h5>
-    <p class="status_num size48">[% total_tweets %]</p>
-  </div>
-  <div class="span3">
-    <h5 class="zurui-sen">アーカイブしたハッシュタグ</h5>
-    <p class="status_num size48">[% hashtags %]</p>
-  </div>
-  <div class="span3">
-    <h5 class="zurui-sen">最終更新日時</h5>
-    <p class="status_num size24">[% last_updated %]</p>
+  <div class="col-md-12">
+    <h3><i class="icon-archive"></i> Archive status</h3>
+    <div class="row">
+      <div class="col-md-offset-1 col-md-3">
+        <h5 class="zurui-sen">アーカイブしたツイート</h5>
+        <p class="status_num size48">[% total_tweets %]</p>
+      </div>
+      <div class="col-md-3">
+        <h5 class="zurui-sen">アーカイブしたハッシュタグ</h5>
+        <p class="status_num size48">[% hashtags %]</p>
+      </div>
+      <div class="col-md-3">
+        <h5 class="zurui-sen">最終更新日時</h5>
+        <p class="status_num size24">[% last_updated %]</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="row voffset50">
-  <div class="span10 offset1">
+  <div class="col-md-offset-1 col-md-10">
     [% INCLUDE "common/ad/foot_adsense.html.tx" %]
   </div>
 </div>

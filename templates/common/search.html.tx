@@ -1,57 +1,76 @@
-<div class="offset1 voffset30">
-  <form method="post" action="/search" class="form-inline">
-    <input type="text" name="tag" id="search-tag" class="input-xlarge" style="color:black; height:35px; font-size:24px;" placeholder="hashtag" value="[% tag %]">
-    <input type="text" name="date" id="search-date" class="" style="color:black; height:35px; font-size:24px;" value="[% date || today() %]">
-    <span>
-      <button type="submit" class="btn btn-large btn-primary"><i class="icon-search icon-white search-icon-offset"></i>検索</button>
+<div id="search-box">
+  <form method="post" action="/search" class="form-inline voffset30" role="form">
+    <div class="form-group" style="padding-left: 50px; vertical-align: top;">
+      <input type="text" name="tag" id="search-tag" class="form-control input-lg" style="color:black; font-size:24px;" placeholder="hashtag" value="[% tag %]">
+    </div>
+    <div class="form-group" style="vertical-align: top;">
+      <input type="text" name="date" id="search-date" class="form-control input-lg" style="color:black; font-size:24px;" value="[% date || today() %]">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-lg btn-primary"><i class="icon-search icon-white"></i> 検索</button>
       <br>
-      <span id="detail-search-inline">
-        <a href="#" id="detail"><i class="icon-plus detail-icon-offset"></i><small>詳細検索</small></a>
+      <span id="search-detail-adjust">
+        <a href="#" id="detail"><i class="icon-plus"></i><small> 詳細検索</small></a>
       </span>
-    </span>
+    </div>
   </form>
-
- <div id="detail-search" class="display-none">
-  <form method="post" action="/search/detail" class="form-horizontal">
-
-    <div class="control-group">
-      <label class="control-label" for="inputEmail">ハッシュタグ</label>
-      <div class="controls">
-        <input type="text" name="tag" id="detail-search-tag" class="input-xlarge" style="color:black;" placeholder="hashtag" value="[% tag %]">
-      </div>
-    </div>
-
-    <div class="control-group">
-      <label class="control-label" for="inputEmail">検索開始日時</label>
-      <div class="controls">
-        <input type="text" name="start_date" id="detail-search-start-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% start_date || yesterday() %]">
-        <select name="start_time" class="input-mini">
-          [% h = 0; WHILE h <= 23 %]
-          <option value="[% h %]"[% IF h == start_time %] selected[% END %]>[% h %]</option>
-          [% h = h + 1; END %]
-        </select><span class="muted">時00分00秒</span>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <label class="control-label" for="inputEmail">検索終了日時</label>
-      <div class="controls">
-        <input type="text" name="end_date" id="detail-search-end-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% end_date || today() %]">
-        <select name="end_time" class="input-mini">
-          [% h = 0; WHILE h <= 23 %]
-          <option value="[% h %]"[% IF h == end_time or h == 23%] selected[% END %]>[% h %]</option>
-          [% h = h + 1; END %]
-        </select><span class="muted">時59分59秒</span>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <div class="controls">
-        <button type="submit" class="btn btn-large btn-primary"><i class="icon-search icon-white search-icon-offset"></i><small>詳細検索</small></button>
-      </div>
-    </div>
-
-  </form>
+  
+  <div id="detail-search" class="display-none">
+    <form method="post" action="/search/detail" role="form">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="4">詳細検索</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p class="help-block">ハッシュタグ</p></td>
+            <td colspan="2">
+              <input type="text" class="form-control input-sm" name="tag" id="detail-search-tag" style="color:black;" placeholder="hashtag" value="[% tag %]">
+            </td>
+            <td></td>
+          </tr>
+  
+          <tr>
+            <td><p class="help-block">検索開始日時</p></td>
+            <td>
+              <input type="text" class="form-control input-sm" name="start_date" id="detail-search-start-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% start_date || yesterday() %]">
+            </td>
+            <td>
+              <select class="form-control input-sm" name="start_time">
+                [% h = 0; WHILE h <= 23 %]
+                <option value="[% h %]"[% IF h == start_time %] selected[% END %]>[% h %]</option>
+                [% h = h + 1; END %]
+              </select>
+            </td>
+            <td><p class="help-block">時00分00秒</p></td>
+          </tr>
+   
+          <tr>
+            <td><p class="help-block">検索終了日時</p></td>
+            <td>
+              <input type="text" class="form-control input-sm" name="end_date" id="detail-search-end-date" style="color:black;" placeholder="yyyy-mm-dd" value="[% end_date || today() %]">
+            </td>
+            <td>
+              <select class="form-control input-sm" name="end_time">
+                [% h = 0; WHILE h <= 23 %]
+                <option value="[% h %]"[% IF h == end_time or h == 23%] selected[% END %]>[% h %]</option>
+                [% h = h + 1; END %]
+              </select>
+            </td>
+            <td><p class="help-block">時59分59秒</p></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2" align="center">
+              <button type="submit" class="btn btn-lg btn-primary"><i class="icon-search icon-white"></i><small> 詳細検索</small></button>
+            </td>
+            <td></td>
+          </tr>
+        <tbody>
+      </table>
+    </form>
   </div>
 </div>
 
@@ -84,13 +103,13 @@
   $('#detail').toggle(
     function () {
       $('#detail-search-tag').val($('#search-tag').val());
-      $('#search-box').animate({ height: '340px' }, 300);
+      $('#search-box').animate({ height: '340px' }, 400);
       $('#detail-search').fadeIn("slow", "", function() { $('#detail-search-tag').focus(); });
       
     },
     function () {
       $('#detail-search').fadeOut("fast");
-      $('#search-box').animate({ height: '120px' }, 300);
+      $('#search-box').animate({ height: '91px' }, 400);
       $('#search-tag').focus();
     }
   );
