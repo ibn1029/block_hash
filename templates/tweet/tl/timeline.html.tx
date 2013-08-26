@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="span2">Hash Tag</div><div class="span5">#[% tag %]</div>
+  <div class="col-md-3">Hash Tag:</div><div class="col-md-9">#[% tag %]</div>
 </div>
 <div class="row">
-  <div class="span2">Date</div>
-  <div class="span5">
+  <div class="col-md-3">Date:</div>
+  <div class="col-md-9">
     [% IF date %]
     [% date %]
     [% ELSE %]
@@ -12,14 +12,20 @@
   </div>
 </div>
 <div class="row">
-  <div class="span2">Tweet Count</div><div class="span5">[% tweet_count %]<small>tweets</small></div>
+  <div class="col-md-3">Tweet Count:</div><div class="col-md-9">[% tweet_count %]<small>tweets</small></div>
 </div>
 
-[% INCLUDE "common/pager.html.tx" %]
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    [% INCLUDE "common/pager.html.tx" %]
+  </div>
+</div>
 
 <div class="row">
-  <div class="span7">
-
+  <div class="col-md-12">
+    <div class="center">
+      [% INCLUDE 'common/ad/google/text_468x60.html.tx' %]
+    </div>
     <div id="timeline">
       [% FOREACH v in tweets %]
       <div class="media tweet[% IF v.blockfm_friend %] blockfm_friend[% END %]">
@@ -56,7 +62,9 @@
         </div>
       </div>
       [% END %]
-      <div id="tl_adsence" class="center">[% INCLUDE 'common/ad/google/text_468x60.html.tx' %]</div>
+      <div id="tl_adsence" class="center">
+        [% INCLUDE 'common/ad/google/resp1.html.tx' %]
+      </div>
     </div>
 
     [% IF pager.next_page %]
@@ -78,6 +86,7 @@
           link: 'a[rel=next]', /* default */
           start: function(current, next) {
             $("#loading").show();
+            $("tl_adsence").remove();
           },
           load: function(current, next) {
             $("#loading").hide();
@@ -95,6 +104,3 @@
 
   </div>
 </div>
-
-[%# INCLUDE "common/pager.html.tx" %]
-

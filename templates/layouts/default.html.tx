@@ -13,21 +13,21 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     <link href="/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <link href="/css/my.css" rel="stylesheet">
     <link href="/css/zurui.css" rel="stylesheet">
-    <script src="/bootstrap3/js/bootstrap.min.js"></script>
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="/js/jquery.autopager-1.0.0.min.js"></script>
+    <script src="/bootstrap3/js/bootstrap.min.js"></script>
     <title>[% title %]</title>
   </head>
   <body>
 
     <header class="header">
       <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-        <div class="navbar-inner">
+        <div>
           <a href="/" class="navbar-brand">BlockHash</a>
-          <div class="navbar-text pull-right">
-            [% INCLUDE "common/twitter.html.tx" %]
-          </div>
+        </div>
+        <div class="navbar-text pull-right">
+          [% INCLUDE "common/twitter.html.tx" %]
         </div>
       </nav>
     </header>
@@ -36,7 +36,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     <div class="jumbotron hero-unit-opt">
       <div class="container">
         <h1>BlockHash</h1>
-        <p>[% sub_title %]</p>
+        <p><small>[% sub_title %]</small></p>
       </div>
     </div>
     <script>

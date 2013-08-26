@@ -4,25 +4,15 @@
  *
 */
 
-/*
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-*/
 body {
-    /*font-size: 1.2em;
-    line-height: 1.3;*/
     background-color: #202020;
     background-image: url(/img/binding_dark/binding_dark.png);
     background-repeat: repeat-x repeat-y;
     color: #969696;
-    padding-top: 50px; /* for bs3 */
+    padding-top: 50px;
 }
 
 a { text-decoration:none; }
-
 /*------------------------------------------------------------------------------*/
 
 /*---- header part ----*/
@@ -40,9 +30,8 @@ a { text-decoration:none; }
     text-shadow: 0 1px 5px #000000;
     border-radius: 0;
 }
-/*h1.title { margin-top:60px; }*/
 
-#search-box { height: 90px; }
+#search-box { padding: 30px 0; }
 
 .white-panel-top {
     background-color: #f8f8f8;
@@ -50,7 +39,7 @@ a { text-decoration:none; }
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.075);
     color: #333333;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     margin-top: -105px;
 }
 .white-panel {
@@ -62,18 +51,19 @@ a { text-decoration:none; }
     /*margin-top: 30px;*/
     margin-bottom: 30px;
 }
-.height30 { height: 30px; }
-/*.text-black { color: block; }*/
 
-.display-none { display: none; }
+.form-text-adjust { margin-top: 5px }
 
 /*---- content part ----*/
 .center { text-align: center; }
+.height30 { height: 30px; }
 .voffset10 { margin-top: 10px; }
 .voffset20 { margin-top: 20px; }
 .voffset30 { margin-top: 30px; }
 .voffset40 { margin-top: 40px; }
 .voffset50 { margin-top: 50px; }
+.display-none { display: none; }
+
 .status_num { text-align: center; }
 .size48 {
     font-size: 48px;
@@ -83,27 +73,12 @@ a { text-decoration:none; }
     font-size: 24px;
     font-weight: bold;
 }
-/*
-.search-icon-offset {
-    margin-top: 2px;
-    margin-right: 4px;
-}
-*/
-/*
-.detail-icon-offset {
-    margin-top: 4px;
-    margin-right: 2px;
-}
-*/
-/*
-#detail-search-inline { margin-left: 520px; }
-*/
+
 #search-detail-adjust { margin-left: 14px}
-
 #detail-search {
-    margin: 0 180px 0 100px;
+    display: none;
+    margin-top: 20px;
 }
-
 
 #timeline a { color: #DF1515; }
 

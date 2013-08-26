@@ -58,14 +58,6 @@ sub startup {
         },
     });
 
-    # Helper method
-    #$self->helper( model => sub {
-    #    my ($self, $model_class) = @_;
-    #    my $pkg = "BlockHash::Model::$model_class";
-    #    load $pkg;
-    #    return $pkg->new;
-    #});
-
     # Router
     my $r = $self->routes;
     $r->namespaces(['BlockHash::Controller']);

@@ -5,4 +5,3 @@
 <p>[% INCLUDE 'common/ad/linkshare/hmv.html.tx' %]</p>
 <p>[% INCLUDE 'common/ad/amazon/350x600_dance.html.tx' %]</p>
 <p>[% INCLUDE 'common/ad/amazon/350x600_musictop.html.tx' %]</p>
-<p>[% INCLUDE 'common/ad/google/300x600_1.html.tx' %]</p>

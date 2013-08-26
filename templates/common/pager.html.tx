@@ -1,44 +1,42 @@
 [% IF pager %]
 <div class="row">
-  <div class="span7">
-    <div class="pagination pagination-centered pagination-large">
-      <small>[% pager.total_entries %]件中 [% pager.first %] - [% pager.last %]件目</small><br>
-      <ul style="font-size:1.1em">
-        [% IF pager.previous_page %]
-        <li>
-          <a href="[% c.url_with.query([ page => $pager.first_page ]) %]" class="paging"><i class="icon-fast-backward"></i></a>
-        </li>
-        <li>
-          <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]">&nbsp;&nbsp;&nbsp;<i class="icon-chevron-left"></i>&nbsp;&nbsp;&nbsp;</a>
-        </li>
-        [% ELSE %]
-        <li class="active"><a href="#"><i class="icon-fast-backward"></i></a></li>
-        <li class="active"><a href="#">&nbsp;&nbsp;&nbsp;<i class="icon-chevron-left"></i>&nbsp;&nbsp;&nbsp;</a></li>
-        [% END %]
+  <div class="col-md-offset-1 col-md-10">
+    <ul class="pagination _pagination-lg" style="_font-size:1.1em;">
+      [% IF pager.previous_page %]
+      <li>
+        <a href="[% c.url_with.query([ page => $pager.first_page ]) %]" class="paging"><i class="icon-fast-backward"></i></a>
+      </li>
+      <li>
+        <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]"><i class="icon-chevron-left"></i></a>
+      </li>
+      [% ELSE %]
+      <li class="active"><a href="#"><i class="icon-fast-backward"></i></a></li>
+      <li class="active"><a href="#"><i class="icon-chevron-left"></i></a></li>
+      [% END %]
     
-        [% FOREACH page IN pager.pages_in_navigation(4) %]
-        [% IF page == pager.current_page %]
-        <li style="font-size:1.6em" class="active"><a href="#">[% page %]</a></li>
-        [% ELSE %]
-          <li style="font-size:1.5em">
-            <a href="[% c.url_with.query([ page => $page ]) %]">[% page %]</a>
-          </li>
-        [% END %]
-        [% END %]
+      [% FOREACH page IN pager.pages_in_navigation(4) %]
+      [% IF page == pager.current_page %]
+      <li style="_font-size:1.6em" class="active"><a href="#">[% page %]</a></li>
+      [% ELSE %]
+        <li style="_font-size:1.5em">
+          <a href="[% c.url_with.query([ page => $page ]) %]">[% page %]</a>
+        </li>
+      [% END %]
+      [% END %]
     
-        [% IF pager.next_page %]
-        <li>
-          <a href="[% c.url_with.query([ page => pager.next_page ]) %]">&nbsp;&nbsp;&nbsp;<i class="icon-chevron-right"></i>&nbsp;&nbsp;&nbsp;</a>
-        </li>
-        <li>
-          <a href="[% c.url_with.query([ page => pager.last_page ]) %]"><i class="icon-fast-forward"></i></a>
-        </li>
-        [% ELSE %]
-        <li class="active"><a href="#">&nbsp;&nbsp;&nbsp;<i class="icon-chevron-right"></i>&nbsp;&nbsp;&nbsp;</a></li>
-        <li class="active"><a href="#"><i class="icon-fast-forward"></i></a></li>
-        [% END %]
-      </ul>
-    </div>
+      [% IF pager.next_page %]
+      <li>
+        <a href="[% c.url_with.query([ page => pager.next_page ]) %]"><i class="icon-chevron-right"></i></a>
+      </li>
+      <li>
+        <a href="[% c.url_with.query([ page => pager.last_page ]) %]"><i class="icon-fast-forward"></i></a>
+      </li>
+      [% ELSE %]
+      <li class="active"><a href="#"><i class="icon-chevron-right"></i></a></li>
+      <li class="active"><a href="#"><i class="icon-fast-forward"></i></a></li>
+      [% END %]
+    </ul>
+    <div class="center"><small>[% pager.total_entries %]件中 [% pager.first %] - [% pager.last %]件目</small></div>
   </div>
 </div>
 [% END %]

@@ -10,7 +10,6 @@ use File::Spec;
 use Data::Dumper;
 
 BEGIN {
-    warn Dumper $FindBin::Bin;
     my $app = BlockHash->new;
     my $blockfm_friends_path = File::Spec->catdir($FindBin::Bin, qw/.. config blockfm_friends.pl/);
     if ($app->mode eq 'development') {

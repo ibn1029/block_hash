@@ -1,4 +1,4 @@
-[% WRAPPER "layouts/3.html.tx" WITH title = " BlockHash - #"_ tag %]
+[% WRAPPER "layouts/default.html.tx" WITH title = " BlockHash - #"_ tag %]
 <div class="row">
   <div class="col-md-offset-1 col-md-10 white-panel">
     [% INCLUDE "common/search.html.tx" %]
@@ -8,11 +8,11 @@
   <div class="col-md-7">
     [% INCLUDE "tweet/tl/timeline.html.tx" %]
   </div>
-  <div class="col-md-5">
+  <div class="col-md-5 visible-md visible-lg">
     [% INCLUDE "common/ad/side_adsense.html.tx" %]
   </div>
 </div>
-<div class="row voffset50">
+<div class="row voffset20 visible-md visible-lg">
   <div class="col-md-offset-1 col-md-10">
     [% INCLUDE "common/ad/foot_adsense.html.tx" %]
   </div>
