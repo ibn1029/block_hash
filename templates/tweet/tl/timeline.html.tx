@@ -55,7 +55,10 @@
           </div>
 
           <div>[% highlight(v.tweet.text) %]</div>
-          <div class="pull-right timestamp muted">[% v.date %]</div>
+          <div class="pull-right timestamp muted">
+            <a href="https://twitter.com/[% v.tweet.user.screen_name %]/status/[% v.tweet.id %]"><i class="icon icon-twitter"></i></a>&nbsp;&nbsp;
+            <span class="zurui-sen-left">&nbsp;&nbsp;&nbsp;[% v.date %]</span>
+          </div>
         </div>
       </div>
       [% END %]
@@ -64,7 +67,7 @@
     [% IF pager.next_page %]
     <div id="bottom_paging">
       <a href="[% c.url_with.query([ page => pager.next_page ]) %]" rel="next">
-        <i class="icon-chevron-sign-right"></i> 次を表示する(<span id="next_page">2</span>/[% pager.last_page %])
+        <i class="icon-chevron-sign-right"></i> 次を表示する(<span id="next_page">[% pager.next_page %]</span>/[% pager.last_page %])
       </a>
     </div>
     [% END %]
@@ -74,7 +77,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row voffset20">
   <div class="col-md-12 center" style="margin:0; padding:0;">
     [% INCLUDE "common/ad/google/resp1.html.tx" %]
   </div>
@@ -82,17 +85,23 @@
 
 <script>
   <!--
-  var last_page = [% pager.last_page%];
+  var last_page = [% pager.last_page %];
+  var initial_page = [% pager.current_page %];
+  var href = $("a[rel=next]").attr("href");
+  var href_parts = href.split("?");
+  var url = href_parts[0];
   $(function() {
     $.autopager({
       content: '#timeline',
       link: 'a[rel=next]', /* default */
+      page: initial_page,
       start: function(current, next) {
         $("#loading").show();
       },
       load: function(current, next) {
         $("#loading").hide();
         if (next.page <= last_page) {
+          $("a[rel=next]").attr("href", url + "?page=" + next.page);
           $("#next_page").text(next.page);
         } else {
           $("#bottom_paging").hide();

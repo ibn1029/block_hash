@@ -156,7 +156,6 @@ sub _get_tweets {
             blockfm_friend => $self->_check_blockfm_friend($user_id),
         };
     }
-
     return \@tweets, $pager, $tweet_count;
 }
 

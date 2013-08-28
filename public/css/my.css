@@ -81,6 +81,10 @@ a { text-decoration:none; }
 }
 
 #timeline a { color: #DF1515; }
+#timeline a i {
+    color: #969696;
+    text-decoration:none;
+}
 
 .tweet {
     background: #333333;

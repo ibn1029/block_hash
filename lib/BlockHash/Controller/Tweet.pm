@@ -36,7 +36,7 @@ sub display {
         my $tweet_btn_text = '#blockfm #'.$self->stash('tag').' '
                             .$self->stash('start_date').' '.$self->stash('start_time').'時から'
                             .$self->stash('end_date').' '.$self->stash('end_time')
-                            .'時台のツイート検索結果';
+                            .'時までのTL';
         my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search_detail({
             tag  => $self->stash('tag'),
             start_date => $self->stash('start_date'),
@@ -64,7 +64,7 @@ sub display {
         $self->_validate($self->stash);
 
         my $tweet_btn_text = '#blockfm #'.$self->stash('tag').' '
-                            .$self->stash('date').'のツイート検索結果';
+                            .$self->stash('date').'のTL';
         my ($tweets, $pager, $tweet_count) = BlockHash::Model::Tweet->search({
             tag  => $self->stash('tag'),
             date => $self->stash('date'),
