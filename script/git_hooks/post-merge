@@ -11,7 +11,7 @@ carton=$HOME/.plenv/versions/$perlver/bin/carton
 echo '###'
 echo '### The following commands are executed from ".git/hooks/post-merge".'
 echo '###'
-cd $BASE
+cd $base
 echo ''
 echo '### Install dependence modules ...'
 $carton install --cached
