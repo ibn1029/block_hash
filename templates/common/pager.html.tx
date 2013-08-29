@@ -4,15 +4,19 @@
   <li>
     <a href="[% c.url_with.query([ page => $pager.first_page ]) %]" class="paging"><i class="icon-step-backward"></i></a>
   </li>
+<!--
   <li>
     <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]"><i class="icon-chevron-left"></i></a>
   </li>
+-->
   [% ELSE %]
   <li class="active"><a href="#"><i class="icon-step-backward"></i></a></li>
+<!--
   <li class="active"><a href="#"><i class="icon-chevron-left"></i></a></li>
+-->
   [% END %]
 
-  [% FOREACH page IN pager.pages_in_navigation(4) %]
+  [% FOREACH page IN pager.pages_in_navigation(5) %]
   [% IF page == pager.current_page %]
   <li class="active"><a href="#">[% page %]</a></li>
   [% ELSE %]
@@ -23,14 +27,18 @@
   [% END %]
 
   [% IF pager.next_page %]
+<!--
   <li>
     <a href="[% c.url_with.query([ page => pager.next_page ]) %]"><i class="icon-chevron-right"></i></a>
   </li>
+-->
   <li>
     <a href="[% c.url_with.query([ page => pager.last_page ]) %]"><i class="icon-step-forward"></i></a>
   </li>
   [% ELSE %]
+<!--
   <li class="active"><a href="#"><i class="icon-chevron-right"></i></a></li>
+-->
   <li class="active"><a href="#"><i class="icon-step-forward"></i></a></li>
   [% END %]
 </ul>
