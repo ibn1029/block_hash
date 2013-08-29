@@ -5,7 +5,7 @@
     <a href="[% c.url_with.query([ page => $pager.first_page ]) %]" class="paging"><i class="icon-fast-backward"></i></a>
   </li>
   <li>
-    <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]"><i class="icon-chevron-left"></i></a>
+    <a href="[% c.url_with.query([ page => $pager.previous_page ]) %]"><i class="icon-step-left"></i></a>
   </li>
   [% ELSE %]
   <li class="active"><a href="#"><i class="icon-step-backward"></i></a></li>
@@ -27,7 +27,7 @@
     <a href="[% c.url_with.query([ page => pager.next_page ]) %]"><i class="icon-chevron-right"></i></a>
   </li>
   <li>
-    <a href="[% c.url_with.query([ page => pager.last_page ]) %]"><i class="icon-fast-forward"></i></a>
+    <a href="[% c.url_with.query([ page => pager.last_page ]) %]"><i class="icon-step-forward"></i></a>
   </li>
   [% ELSE %]
   <li class="active"><a href="#"><i class="icon-chevron-right"></i></a></li>
