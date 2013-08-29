@@ -56,7 +56,7 @@
 
           <div>[% highlight(v.tweet.text) %]</div>
           <div class="pull-right timestamp muted">
-            <a href="https://twitter.com/[% v.tweet.user.screen_name %]/status/[% v.tweet.id %]"><i class="icon icon-twitter"></i></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/[% v.tweet.user.screen_name %]/status/[% v.tweet.id %]" target="_brank"><i class="icon icon-twitter"></i></a>&nbsp;&nbsp;
             <span class="zurui-sen-left">&nbsp;&nbsp;&nbsp;[% v.date %]</span>
           </div>
         </div>

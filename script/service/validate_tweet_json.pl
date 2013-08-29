@@ -7,6 +7,7 @@ use File::Spec;
 use Encode;
 use DBI;
 use JSON;
+use Test::JSON;
 
 use Data::Dumper;
 
@@ -52,7 +53,8 @@ sub validate {
         $sth->finish;
 
         eval {
-            decode_json(encode_utf8($rs->{tweet_json}));
+            #decode_json(encode_utf8($rs->{tweet_json}));
+            die unless (is_valid_json encode_utf8($rs->{tweet_json}));
             my $sth = $self->{dbh}->prepare(qq/update tweet set is_valid = 1 where id = ?/);
             $sth->execute($row->{id});
             $sth->finish;

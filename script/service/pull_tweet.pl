@@ -10,7 +10,6 @@ use DBI;
 use Time::Piece;
 use Time::Seconds;
 use JSON;
-use Test::JSON;
 
 use Data::Dumper;
 
@@ -29,7 +28,7 @@ while (1) {
     last unless $meta->{count} > 0;
 
     print "$meta->{count} $result->{statuses}[-1]{id} $result->{statuses}[-1]{created_at}\n";
-    redo unless store_tweet($result);
+    store_tweet($result);
     $query->{max_id} = $result->{statuses}[-1]{id};
 }
 exit;
@@ -82,7 +81,6 @@ sub store_tweet {
     my $sth = $self->{dbh}->prepare(qq/insert into block_hash.tweet (tweet_id, hashtags, url, created_at, tweet_json, is_valid) values (?, ?, ?, ?, ?, 0)/);
 
     for my $tweet (@{$result->{statuses}}) {
-        return 0 unless is_valid_json $tweet;
         unless (deflate_datetime(inflate_datetime($tweet->{created_at})) - $self->{last_tweet} ) {
             print "new tweet not found. finished.\n";
             exit;
