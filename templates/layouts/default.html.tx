@@ -28,6 +28,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
         <div>
           <a href="/" class="navbar-brand">BlockHash</a>
         </div>
+        <p class="navbar-text visible-md visible-lg">#blockfm TL検索サイト</p>
         <div class="navbar-text pull-right">
           [% INCLUDE "common/twitter.html.tx" %]
         </div>
@@ -38,7 +39,7 @@ sub_title = 'BlockHash is the hash tag archive and search web service of #blockf
     <div class="jumbotron hero-unit-opt">
       <div class="container">
         <h1>BlockHash</h1>
-        <p><small>[% sub_title %]</small></p>
+        <p><small>#blockfm TL検索サイト<br>[% sub_title %]</small></p>
       </div>
     </div>
     <script>

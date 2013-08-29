@@ -18,6 +18,8 @@
   </div>
   
   <div id="detail-search">
+    <div class="zurui-sen-white"></div>
+    <div class="voffset30"></div>
     <form method="post" action="/search/detail" role="form">
 
       <div class="row">
