@@ -1,0 +1,28 @@
+#!/bin/bash
+
+HOME=/home/viage
+app=block_hash
+base=$HOME/work/$app
+perlver=5.14.4
+
+source $HOME/.bash_profile
+carton=$HOME/.plenv/versions/$perlver/bin/carton
+
+echo '###'
+echo '### The following commands are executed from ".git/hooks/post-merge".'
+echo '###'
+cd $BASE
+echo ''
+echo '### Install dependence modules ...'
+$carton install --cached
+echo ''
+echo '### Current application pid...'
+pgrep -f script/$app
+echo ''
+echo '### Restart application ...'
+kill -HUP `pgrep -f script/$app`
+echo ''
+echo '### Current application pid...'
+pgrep -f script/$app
+echo ''
+echo '### End of port-merge'

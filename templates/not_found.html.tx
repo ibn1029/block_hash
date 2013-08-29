@@ -1,7 +1,7 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "BlockHash - Not Found" %]
 
-<div class="row voffset30 height300">
-  <h1>404 Not Found</h1>
+<div class="row voffset30 height200">
+  <h1><i class="icon icon-frown"></i> 404 Not Found</h1>
   <div class="span12">
     <p>リクエストされたページが見つかりませんでした。</p>
   </div>

@@ -20,9 +20,9 @@ requires 'Web::Query', '== 0.23';
 requires 'Qudo', '== 0.0213';
 requires 'Selenium::Remote::Driver', '== 0.17';
 requires 'Test::TCP', '== 2.00';
+requires 'Test::JSON', '== 0.11';
 
 requires 'Plack', '== 1.0028';
-#requires 'Plack::Handler::Starman', '== 0.4003';
 requires 'Starman', '== 0.4003';
 requires 'Server::Starter', '== 0.15';
 requires 'Net::Server::SS::PreFork', '== 0.05';

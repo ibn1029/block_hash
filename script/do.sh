@@ -42,15 +42,15 @@ else
     exit 1
 fi
 
-echo '#' 
-echo '# carton exec -- perl script/validate_tweet_json.pl'
-echo '#' 
-$carton exec -- perl script/service/validate_tweet_json.pl
-if [ X$? == 'X0' ]; then
-    echo ok
-else
-    exit 1
-fi
+#echo '#' 
+#echo '# carton exec -- perl script/validate_tweet_json.pl'
+#echo '#' 
+#$carton exec -- perl script/service/validate_tweet_json.pl
+#if [ X$? == 'X0' ]; then
+#    echo ok
+#else
+#    exit 1
+#fi
 
 echo '#' 
 echo '# carton exec -- perl script/analysis_tag.pl'
