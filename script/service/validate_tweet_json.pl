@@ -53,10 +53,10 @@ sub validate {
         $sth->finish;
 
         eval {
-            #decode_json(encode_utf8($rs->{tweet_json}));
-            die unless (is_valid_json encode_utf8($rs->{tweet_json}));
-            my $sth = $self->{dbh}->prepare(qq/update tweet set is_valid = 1 where id = ?/);
-            $sth->execute($row->{id});
+            my $valid = 1;
+            $valid = 0 unless is_valid_json encode_utf8($rs->{tweet_json});
+            my $sth = $self->{dbh}->prepare(qq/update tweet set is_valid = ? where id = ?/);
+            $sth->execute($valid, $row->{id});
             $sth->finish;
         };
         if ($@) {
@@ -68,7 +68,7 @@ sub validate {
         warn "deleteing bloken json of tweet.\n";
         warn  join ', ', @ng_list,"\n";
         for my $id (@ng_list) {
-            my $sth = $self->{dbh}->prepare(qq/delete from tweet where id in (?)/);
+            my $sth = $self->{dbh}->prepare(qq/delete from tweet where id = ?/);
             $sth->execute($id);
             $sth->finish;
         }

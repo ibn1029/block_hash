@@ -8,17 +8,17 @@ DISTRIBUTIONS
       Algorithm::DiffOld 1.1
     requirements:
       ExtUtils::MakeMaker 0
-  AnyEvent-7.05
-    pathname: M/ML/MLEHMANN/AnyEvent-7.05.tar.gz
+  AnyEvent-7.04
+    pathname: M/ML/MLEHMANN/AnyEvent-7.04.tar.gz
     provides:
-      AE undef
+      AE 7.04
       AE::Log::COLLECT undef
       AE::Log::FILTER undef
       AE::Log::LOG undef
-      AnyEvent 7.05
-      AnyEvent::Base 7.05
-      AnyEvent::CondVar 7.05
-      AnyEvent::CondVar::Base 7.05
+      AnyEvent 7.04
+      AnyEvent::Base 7.04
+      AnyEvent::CondVar 7.04
+      AnyEvent::CondVar::Base 7.04
       AnyEvent::DNS undef
       AnyEvent::Debug undef
       AnyEvent::Debug::Backtrace undef
@@ -559,6 +559,9 @@ DISTRIBUTIONS
       POSIX 0
       Params::Validate 0.76
       Scalar::Util 0
+      Storable 0
+      Test::Fatal 0
+      Test::More 0.88
       Try::Tiny 0
       XSLoader 0
       base 0
@@ -567,6 +570,7 @@ DISTRIBUTIONS
       overload 0
       perl 5.008001
       strict 0
+      utf8 0
       vars 0
       warnings 0
   DateTime-Format-Strptime-1.54
@@ -1565,7 +1569,6 @@ DISTRIBUTIONS
       Digest::SHA 5.85
     requirements:
       ExtUtils::MakeMaker 0
-      perl 5.003
   Digest-SHA1-2.13
     pathname: G/GA/GAAS/Digest-SHA1-2.13.tar.gz
     provides:
@@ -1577,7 +1580,7 @@ DISTRIBUTIONS
   Dist-CheckConflicts-0.09
     pathname: D/DO/DOY/Dist-CheckConflicts-0.09.tar.gz
     provides:
-      Bar 0.02
+      Bar undef
       Bar::Bar 0.01
       Bar::Bar::Bad 0.01
       Bar::Bar::Good 0.02
@@ -1635,10 +1638,10 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Test 0
       perl 5.008
-  Eval-Closure-0.11
-    pathname: D/DO/DOY/Eval-Closure-0.11.tar.gz
+  Eval-Closure-0.10
+    pathname: D/DO/DOY/Eval-Closure-0.10.tar.gz
     provides:
-      Eval::Closure 0.11
+      Eval::Closure 0.10
     requirements:
       Carp 0
       Exporter 0
@@ -1697,40 +1700,40 @@ DISTRIBUTIONS
       Test::More 0
       strict 0
       warnings 0
-  ExtUtils-MakeMaker-6.74
-    pathname: B/BI/BINGOS/ExtUtils-MakeMaker-6.74.tar.gz
+  ExtUtils-MakeMaker-6.72
+    pathname: B/BI/BINGOS/ExtUtils-MakeMaker-6.72.tar.gz
     provides:
-      DynaLoader 6.74
-      ExtUtils::Command::MM 6.74
-      ExtUtils::Liblist 6.74
-      ExtUtils::Liblist::Kid 6.74
-      ExtUtils::MM 6.74
-      ExtUtils::MM_AIX 6.74
-      ExtUtils::MM_Any 6.74
-      ExtUtils::MM_BeOS 6.74
-      ExtUtils::MM_Cygwin 6.74
-      ExtUtils::MM_DOS 6.74
-      ExtUtils::MM_Darwin 6.74
-      ExtUtils::MM_MacOS 6.74
-      ExtUtils::MM_NW5 6.74
-      ExtUtils::MM_OS2 6.74
-      ExtUtils::MM_QNX 6.74
-      ExtUtils::MM_UWIN 6.74
-      ExtUtils::MM_Unix 6.74
-      ExtUtils::MM_VMS 6.74
-      ExtUtils::MM_VOS 6.74
-      ExtUtils::MM_Win32 6.74
-      ExtUtils::MM_Win95 6.74
-      ExtUtils::MY 6.74
-      ExtUtils::MakeMaker 6.74
-      ExtUtils::MakeMaker::Config 6.74
-      ExtUtils::MakeMaker::_version 6.74
-      ExtUtils::Mkbootstrap 6.74
-      ExtUtils::Mksymlists 6.74
-      ExtUtils::testlib 6.74
-      MM 6.74
-      MY 6.74
-      in 6.74
+      DynaLoader 6.72
+      ExtUtils::Command::MM 6.72
+      ExtUtils::Liblist 6.72
+      ExtUtils::Liblist::Kid 6.72
+      ExtUtils::MM 6.72
+      ExtUtils::MM_AIX 6.72
+      ExtUtils::MM_Any 6.72
+      ExtUtils::MM_BeOS 6.72
+      ExtUtils::MM_Cygwin 6.72
+      ExtUtils::MM_DOS 6.72
+      ExtUtils::MM_Darwin 6.72
+      ExtUtils::MM_MacOS 6.72
+      ExtUtils::MM_NW5 6.72
+      ExtUtils::MM_OS2 6.72
+      ExtUtils::MM_QNX 6.72
+      ExtUtils::MM_UWIN 6.72
+      ExtUtils::MM_Unix 6.72
+      ExtUtils::MM_VMS 6.72
+      ExtUtils::MM_VOS 6.72
+      ExtUtils::MM_Win32 6.72
+      ExtUtils::MM_Win95 6.72
+      ExtUtils::MY 6.72
+      ExtUtils::MakeMaker 6.72
+      ExtUtils::MakeMaker::Config 6.72
+      ExtUtils::MakeMaker::_version 6.72
+      ExtUtils::Mkbootstrap 6.72
+      ExtUtils::Mksymlists 6.72
+      ExtUtils::testlib 6.72
+      MM 6.72
+      MY 6.72
+      in 6.72
     requirements:
       Data::Dumper 0
       DirHandle 0
@@ -1762,12 +1765,13 @@ DISTRIBUTIONS
       File::HomeDir::Windows 1.00
     requirements:
       Carp 0
-      Cwd 3.12
+      Cwd 3
       ExtUtils::MakeMaker 6.36
       File::Path 2.01
-      File::Spec 3.12
+      File::Spec 3
       File::Temp 0.19
       File::Which 0.05
+      Mac::SystemDirectory 0.04
       Test::More 0.47
       perl 5.00503
   File-Listing-6.04
@@ -1819,6 +1823,29 @@ DISTRIBUTIONS
       Filesys::Notify::Simple 0.12
     requirements:
       ExtUtils::MakeMaker 6.30
+  Furl-2.17
+    pathname: T/TO/TOKUHIROM/Furl-2.17.tar.gz
+    provides:
+      Furl 2.17
+      Furl::ConnectionCache undef
+      Furl::HTTP 2.17
+      Furl::Headers undef
+      Furl::Request undef
+      Furl::Response undef
+      Furl::ZlibStream undef
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      Class::Accessor::Lite 0
+      Encode 0
+      HTTP::Parser::XS 0.11
+      MIME::Base64 0
+      Module::Build 0.38
+      Mozilla::CA 0
+      Scalar::Util 0
+      Socket 0
+      Time::HiRes 0
+      perl 5.008001
   Guard-1.022
     pathname: M/ML/MLEHMANN/Guard-1.022.tar.gz
     provides:
@@ -1963,7 +1990,7 @@ DISTRIBUTIONS
     pathname: G/GA/GAAS/HTTP-Message-6.06.tar.gz
     provides:
       HTTP::Config 6.00
-      HTTP::Headers 6.05
+      HTTP::Headers 6.00
       HTTP::Headers::Auth 6.00
       HTTP::Headers::ETag 6.00
       HTTP::Headers::Util 6.03
@@ -2136,11 +2163,19 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.59
       Test::More 0.47
       perl 5.006
-  Module-Build-Tiny-0.026
-    pathname: L/LE/LEONT/Module-Build-Tiny-0.026.tar.gz
+  Mac-SystemDirectory-0.06
+    pathname: C/CH/CHANSEN/Mac-SystemDirectory-0.06.tar.gz
+    provides:
+      Mac::SystemDirectory 0.06
+    requirements:
+      ExtUtils::MakeMaker 6.42
+      Test::More 0.86
+      perl 5.006
+  Module-Build-Tiny-0.025
+    pathname: L/LE/LEONT/Module-Build-Tiny-0.025.tar.gz
     provides:
       DistGen 0.01
-      Module::Build::Tiny 0.026
+      Module::Build::Tiny 0.025
     requirements:
       CPAN::Meta 0
       Exporter 5.57
@@ -2278,7 +2313,7 @@ DISTRIBUTIONS
       Mojolicious::Command::generate::app undef
       Mojolicious::Command::generate::lite_app undef
       Mojolicious::Command::generate::makefile undef
-      Mojolicious::Command::generate::plugin 0.01
+      Mojolicious::Command::generate::plugin undef
       Mojolicious::Command::get undef
       Mojolicious::Command::inflate undef
       Mojolicious::Command::prefork undef
@@ -2314,53 +2349,52 @@ DISTRIBUTIONS
       ojo undef
     requirements:
       ExtUtils::MakeMaker 0
-      perl 5.010001
-  Moose-2.1005
-    pathname: E/ET/ETHER/Moose-2.1005.tar.gz
+  Moose-2.1004
+    pathname: E/ET/ETHER/Moose-2.1004.tar.gz
     provides:
-      Class::MOP 2.1005
-      Class::MOP::Attribute 2.1005
-      Class::MOP::Class 2.1005
+      Class::MOP 2.1004
+      Class::MOP::Attribute 2.1004
+      Class::MOP::Class 2.1004
       Class::MOP::Class::Immutable::Trait undef
       Class::MOP::Deprecated undef
-      Class::MOP::Instance 2.1005
-      Class::MOP::Method 2.1005
-      Class::MOP::Method::Accessor 2.1005
-      Class::MOP::Method::Constructor 2.1005
-      Class::MOP::Method::Generated 2.1005
-      Class::MOP::Method::Inlined 2.1005
-      Class::MOP::Method::Meta 2.1005
-      Class::MOP::Method::Overload 2.1005
-      Class::MOP::Method::Wrapped 2.1005
+      Class::MOP::Instance 2.1004
+      Class::MOP::Method 2.1004
+      Class::MOP::Method::Accessor 2.1004
+      Class::MOP::Method::Constructor 2.1004
+      Class::MOP::Method::Generated 2.1004
+      Class::MOP::Method::Inlined 2.1004
+      Class::MOP::Method::Meta 2.1004
+      Class::MOP::Method::Overload 2.1004
+      Class::MOP::Method::Wrapped 2.1004
       Class::MOP::MiniTrait undef
       Class::MOP::Mixin undef
       Class::MOP::Mixin::AttributeCore undef
       Class::MOP::Mixin::HasAttributes undef
       Class::MOP::Mixin::HasMethods undef
-      Class::MOP::Module 2.1005
-      Class::MOP::Object 2.1005
-      Class::MOP::Package 2.1005
-      Moose 2.1005
+      Class::MOP::Module 2.1004
+      Class::MOP::Object 2.1004
+      Class::MOP::Package 2.1004
+      Moose 2.1004
       Moose::Deprecated undef
-      Moose::Error::Confess 2.1005
-      Moose::Error::Croak 2.1005
-      Moose::Error::Default 2.1005
-      Moose::Exporter 2.1005
-      Moose::Meta::Attribute 2.1005
-      Moose::Meta::Attribute::Native 2.1005
+      Moose::Error::Confess 2.1004
+      Moose::Error::Croak 2.1004
+      Moose::Error::Default 2.1004
+      Moose::Exporter 2.1004
+      Moose::Meta::Attribute 2.1004
+      Moose::Meta::Attribute::Native 2.1004
       Moose::Meta::Attribute::Native::Trait undef
-      Moose::Meta::Attribute::Native::Trait::Array 2.1005
-      Moose::Meta::Attribute::Native::Trait::Bool 2.1005
-      Moose::Meta::Attribute::Native::Trait::Code 2.1005
-      Moose::Meta::Attribute::Native::Trait::Counter 2.1005
-      Moose::Meta::Attribute::Native::Trait::Hash 2.1005
-      Moose::Meta::Attribute::Native::Trait::Number 2.1005
-      Moose::Meta::Attribute::Native::Trait::String 2.1005
-      Moose::Meta::Class 2.1005
+      Moose::Meta::Attribute::Native::Trait::Array 2.1004
+      Moose::Meta::Attribute::Native::Trait::Bool 2.1004
+      Moose::Meta::Attribute::Native::Trait::Code 2.1004
+      Moose::Meta::Attribute::Native::Trait::Counter 2.1004
+      Moose::Meta::Attribute::Native::Trait::Hash 2.1004
+      Moose::Meta::Attribute::Native::Trait::Number 2.1004
+      Moose::Meta::Attribute::Native::Trait::String 2.1004
+      Moose::Meta::Class 2.1004
       Moose::Meta::Class::Immutable::Trait undef
-      Moose::Meta::Instance 2.1005
-      Moose::Meta::Method 2.1005
-      Moose::Meta::Method::Accessor 2.1005
+      Moose::Meta::Instance 2.1004
+      Moose::Meta::Method 2.1004
+      Moose::Meta::Method::Accessor 2.1004
       Moose::Meta::Method::Accessor::Native undef
       Moose::Meta::Method::Accessor::Native::Array undef
       Moose::Meta::Method::Accessor::Native::Array::Writer undef
@@ -2437,45 +2471,45 @@ DISTRIBUTIONS
       Moose::Meta::Method::Accessor::Native::String::replace undef
       Moose::Meta::Method::Accessor::Native::String::substr undef
       Moose::Meta::Method::Accessor::Native::Writer undef
-      Moose::Meta::Method::Augmented 2.1005
-      Moose::Meta::Method::Constructor 2.1005
-      Moose::Meta::Method::Delegation 2.1005
-      Moose::Meta::Method::Destructor 2.1005
-      Moose::Meta::Method::Meta 2.1005
-      Moose::Meta::Method::Overridden 2.1005
+      Moose::Meta::Method::Augmented 2.1004
+      Moose::Meta::Method::Constructor 2.1004
+      Moose::Meta::Method::Delegation 2.1004
+      Moose::Meta::Method::Destructor 2.1004
+      Moose::Meta::Method::Meta 2.1004
+      Moose::Meta::Method::Overridden 2.1004
       Moose::Meta::Mixin::AttributeCore undef
       Moose::Meta::Object::Trait undef
-      Moose::Meta::Role 2.1005
-      Moose::Meta::Role::Application 2.1005
-      Moose::Meta::Role::Application::RoleSummation 2.1005
-      Moose::Meta::Role::Application::ToClass 2.1005
-      Moose::Meta::Role::Application::ToInstance 2.1005
-      Moose::Meta::Role::Application::ToRole 2.1005
-      Moose::Meta::Role::Attribute 2.1005
-      Moose::Meta::Role::Composite 2.1005
-      Moose::Meta::Role::Method 2.1005
-      Moose::Meta::Role::Method::Conflicting 2.1005
-      Moose::Meta::Role::Method::Required 2.1005
-      Moose::Meta::TypeCoercion 2.1005
-      Moose::Meta::TypeCoercion::Union 2.1005
-      Moose::Meta::TypeConstraint 2.1005
-      Moose::Meta::TypeConstraint::Class 2.1005
-      Moose::Meta::TypeConstraint::DuckType 2.1005
-      Moose::Meta::TypeConstraint::Enum 2.1005
-      Moose::Meta::TypeConstraint::Parameterizable 2.1005
-      Moose::Meta::TypeConstraint::Parameterized 2.1005
-      Moose::Meta::TypeConstraint::Registry 2.1005
-      Moose::Meta::TypeConstraint::Role 2.1005
-      Moose::Meta::TypeConstraint::Union 2.1005
-      Moose::Object 2.1005
-      Moose::Role 2.1005
-      Moose::Util 2.1005
-      Moose::Util::MetaRole 2.1005
-      Moose::Util::TypeConstraints 2.1005
+      Moose::Meta::Role 2.1004
+      Moose::Meta::Role::Application 2.1004
+      Moose::Meta::Role::Application::RoleSummation 2.1004
+      Moose::Meta::Role::Application::ToClass 2.1004
+      Moose::Meta::Role::Application::ToInstance 2.1004
+      Moose::Meta::Role::Application::ToRole 2.1004
+      Moose::Meta::Role::Attribute 2.1004
+      Moose::Meta::Role::Composite 2.1004
+      Moose::Meta::Role::Method 2.1004
+      Moose::Meta::Role::Method::Conflicting 2.1004
+      Moose::Meta::Role::Method::Required 2.1004
+      Moose::Meta::TypeCoercion 2.1004
+      Moose::Meta::TypeCoercion::Union 2.1004
+      Moose::Meta::TypeConstraint 2.1004
+      Moose::Meta::TypeConstraint::Class 2.1004
+      Moose::Meta::TypeConstraint::DuckType 2.1004
+      Moose::Meta::TypeConstraint::Enum 2.1004
+      Moose::Meta::TypeConstraint::Parameterizable 2.1004
+      Moose::Meta::TypeConstraint::Parameterized 2.1004
+      Moose::Meta::TypeConstraint::Registry 2.1004
+      Moose::Meta::TypeConstraint::Role 2.1004
+      Moose::Meta::TypeConstraint::Union 2.1004
+      Moose::Object 2.1004
+      Moose::Role 2.1004
+      Moose::Util 2.1004
+      Moose::Util::MetaRole 2.1004
+      Moose::Util::TypeConstraints 2.1004
       Moose::Util::TypeConstraints::Builtins undef
-      Test::Moose 2.1005
-      metaclass 2.1005
-      oose 2.1005
+      Test::Moose 2.1004
+      metaclass 2.1004
+      oose 2.1004
     requirements:
       Carp 1.22
       Class::Load 0.09
@@ -2534,7 +2568,7 @@ DISTRIBUTIONS
     pathname: G/GF/GFUJI/Mouse-1.11.tar.gz
     provides:
       Mouse 1.11
-      Mouse::Exporter undef
+      Mouse::Exporter 1.11
       Mouse::Meta::Attribute undef
       Mouse::Meta::Class undef
       Mouse::Meta::Method undef
@@ -2549,14 +2583,14 @@ DISTRIBUTIONS
       Mouse::Meta::Role::Composite undef
       Mouse::Meta::Role::Method undef
       Mouse::Meta::TypeConstraint undef
-      Mouse::Object undef
-      Mouse::PurePerl undef
+      Mouse::Object 1.11
+      Mouse::PurePerl 1.11
       Mouse::Role 1.11
       Mouse::Spec 1.11
       Mouse::Tiny 1.11
       Mouse::TypeRegistry undef
-      Mouse::Util undef
-      Mouse::Util::MetaRole 1.11
+      Mouse::Util 1.11
+      Mouse::Util::MetaRole undef
       Mouse::Util::TypeConstraints undef
       Squirrel undef
       Squirrel::Role undef
@@ -2841,13 +2875,22 @@ DISTRIBUTIONS
     requirements:
       Attribute::Handlers 0.79
       Carp 0
+      Devel::Peek 0
       Exporter 0
       ExtUtils::CBuilder 0
+      File::Spec 0
+      File::Temp 0
       Module::Build 0.3601
       Module::Implementation 0
       Scalar::Util 1.10
+      Test::Fatal 0
+      Test::More 0.88
+      Tie::Array 0
+      Tie::Hash 0
       XSLoader 0
       attributes 0
+      base 0
+      overload 0
       perl 5.008001
       strict 0
       vars 0
@@ -2973,10 +3016,10 @@ DISTRIBUTIONS
       Try::Tiny 0
       URI 1.59
       parent 0
-  Probe-Perl-0.03
-    pathname: K/KW/KWILLIAMS/Probe-Perl-0.03.tar.gz
+  Probe-Perl-0.02
+    pathname: K/KW/KWILLIAMS/Probe-Perl-0.02.tar.gz
     provides:
-      Probe::Perl 0.03
+      Probe::Perl 0.02
     requirements:
       Config 0
       ExtUtils::MakeMaker 6.30
@@ -3484,44 +3527,6 @@ DISTRIBUTIONS
       Algorithm::Diff 1.19
       Exporter 0
       ExtUtils::MakeMaker 0
-  Text-Xslate-2.0009
-    pathname: G/GF/GFUJI/Text-Xslate-2.0009.tar.gz
-    provides:
-      Text::Xslate 2.0009
-      Text::Xslate::Bridge undef
-      Text::Xslate::Bridge::Star undef
-      Text::Xslate::Compiler undef
-      Text::Xslate::Engine 2.0009
-      Text::Xslate::HashWithDefault undef
-      Text::Xslate::PP 2.0009
-      Text::Xslate::PP::Const undef
-      Text::Xslate::PP::Method undef
-      Text::Xslate::PP::Opcode 2.0009
-      Text::Xslate::PP::State undef
-      Text::Xslate::PP::Type::Macro undef
-      Text::Xslate::PP::Type::Pair undef
-      Text::Xslate::PP::Type::Raw undef
-      Text::Xslate::Parser undef
-      Text::Xslate::Runner undef
-      Text::Xslate::Symbol undef
-      Text::Xslate::Syntax::Kolon undef
-      Text::Xslate::Syntax::Metakolon undef
-      Text::Xslate::Syntax::TTerse undef
-      Text::Xslate::Type::Raw undef
-      Text::Xslate::Util undef
-    requirements:
-      Data::MessagePack 0.38
-      Devel::PPPort 3.19
-      ExtUtils::MakeMaker 6.59
-      ExtUtils::ParseXS 2.21
-      File::Copy::Recursive 0
-      Mouse 0.61
-      Scalar::Util 1.14
-      Test::More 0.88
-      Test::Requires 0
-      XSLoader 0.02
-      parent 0.221
-      perl 5.008001
   Tie-ToObject-0.03
     pathname: N/NU/NUFFIN/Tie-ToObject-0.03.tar.gz
     provides:
@@ -3532,19 +3537,19 @@ DISTRIBUTIONS
       Test::More 0
       Test::use::ok 0
       Tie::RefHash 0
-  Tree-DAG_Node-1.13
-    pathname: R/RS/RSAVAGE/Tree-DAG_Node-1.13.tgz
+  Tree-DAG_Node-1.12
+    pathname: R/RS/RSAVAGE/Tree-DAG_Node-1.12.tgz
     provides:
-      Tree::DAG_Node 1.13
+      Tree::DAG_Node 1.12
     requirements:
       Module::Build 0.38
       Test::More 0.98
       strict 0
       warnings 0
-  Try-Tiny-0.18
-    pathname: D/DO/DOY/Try-Tiny-0.18.tar.gz
+  Try-Tiny-0.16
+    pathname: D/DO/DOY/Try-Tiny-0.16.tar.gz
     provides:
-      Try::Tiny 0.18
+      Try::Tiny 0.16
     requirements:
       Carp 0
       Exporter 0
@@ -3553,11 +3558,11 @@ DISTRIBUTIONS
       constant 0
       strict 0
       warnings 0
-  UNIVERSAL-require-0.14
-    pathname: N/NE/NEILB/UNIVERSAL-require-0.14.tar.gz
+  UNIVERSAL-require-0.13
+    pathname: M/MS/MSCHWERN/UNIVERSAL-require-0.13.tar.gz
     provides:
-      UNIVERSAL 0.14
-      UNIVERSAL::require 0.14
+      UNIVERSAL 0.13
+      UNIVERSAL::require 0.13
     requirements:
       ExtUtils::MakeMaker 0
       Test::More 0.47
@@ -3572,7 +3577,7 @@ DISTRIBUTIONS
       URI::Split undef
       URI::URL 5.04
       URI::WithBase 2.20
-      URI::_foreign undef
+      URI::_foreign 5.04
       URI::_generic undef
       URI::_idna undef
       URI::_ldap 1.12
@@ -3720,10 +3725,10 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 6.59
       perl 5.006
-  common-sense-3.72
-    pathname: M/ML/MLEHMANN/common-sense-3.72.tar.gz
+  common-sense-3.6
+    pathname: M/ML/MLEHMANN/common-sense-3.6.tar.gz
     provides:
-      common::sense 3.72
+      common::sense undef
     requirements:
       ExtUtils::MakeMaker 0
   libwww-perl-6.05
