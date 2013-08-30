@@ -22,7 +22,10 @@ requires 'Selenium::Remote::Driver', '== 0.17';
 requires 'Test::TCP', '== 2.00';
 requires 'Test::JSON', '== 0.11';
 
-requires 'Plack', '== 1.0028';
-requires 'Starman', '== 0.4003';
+requires 'Plack', '== 1.0029';
+requires 'Starman', '== 0.4006';
+#requires 'Starlet', '== 0.20';
 requires 'Server::Starter', '== 0.15';
 requires 'Net::Server::SS::PreFork', '== 0.05';
+
+requires 'Devel::KYTProf', '== 0.05';

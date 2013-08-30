@@ -1,2 +1,2 @@
 #!/bin/bash
-MOJO_MODE=production carton exec -- start_server --port 5000 -- plackup -s Starman -a script/block_hash
+env MOJO_MODE=production carton exec -- start_server --port 5000 -- starman script/block_hash --wokers 10

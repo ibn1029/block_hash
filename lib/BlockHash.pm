@@ -8,6 +8,8 @@ use Module::Load 'load';
 use Time::Piece;
 use Time::Seconds;
 
+use Devel::KYTProf;
+
 sub startup {
     my $self = shift;
 
@@ -15,6 +17,11 @@ sub startup {
     $self->plugin('Config', { file => 'config/block_hash.conf'});
 
     $self->app->secret('BlockHash20130804');
+
+    # Profiling
+    if ($self->mode eq 'development') {
+        use Devel::KYTProf
+    }
 
     # View
     $self->plugin( xslate_renderer => {

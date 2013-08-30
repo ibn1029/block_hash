@@ -8,7 +8,7 @@ __PACKAGE__->load_plugin('Count');
 
 use DBI;
 use BlockHash;
-use DBIx::QueryLog;
+#use DBIx::QueryLog;
 
 sub new {
     my $class = shift;
