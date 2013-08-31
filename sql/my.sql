@@ -2,7 +2,7 @@
 -- BlockHash DB
 --
 
-create database if not exists block_hash;
+create database if not exists block_hash default character set utf8;
 
 create table if not exists block_hash.hashtag (
     tag_id              bigint unsigned not null auto_increment primary key
