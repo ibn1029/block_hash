@@ -13,7 +13,7 @@ use Web::Query;
 use Encode;
 
 use Data::Dumper;
-use DBIx::Query;
+use DBIx::QueryLog;
 
 our $self;
 my $url = 'http://block.fm';
