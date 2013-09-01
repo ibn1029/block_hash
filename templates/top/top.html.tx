@@ -24,11 +24,11 @@
 <div class="row voffset10">
   <div class="col-md-12">
     <h3><i class="icon-tags"></i> Hashtags</h3>
-    [% FOREACH v in tag_cloud; IF v.ratio < 0.0035; NEXT; END %]
+    [% FOREACH v in tag_cloud; IF v.ratio < 0.0036; NEXT; END %]
     <button type="button" data-toggle="button" class="btn
       [% IF v.ratio > 0.6 %] btn-danger btn-sm
       [% ELSIF v.ratio > 0.4 %] btn-warning btn-sm
-      [% ELSIF v.ratio > 0.2 %] btn-info btn-sm
+      [% ELSIF v.ratio > 0.05 %] btn-info btn-sm
       [% ELSE %] btn-default btn-xs
       [% END %]
     " onclick="location.href='/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23'">[% v.tag %]</button>
