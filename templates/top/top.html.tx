@@ -32,7 +32,8 @@
       [% ELSE %] btn-default btn-xs
       [% END %]
     " onclick="location.href='/[% v.tag %]/[% week_ago() %]/0/[% today() %]/23'">[% v.tag %]</button>
-    [% END %]
+    [% END %]<br>
+    <small><i class="icon icon-info-sign"></i> ハッシュタグのボタンを押すと、ハッシュタグの一週間のタイムラインが検索出来ます。</small>
   </div>
 </div>
 
