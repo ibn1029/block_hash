@@ -8,8 +8,6 @@ use Module::Load 'load';
 use Time::Piece;
 use Time::Seconds;
 
-use Devel::KYTProf;
-
 sub startup {
     my $self = shift;
 
