@@ -11,7 +11,7 @@ DISTRIBUTIONS
   AnyEvent-7.04
     pathname: M/ML/MLEHMANN/AnyEvent-7.04.tar.gz
     provides:
-      AE 7.04
+      AE undef
       AE::Log::COLLECT undef
       AE::Log::FILTER undef
       AE::Log::LOG undef
@@ -559,9 +559,6 @@ DISTRIBUTIONS
       POSIX 0
       Params::Validate 0.76
       Scalar::Util 0
-      Storable 0
-      Test::Fatal 0
-      Test::More 0.88
       Try::Tiny 0
       XSLoader 0
       base 0
@@ -570,7 +567,6 @@ DISTRIBUTIONS
       overload 0
       perl 5.008001
       strict 0
-      utf8 0
       vars 0
       warnings 0
   DateTime-Format-Strptime-1.54
@@ -1580,7 +1576,7 @@ DISTRIBUTIONS
   Dist-CheckConflicts-0.09
     pathname: D/DO/DOY/Dist-CheckConflicts-0.09.tar.gz
     provides:
-      Bar undef
+      Bar 0.02
       Bar::Bar 0.01
       Bar::Bar::Bad 0.01
       Bar::Bar::Good 0.02
@@ -1823,29 +1819,6 @@ DISTRIBUTIONS
       Filesys::Notify::Simple 0.12
     requirements:
       ExtUtils::MakeMaker 6.30
-  Furl-2.17
-    pathname: T/TO/TOKUHIROM/Furl-2.17.tar.gz
-    provides:
-      Furl 2.17
-      Furl::ConnectionCache undef
-      Furl::HTTP 2.17
-      Furl::Headers undef
-      Furl::Request undef
-      Furl::Response undef
-      Furl::ZlibStream undef
-    requirements:
-      CPAN::Meta 0
-      CPAN::Meta::Prereqs 0
-      Class::Accessor::Lite 0
-      Encode 0
-      HTTP::Parser::XS 0.11
-      MIME::Base64 0
-      Module::Build 0.38
-      Mozilla::CA 0
-      Scalar::Util 0
-      Socket 0
-      Time::HiRes 0
-      perl 5.008001
   Guard-1.022
     pathname: M/ML/MLEHMANN/Guard-1.022.tar.gz
     provides:
@@ -1990,7 +1963,7 @@ DISTRIBUTIONS
     pathname: G/GA/GAAS/HTTP-Message-6.06.tar.gz
     provides:
       HTTP::Config 6.00
-      HTTP::Headers 6.00
+      HTTP::Headers 6.05
       HTTP::Headers::Auth 6.00
       HTTP::Headers::ETag 6.00
       HTTP::Headers::Util 6.03
@@ -2313,7 +2286,7 @@ DISTRIBUTIONS
       Mojolicious::Command::generate::app undef
       Mojolicious::Command::generate::lite_app undef
       Mojolicious::Command::generate::makefile undef
-      Mojolicious::Command::generate::plugin undef
+      Mojolicious::Command::generate::plugin 0.01
       Mojolicious::Command::get undef
       Mojolicious::Command::inflate undef
       Mojolicious::Command::prefork undef
@@ -2568,7 +2541,7 @@ DISTRIBUTIONS
     pathname: G/GF/GFUJI/Mouse-1.11.tar.gz
     provides:
       Mouse 1.11
-      Mouse::Exporter 1.11
+      Mouse::Exporter undef
       Mouse::Meta::Attribute undef
       Mouse::Meta::Class undef
       Mouse::Meta::Method undef
@@ -2583,14 +2556,14 @@ DISTRIBUTIONS
       Mouse::Meta::Role::Composite undef
       Mouse::Meta::Role::Method undef
       Mouse::Meta::TypeConstraint undef
-      Mouse::Object 1.11
-      Mouse::PurePerl 1.11
+      Mouse::Object undef
+      Mouse::PurePerl undef
       Mouse::Role 1.11
       Mouse::Spec 1.11
       Mouse::Tiny 1.11
       Mouse::TypeRegistry undef
-      Mouse::Util 1.11
-      Mouse::Util::MetaRole undef
+      Mouse::Util undef
+      Mouse::Util::MetaRole 1.11
       Mouse::Util::TypeConstraints undef
       Squirrel undef
       Squirrel::Role undef
@@ -2875,22 +2848,13 @@ DISTRIBUTIONS
     requirements:
       Attribute::Handlers 0.79
       Carp 0
-      Devel::Peek 0
       Exporter 0
       ExtUtils::CBuilder 0
-      File::Spec 0
-      File::Temp 0
       Module::Build 0.3601
       Module::Implementation 0
       Scalar::Util 1.10
-      Test::Fatal 0
-      Test::More 0.88
-      Tie::Array 0
-      Tie::Hash 0
       XSLoader 0
       attributes 0
-      base 0
-      overload 0
       perl 5.008001
       strict 0
       vars 0
@@ -3527,6 +3491,44 @@ DISTRIBUTIONS
       Algorithm::Diff 1.19
       Exporter 0
       ExtUtils::MakeMaker 0
+  Text-Xslate-2.0009
+    pathname: G/GF/GFUJI/Text-Xslate-2.0009.tar.gz
+    provides:
+      Text::Xslate 2.0009
+      Text::Xslate::Bridge undef
+      Text::Xslate::Bridge::Star undef
+      Text::Xslate::Compiler undef
+      Text::Xslate::Engine 2.0009
+      Text::Xslate::HashWithDefault undef
+      Text::Xslate::PP 2.0009
+      Text::Xslate::PP::Const undef
+      Text::Xslate::PP::Method undef
+      Text::Xslate::PP::Opcode 2.0009
+      Text::Xslate::PP::State undef
+      Text::Xslate::PP::Type::Macro undef
+      Text::Xslate::PP::Type::Pair undef
+      Text::Xslate::PP::Type::Raw undef
+      Text::Xslate::Parser undef
+      Text::Xslate::Runner undef
+      Text::Xslate::Symbol undef
+      Text::Xslate::Syntax::Kolon undef
+      Text::Xslate::Syntax::Metakolon undef
+      Text::Xslate::Syntax::TTerse undef
+      Text::Xslate::Type::Raw undef
+      Text::Xslate::Util undef
+    requirements:
+      Data::MessagePack 0.38
+      Devel::PPPort 3.19
+      ExtUtils::MakeMaker 6.59
+      ExtUtils::ParseXS 2.21
+      File::Copy::Recursive 0
+      Mouse 0.61
+      Scalar::Util 1.14
+      Test::More 0.88
+      Test::Requires 0
+      XSLoader 0.02
+      parent 0.221
+      perl 5.008001
   Tie-ToObject-0.03
     pathname: N/NU/NUFFIN/Tie-ToObject-0.03.tar.gz
     provides:
@@ -3577,7 +3579,7 @@ DISTRIBUTIONS
       URI::Split undef
       URI::URL 5.04
       URI::WithBase 2.20
-      URI::_foreign 5.04
+      URI::_foreign undef
       URI::_generic undef
       URI::_idna undef
       URI::_ldap 1.12
@@ -3725,10 +3727,10 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 6.59
       perl 5.006
-  common-sense-3.6
-    pathname: M/ML/MLEHMANN/common-sense-3.6.tar.gz
+  common-sense-3.72
+    pathname: M/ML/MLEHMANN/common-sense-3.72.tar.gz
     provides:
-      common::sense undef
+      common::sense 3.72
     requirements:
       ExtUtils::MakeMaker 0
   libwww-perl-6.05

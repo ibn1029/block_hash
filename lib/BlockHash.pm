@@ -18,7 +18,7 @@ sub startup {
 
     # Profiling
     if ($self->mode eq 'development') {
-        use Devel::KYTProf
+        #use Devel::KYTProf
     }
 
     # View
