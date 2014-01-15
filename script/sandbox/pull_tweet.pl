@@ -61,7 +61,6 @@ sub setup {
             consumer_secret     => $twitter->{consumer_secret}, 
             access_token        => $twitter->{access_token},
             access_token_secret => $twitter->{access_token_secret}, 
-            ssl => 1,
         ) or die 'twitter oauth error';
         $self->{nt} = $nt;
     }
