@@ -3,3 +3,5 @@ local/*
 tmp/*
 log/*
 *.swp
+nohup.out
+config/blockfm_friends.pl

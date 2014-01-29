@@ -3,9 +3,7 @@ DISTRIBUTIONS
   Algorithm-Diff-1.1902
     pathname: T/TY/TYEMQ/Algorithm-Diff-1.1902.tar.gz
     provides:
-      Algorithm::Diff 1.1902
-      Algorithm::Diff::_impl 1.1902
-      Algorithm::DiffOld 1.1
+      Algorithm::Diff undef
     requirements:
       ExtUtils::MakeMaker 0
   AnyEvent-7.04
@@ -158,8 +156,7 @@ DISTRIBUTIONS
   Class-Accessor-Chained-0.01
     pathname: R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz
     provides:
-      Class::Accessor::Chained 0.01
-      Class::Accessor::Chained::Fast undef
+      Class::Accessor::Chained undef
     requirements:
       Class::Accessor 0
       Test::More 0
@@ -559,6 +556,9 @@ DISTRIBUTIONS
       POSIX 0
       Params::Validate 0.76
       Scalar::Util 0
+      Storable 0
+      Test::Fatal 0
+      Test::More 0.88
       Try::Tiny 0
       XSLoader 0
       base 0
@@ -567,6 +567,7 @@ DISTRIBUTIONS
       overload 0
       perl 5.008001
       strict 0
+      utf8 0
       vars 0
       warnings 0
   DateTime-Format-Strptime-1.54
@@ -1740,7 +1741,7 @@ DISTRIBUTIONS
   File-Copy-Recursive-0.38
     pathname: D/DM/DMUEY/File-Copy-Recursive-0.38.tar.gz
     provides:
-      File::Copy::Recursive 0.38
+      File::Copy::Recursive undef
     requirements:
       ExtUtils::MakeMaker 0
       File::Copy 0
@@ -1761,13 +1762,12 @@ DISTRIBUTIONS
       File::HomeDir::Windows 1.00
     requirements:
       Carp 0
-      Cwd 3
+      Cwd 3.12
       ExtUtils::MakeMaker 6.36
       File::Path 2.01
-      File::Spec 3
+      File::Spec 3.12
       File::Temp 0.19
       File::Which 0.05
-      Mac::SystemDirectory 0.04
       Test::More 0.47
       perl 5.00503
   File-Listing-6.04
@@ -2136,14 +2136,6 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.59
       Test::More 0.47
       perl 5.006
-  Mac-SystemDirectory-0.06
-    pathname: C/CH/CHANSEN/Mac-SystemDirectory-0.06.tar.gz
-    provides:
-      Mac::SystemDirectory 0.06
-    requirements:
-      ExtUtils::MakeMaker 6.42
-      Test::More 0.86
-      perl 5.006
   Module-Build-Tiny-0.025
     pathname: L/LE/LEONT/Module-Build-Tiny-0.025.tar.gz
     provides:
@@ -2286,7 +2278,7 @@ DISTRIBUTIONS
       Mojolicious::Command::generate::app undef
       Mojolicious::Command::generate::lite_app undef
       Mojolicious::Command::generate::makefile undef
-      Mojolicious::Command::generate::plugin 0.01
+      Mojolicious::Command::generate::plugin undef
       Mojolicious::Command::get undef
       Mojolicious::Command::inflate undef
       Mojolicious::Command::prefork undef
@@ -2544,9 +2536,9 @@ DISTRIBUTIONS
       Mouse::Exporter undef
       Mouse::Meta::Attribute undef
       Mouse::Meta::Class undef
-      Mouse::Meta::Method undef
-      Mouse::Meta::Method::Accessor undef
-      Mouse::Meta::Method::Constructor undef
+      Mouse::Meta::Method 1.11
+      Mouse::Meta::Method::Accessor 1.11
+      Mouse::Meta::Method::Constructor 1.11
       Mouse::Meta::Method::Delegation undef
       Mouse::Meta::Method::Destructor undef
       Mouse::Meta::Module undef
@@ -2562,8 +2554,8 @@ DISTRIBUTIONS
       Mouse::Spec 1.11
       Mouse::Tiny 1.11
       Mouse::TypeRegistry undef
-      Mouse::Util undef
-      Mouse::Util::MetaRole 1.11
+      Mouse::Util 1.11
+      Mouse::Util::MetaRole undef
       Mouse::Util::TypeConstraints undef
       Squirrel undef
       Squirrel::Role undef
@@ -2848,13 +2840,22 @@ DISTRIBUTIONS
     requirements:
       Attribute::Handlers 0.79
       Carp 0
+      Devel::Peek 0
       Exporter 0
       ExtUtils::CBuilder 0
+      File::Spec 0
+      File::Temp 0
       Module::Build 0.3601
       Module::Implementation 0
       Scalar::Util 1.10
+      Test::Fatal 0
+      Test::More 0.88
+      Tie::Array 0
+      Tie::Hash 0
       XSLoader 0
       attributes 0
+      base 0
+      overload 0
       perl 5.008001
       strict 0
       vars 0
@@ -3491,44 +3492,6 @@ DISTRIBUTIONS
       Algorithm::Diff 1.19
       Exporter 0
       ExtUtils::MakeMaker 0
-  Text-Xslate-2.0009
-    pathname: G/GF/GFUJI/Text-Xslate-2.0009.tar.gz
-    provides:
-      Text::Xslate 2.0009
-      Text::Xslate::Bridge undef
-      Text::Xslate::Bridge::Star undef
-      Text::Xslate::Compiler undef
-      Text::Xslate::Engine 2.0009
-      Text::Xslate::HashWithDefault undef
-      Text::Xslate::PP 2.0009
-      Text::Xslate::PP::Const undef
-      Text::Xslate::PP::Method undef
-      Text::Xslate::PP::Opcode 2.0009
-      Text::Xslate::PP::State undef
-      Text::Xslate::PP::Type::Macro undef
-      Text::Xslate::PP::Type::Pair undef
-      Text::Xslate::PP::Type::Raw undef
-      Text::Xslate::Parser undef
-      Text::Xslate::Runner undef
-      Text::Xslate::Symbol undef
-      Text::Xslate::Syntax::Kolon undef
-      Text::Xslate::Syntax::Metakolon undef
-      Text::Xslate::Syntax::TTerse undef
-      Text::Xslate::Type::Raw undef
-      Text::Xslate::Util undef
-    requirements:
-      Data::MessagePack 0.38
-      Devel::PPPort 3.19
-      ExtUtils::MakeMaker 6.59
-      ExtUtils::ParseXS 2.21
-      File::Copy::Recursive 0
-      Mouse 0.61
-      Scalar::Util 1.14
-      Test::More 0.88
-      Test::Requires 0
-      XSLoader 0.02
-      parent 0.221
-      perl 5.008001
   Tie-ToObject-0.03
     pathname: N/NU/NUFFIN/Tie-ToObject-0.03.tar.gz
     provides:
@@ -3560,11 +3523,11 @@ DISTRIBUTIONS
       constant 0
       strict 0
       warnings 0
-  UNIVERSAL-require-0.13
-    pathname: M/MS/MSCHWERN/UNIVERSAL-require-0.13.tar.gz
+  UNIVERSAL-require-0.14
+    pathname: N/NE/NEILB/UNIVERSAL-require-0.14.tar.gz
     provides:
-      UNIVERSAL 0.13
-      UNIVERSAL::require 0.13
+      UNIVERSAL 0.14
+      UNIVERSAL::require 0.14
     requirements:
       ExtUtils::MakeMaker 0
       Test::More 0.47
@@ -3579,7 +3542,7 @@ DISTRIBUTIONS
       URI::Split undef
       URI::URL 5.04
       URI::WithBase 2.20
-      URI::_foreign undef
+      URI::_foreign 5.04
       URI::_generic undef
       URI::_idna undef
       URI::_ldap 1.12
